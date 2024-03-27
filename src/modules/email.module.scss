@@ -1,0 +1,47 @@
+@import '../common/variables.scss';
+@import '../null.scss';
+
+
+.emailBox{
+	@extend %displayFlexDirection;
+	gap: 10px;
+	@media (max-width:768.98px) {
+		margin-top: 20px;
+		text-align: center;
+		grid-row: 2;
+		grid-column: 2;
+	}
+	@media (max-width:425.98px) {
+		margin-top: 20px;
+		text-align: center;
+		grid-row: 4;
+		grid-column: 1;
+	}
+}
+.email {
+	border-radius: 3px;
+	@extend %display;
+	@include adaptive-value('width',270,180,1440);
+	border: 1px solid $mainColor;
+	@media (max-width:768.98px) {
+		width: 100%;
+
+	}
+}
+.subscribe{
+	@extend %text ;
+}
+.emailBtn {
+	color:white;
+	background: $mainColor;
+	width: fit-content;
+	padding: 10px 20px;
+	transition: all 0.3s ease 0s;
+	@media (any-hover: hover){
+		&:hover{
+	transition: all 0.3s ease 0s;
+			background: white;
+			color:$mainColor;
+		}
+	}
+}

@@ -1,0 +1,13 @@
+@import '../common/variables.scss';
+@import '../null.scss';
+
+.imageBox{
+max-width: 410px;
+height: auto;
+@extend %images ;
+}
+
+.logo{
+	max-width: 70px;
+	@extend %images ;
+}

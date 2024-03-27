@@ -1,0 +1,179 @@
+* {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+ }
+ *::before, *::after {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+ }
+ 
+ :focus, :active {
+	outline: none;
+ }
+ 
+ a:focus, a:active {
+	@media (min-width:768.98px){
+		color: #ED165F;
+	}
+	outline: none;
+ }
+ 
+ nav, footer, header, aside {
+	display: block;
+ }
+ 
+ html, body {
+	height: 100%;
+	width: 100%;
+	line-height: 1;
+	-moz-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+ }
+
+ #root{
+	height: 100%;
+}
+ 
+ input, button, textarea {
+	width: 100%;
+	background: transparent;
+	font-family: inherit;
+ }
+ input, textarea{
+	padding: 5px;
+ }
+ input::-ms-clear {
+	display: none;
+ }
+ 
+ button {
+	cursor: pointer;
+ }
+ button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+ }
+ 
+ a {
+	text-decoration: none;
+	list-style: none;
+	color:var(--color-text)
+ }
+ a:visited, a:hover {
+	text-decoration: none;
+	list-style: none;
+ }
+ 
+ ul li {
+	list-style: none;
+ }
+ 
+ img {
+	vertical-align: top;
+ }
+ 
+ h1, h2, h3, h4, h5, h6 {
+	font-size: inherit;
+	font-weight: 400;
+ }
+ 
+ input[tupe=text], input[tupe=email], input[tupe=tel] {
+	-webkit-appearence: none;
+	-moz-appearence: none;
+	-webkit-appearance: none;
+		-moz-appearance: none;
+			  appearance: none;
+ }
+ 
+ textarea {
+	-webkit-appearence: none;
+	-moz-appearence: none;
+	-webkit-appearance: none;
+		-moz-appearance: none;
+			  appearance: none;
+ }
+ 
+ .input {
+	border-radius: 0 !important;
+	width: 100%;
+	display: block;
+	padding: 0 20px;
+ }
+ 
+ textarea.input {
+	resize: none;
+	padding: 0 0;
+ }
+  
+ ._icon-arrow {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-ordinal-group: 2;
+		 -ms-flex-order: 1;
+			  order: 1;
+ }
+ 
+ /* ---------------------------------------------------body */
+ body {
+	font-family: 'Nunito';
+
+ }
+ body._lock {
+	overflow: hidden;
+ }
+ 
+ body._pc .menu__link:hover .menu__sub-list {
+	opacity: 1;
+	visibility: visible;
+	-webkit-transform: translate(0px, 0px);
+			  transform: translate(0px, 0px);
+	pointer-events: all;
+ }
+ 
+ body._touch .menu__link._active .menu__sub-list {
+	-webkit-transform: translate(0px, 10px);
+			  transform: translate(0px, 10px);
+	display: block;
+ }
+
+
+body[data-theme=light]{
+
+	transition: all 0.3s;
+	background: #F6F6F6;
+	color: black;
+	button{
+		color:black;
+	}
+	//-----------------------------------var()
+	--elements:black;
+	--bg-block:#fff;
+	--bg-burger:#F6F6F6;
+	--link-bg:#f0eeee;
+	--search-border:#b3b0b0;
+	--bg:white;
+	--color-text:black;
+}
+body[data-theme=dark]{
+	background:black;
+	color:white;
+	transition: all 0.3s;
+	button{
+		color:white;
+	}
+	//-----------------------------------var()
+
+	--link-bg:#292929;
+	--elements:white;
+	--bg-burger:#292929;
+	--bg-block:#292929;
+	--bg:black;
+	--color-text:white;
+	--search-border:#292929;
+}
+ /* ---------------------------------------------------body */

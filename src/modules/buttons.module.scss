@@ -1,0 +1,154 @@
+@import '../common/variables.scss';
+@import '../null.scss';
+
+$colorBtn:#ED165F;
+
+.back{
+	@extend %display;
+	width: fit-content;
+	gap: 10px;
+	background:$colorBtn;
+	padding: 10px 15px;
+	border-radius: 5px;
+	color:#fff;
+	transition: all 0.3s ease 0s;
+	@media (any-hover: hover){
+		&:hover{
+	transition: all 0.3s ease 0s;
+	color:$colorBtn;
+	background:#fff;
+	border: 1px solid $colorBtn ;
+		}
+	}
+}
+.goHome{
+	@extend %display;
+	width: fit-content;
+	gap: 10px;
+	background:$colorBtn;
+	padding: 10px 15px;
+	border-radius: 5px;
+	color:#fff;
+	transition: all 0.3s ease 0s;
+	@media (any-hover: hover){
+		&:hover{
+	transition: all 0.3s ease 0s;
+	color:$colorBtn;
+	background:#fff;
+	border: 1px solid $colorBtn ;
+		}
+	}
+}
+
+.SignIn{
+	@extend %display;
+	justify-content: center;
+	max-width: 410px;
+	gap: 10px;
+	background:$colorBtn;
+	padding: 10px 15px;
+	border-radius: 5px;
+	color:#fff;
+	transition: all 0.3s ease 0s;
+	@media (any-hover: hover){
+		&:hover{
+	transition: all 0.3s ease 0s;
+	color:$colorBtn;
+	background:#fff;
+	border: 1px solid $colorBtn ;
+		}
+	}
+}
+.CreateAccount{
+	@extend %display;
+	justify-content: center;
+	max-width: 410px;
+	gap: 10px;
+	background:$colorBtn;
+	padding: 10px 15px;
+	border-radius: 5px;
+	color:#fff;
+	transition: all 0.3s ease 0s;
+	@media (any-hover: hover){
+		&:hover{
+	transition: all 0.3s ease 0s;
+	color:$colorBtn;
+	background:#fff;
+	border: 1px solid $colorBtn ;
+		}
+	}
+}
+.Shopping{
+	@extend %display;
+	justify-content: center;
+	max-width: 410px;
+	gap: 10px;
+	color:black;
+	cursor: pointer;
+	font-weight: 700;
+	text-transform: uppercase;
+	background:white;
+	border: 1px solid $colorBtn;
+	padding: 10px 15px;
+	border-radius: 5px;
+	transition: all 0.3s ease 0s;
+
+}
+
+
+.close{
+	width: fit-content;
+}
+
+.addToCart{
+	background: white;
+	padding: 10px 15px;
+	text-transform: uppercase;
+	width: fit-content;
+	border-radius:3px;
+	font-weight: 600;
+	transition: all 0.3s ease 0s;
+	@media (any-hover: hover){
+		&:hover{
+	transition: all 0.3s ease 0s;
+			color:$colorBtn;
+			
+		}
+	}
+}
+.favorite{
+	background: white;
+	width: fit-content;
+	font-size: 20px;
+	padding: 5px 8px;
+	transition: all 0.3s ease 0s;
+	@media (any-hover: hover){
+		&:hover{
+	transition: all 0.3s ease 0s;
+			background: $colorBtn;
+		}
+	}
+}
+.heart{
+	color:$colorBtn;
+	transition: all 0.3s ease 0s;
+	@media (any-hover: hover){
+		&:hover{
+	transition: all 0.3s ease 0s;
+			color:white;
+		}
+	}
+}
+
+.goToFavorite{
+	color:$colorBtn;
+	width: fit-content;
+	text-transform: uppercase;
+}
+
+
+.remove{
+	width: fit-content;
+	text-transform: uppercase;
+	color:$colorBtn;
+}

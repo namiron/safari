@@ -1,0 +1,60 @@
+@import './null.scss';
+@import './common/variables.scss';
+
+$mainColor:#ED165F;
+
+.wrapper {
+	@extend %wrapper ;
+}
+.header {
+}
+.main {
+	@extend %main;
+
+}
+.footer {
+}
+
+
+//-----------------------------------------
+.cartIcon{
+transition: all 0.3s ease 0s;
+@media (any-hover: hover){
+	&:hover{
+		color:$mainColor ;
+	}
+}
+}
+
+.favoriteIcon{
+	transition: all 0.3s ease 0s;
+@media (any-hover: hover){
+	&:hover{
+		color:$mainColor ;
+	}
+}
+}
+.iconSearch{
+	transition: all 0.3s ease 0s;
+	font-size: 18px;
+	@media (any-hover: hover){
+		&:hover{
+			color:$mainColor ;
+		}
+	}
+}
+
+.userIcon{
+	transition: all 0.3s ease 0s;
+	height: 15px;
+	@media (any-hover: hover){
+		&:hover{
+			color:$mainColor ;
+		}
+	}
+}
+
+.burgerIcon{
+	font-size: 18px;
+}
+//---------------------------------------

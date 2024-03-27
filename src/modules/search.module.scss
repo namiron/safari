@@ -1,0 +1,21 @@
+@import '../common/variables.scss';
+@import '../null.scss';
+
+
+
+.search {
+	@extend %display;
+	align-items:flex-end;
+	gap: 10px;
+	width: fit-content;
+}
+.searchIcon {
+	width: fit-content;
+}
+.searchInput{
+	max-width: 175px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.26);
+}
+::placeholder{
+	color: $cartTextColor;
+}

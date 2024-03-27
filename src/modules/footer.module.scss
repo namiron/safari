@@ -1,0 +1,99 @@
+@import '../common/variables.scss';
+@import '../null.scss';
+
+
+//-------------------------------------------
+
+$footerBg:#F5F5F5;
+$mainColor:#ED165F;
+//-------------------------------------------
+
+.footer {
+	@include adaptive-value('padding-top',40,20,1440);
+	@include adaptive-value('padding-bottom',40,20,1440);
+	background: $footerBg;
+}
+.container {
+	@extend %container;
+	@extend %gridFooter;
+}
+
+
+.social {
+	width: fit-content;
+	@extend %displayFlexDirection;
+	gap: 10px;
+	@media (max-width:425.98px) {
+		margin-top: 20px;
+		text-align: center;
+		grid-row: 3;
+		grid-column: 1;
+	}
+}
+.facebook {
+	font-weight: 600;
+	@extend %display;
+	gap: 15px;
+	transition: all 0.3s ease 0s;
+	@media (any-hover: hover){
+		&:hover{
+	transition: all 0.3s ease 0s;
+			color:$mainColor;
+		}
+	}
+}
+.twitter {
+	font-weight: 600;
+	@extend %display;
+	gap: 10px;
+	transition: all 0.3s ease 0s;
+	@media (any-hover: hover){
+		&:hover{
+	transition: all 0.3s ease 0s;
+			color:$mainColor;
+		}
+	}
+}
+.informations{
+	width: fit-content;
+	@extend %displayFlexDirection;
+	gap: 10px;
+	@media (max-width:425.98px) {
+		margin-top: 20px;
+		grid-row: 2;
+		grid-column: 1;
+	}
+}
+.instagram {
+	font-weight: 600;
+	@extend %display;
+	gap: 10px;
+	transition: all 0.3s ease 0s;
+	@media (any-hover: hover){
+		&:hover{
+	transition: all 0.3s ease 0s;
+			color:$mainColor;
+		}
+	}
+}
+.thank{
+	max-width: auto;
+	@media (max-width:1024.98px) {
+		margin-top: 20px;
+		text-align: center;
+		grid-row: 2;
+		grid-column: 3;
+	}
+	@media (max-width:768.98px) {
+		margin-top: 20px;
+		text-align: center;
+		grid-row: 3;
+		grid-column: 2;
+	}
+	@media (max-width:425.98px) {
+		margin-top: 20px;
+		text-align: center;
+		grid-row: 5;
+		grid-column: 1;
+	}
+}

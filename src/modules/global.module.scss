@@ -1,0 +1,30 @@
+@import '../common/variables.scss';
+@import '../null.scss';
+
+
+
+.title {
+	@extend %title;
+
+}
+.text {
+	@extend %text;
+}
+.categoryLink{
+	@extend %categoryLink;
+}
+.titleCategory {
+
+	@extend %titleCategory;
+}
+.titlePage {
+	@extend %titlePage;
+}
+
+.cartListCategory{
+	@extend %cartListCategoryTitle;
+}
+
+.subTextCart{
+@extend %subTextCart;
+}
