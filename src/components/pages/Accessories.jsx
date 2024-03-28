@@ -1,9 +1,12 @@
 import React from 'react';
 import '../../wrapper.scss'
+import { Nav } from './../../common/Buttons';
 
 const Accessories = (props) => {
 	return (
-		<section className='main'>Accessories</section>
+		<section className='accessories'>Accessories
+			<Nav />
+		</section>
 
 	)
 }

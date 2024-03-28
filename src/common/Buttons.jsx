@@ -16,31 +16,40 @@ export const GoBack = () => {
 	const goBack = () => navigate(-1)
 
 	return (
-		<button className={btn.back} onClick={goBack}> <ImArrowLeft2 />back</button>
+		<button className={btn.back} onClick={goBack}> <ImArrowLeft2 />Back</button>
 	)
 }
 
 export const GoHome = () => {
 	return (
-		<Link to='/safari' className={btn.goHome}>Home</Link>
+		<Link to='/' className={btn.goHome}>Home</Link>
+	)
+}
+
+export const Nav = () => {
+	return (
+		<div className={btn.btnNavigations}>
+			<GoBack />
+			<GoHome />
+		</div>
 	)
 }
 
 export const SignIn = () => {
 	return (
-		<Link to='/safari' className={btn.SignIn}>SIGN IN <CiLogin /> </Link>
+		<Link to='/' className={btn.SignIn}>SIGN IN <CiLogin /> </Link>
 	)
 }
 
 export const Shopping = () => {
 	return (
-		<Link to='/safari' className={btn.Shopping}>CONTINUE SHOPPING </Link>
+		<Link to='/' className={btn.Shopping}>CONTINUE SHOPPING </Link>
 	)
 }
 
 export const CreateAccount = () => {
 	return (
-		<Link to='/safari' className={btn.CreateAccount}>CREATE ACCOUNT</Link>
+		<Link to='/' className={btn.CreateAccount}>CREATE ACCOUNT</Link>
 	)
 }
 

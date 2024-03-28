@@ -10,10 +10,10 @@ const Home = (props) => {
 
   return (
     <>
-      <main className='main'>
+      <section className='home'>
         Home
 
-      </main>
+      </section>
     </>
   )
 

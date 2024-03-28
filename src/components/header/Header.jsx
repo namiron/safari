@@ -23,7 +23,7 @@ const Header = () => {
 			<div className={header.container}>
 				<nav className={`${header.menu} ${isOpen ? header.active : ''}`} ref={mouseRef}>
 					<ul className={header.list}>
-						<li className={header.item}><Link to='/safari' className={header.link}>Home</Link></li>
+						<li className={header.item}><Link to='/' className={header.link}>Home</Link></li>
 						<li className={header.item}><Link to='/clothes' className={header.link}>Closes</Link></li>
 						<li className={header.item}><Link to='/shoes' className={header.link}>Shoes</Link></li>
 						<li className={header.item}><Link to='/accessories' className={header.link}>Accessories</Link></li>

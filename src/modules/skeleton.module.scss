@@ -1,0 +1,133 @@
+@import '../common/variables.scss';
+@import '../null.scss';
+
+//----------------------var
+$bg:#F5F5F5;
+
+@keyframes shimmer {
+	0% {
+	  background-position: -1000px 0;
+	}
+	100% {
+	  background-position: 1000px 0;
+	}
+ }
+
+
+//----------------------var
+
+//------------------------------------SkeletonItem
+
+.itemBody {
+	@include adaptive-value('max-width',296,260,1440);
+	min-width: 260px;
+
+}
+.boxImage {
+
+	@include adaptive-value('height',320,280,1440);
+	background:$bg ;
+	@extend %animationBlik;
+}
+.contentBox {
+}
+.text {
+	margin: 10px 0px;
+	background: $bg;
+	@include adaptive-value('height',15,8,1440);
+	@extend %animationBlik;
+}
+
+//------------------------------------SkeletonItem
+
+
+//------------------------------------SkeletonsHome
+.skeletonHome {
+}
+.skeletonContainer {
+	@extend %container;
+}
+.skeletonHeading {
+	margin: 0 auto;
+	@include adaptive-value('padding-bottom',30,15,1440);
+	@include adaptive-value('padding-top',30,15,1440);
+}
+.skeletonList {
+	@include adaptive-value('padding-bottom',160,80,1440);
+	@extend %gridColumn;
+}
+
+.title{
+	margin: 0 auto;
+	margin-bottom: 10px;
+	max-width: 280px;
+	background: $bg;
+	@include adaptive-value('height',15,8,1440);
+	@extend %animationBlik;
+
+}
+.subTitle {
+
+	margin: 0 auto;
+	max-width: 480px;
+	background: $bg;
+	@include adaptive-value('height',15,8,1440);
+	@extend %animationBlik;
+}
+
+//------------------------------------SkeletonsHome
+
+
+
+
+
+
+//--------------------------------------SkeletonCart
+
+.skeletonCart {
+	@include adaptive-value('padding-top',30,15,1440);
+	@include adaptive-value('padding-bottom',30,15,1440);
+
+}
+.skeletonCartContainer{
+	@extend %container;
+}
+.skeletonCartTitleMain{
+
+	background: $bg;
+	max-width: 280px;
+	margin-bottom: 10px;
+	@include adaptive-value('height',15,8,1440);
+	@extend %animationBlik;
+}
+.skeletonCartTitle {
+	margin-left: auto;
+	background: $bg;
+	max-width: 280px;
+	margin-bottom: 10px;
+	@include adaptive-value('height',15,8,1440);
+	@extend %animationBlik;
+
+}
+.skeletonCartBody {
+}
+.skeletonCartItem {
+	background: $bg;
+	border-radius: 5px;
+	@include adaptive-value('margin-bottom',15,5,1440);
+	@include adaptive-value('height',50,20,1440);
+	@extend %animationBlik;
+}
+.skeletonCartPrices {
+
+}
+.skeletonCartNumber {
+	background: $bg;
+	max-width: 280px;
+	margin-bottom: 10px;
+	@include adaptive-value('height',15,8,1440);
+	@extend %animationBlik;
+	margin-left: auto;
+}
+
+//--------------------------------------SkeletonCart
