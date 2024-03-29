@@ -1,8 +1,14 @@
 import React from 'react';
+import { Nav } from './../../common/Buttons';
 
 const Cart = (props) => {
 	return (
-		<p>Cart</p>
+		<section>
+			cart
+			<Nav />
+		</section>
+
+
 	)
 }
 export default Cart;

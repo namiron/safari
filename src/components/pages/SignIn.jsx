@@ -1,10 +1,14 @@
 import React from 'react';
-import '../../wrapper.scss'
+
+
+
+import { Nav } from './../../common/Buttons';
 
 const SignIn = (props) => {
 
 	return (
-		<main className='main'>
+		<main className='signIn'>
+			<Nav />
 			SignIn
 		</main>
 	)
