@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import { BASE_URL } from '../../hooks/untils'
+import { BASE_URL } from '../../common/constants'
 import axios from 'axios'
 
 export const getProducts = createAsyncThunk(

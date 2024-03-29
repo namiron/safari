@@ -7,6 +7,8 @@ import { useNavigate, Link } from 'react-router-dom';
 import { FaCartPlus } from "react-icons/fa";
 import { MdFavoriteBorder } from "react-icons/md";
 import { IoIosRemoveCircle } from "react-icons/io";
+import { BACK, CONTINUE_SHOPPING, HOME, SIG_IN, CREATE_ACCOUNT, MOVE_TO_FAVORITES, REMOVE } from './constants';
+
 //---------------------------------------
 
 //---------------------------------------
@@ -16,13 +18,13 @@ export const GoBack = () => {
 	const goBack = () => navigate(-1)
 
 	return (
-		<button className={btn.back} onClick={goBack}> <ImArrowLeft2 />Back</button>
+		<button className={btn.back} onClick={goBack}> <ImArrowLeft2 />{BACK}</button>
 	)
 }
 
 export const GoHome = () => {
 	return (
-		<Link to='/' className={btn.goHome}>Home</Link>
+		<Link to='/' className={btn.goHome}>{HOME}</Link>
 	)
 }
 
@@ -37,19 +39,19 @@ export const Nav = () => {
 
 export const SignIn = () => {
 	return (
-		<Link to='/' className={btn.SignIn}>SIGN IN <CiLogin /> </Link>
+		<Link to='/' className={btn.SignIn}>{SIG_IN} <CiLogin /> </Link>
 	)
 }
 
 export const Shopping = () => {
 	return (
-		<Link to='/' className={btn.Shopping}>CONTINUE SHOPPING </Link>
+		<Link to='/' className={btn.Shopping}>{CONTINUE_SHOPPING} </Link>
 	)
 }
 
 export const CreateAccount = () => {
 	return (
-		<Link to='/' className={btn.CreateAccount}>CREATE ACCOUNT</Link>
+		<Link to='/' className={btn.CreateAccount}>{CREATE_ACCOUNT}</Link>
 	)
 }
 
@@ -81,7 +83,7 @@ export const GoToFavorite = () => {
 	return (
 		<Link to='/favorite' className={btn.goToFavorite}><MdFavoriteBorder style={{
 			color: '#ED165F',
-		}} /> MOVE TO FAVORITES </Link>
+		}} /> {MOVE_TO_FAVORITES} </Link>
 	)
 }
 
@@ -89,7 +91,7 @@ export const Remove = () => {
 	return (
 		<button className={btn.remove}><IoIosRemoveCircle style={{
 			color: '#ED165F',
-		}} /> REMOVE </button>
+		}} /> {REMOVE} </button>
 	)
 }
 

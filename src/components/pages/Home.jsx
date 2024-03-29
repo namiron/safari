@@ -1,5 +1,6 @@
 import React from 'react';
-import '../../wrapper.scss'
+
+
 import { useCustomProductList } from '../../hooks/untils';
 
 

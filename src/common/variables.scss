@@ -128,7 +128,7 @@ $cartTextColor:#686868;
 			}
 		}
 	}
-  @media (max-width:768.98px){
+  @media (max-width:768px){
     &::before {
       transition: width 0.3s ease 0s;
       content: '';
@@ -154,19 +154,61 @@ $cartTextColor:#686868;
 
 //-------------------------------------------------------------------------------------------------animation
 
-//-------------------------------------------------------HEADER
 
 //-------------------------------------------------------BURGER-MENU-CONSTRUCTION
 
-%BurgerMenuNavContainer { //------------------------ul
-	@extend %displayComplect;
-	@media (max-width:768.98px){
-
+%menuBurger{ //------------------------nav
+	@media (max-width:768px){
+		position: fixed;
+		top:0%;
+		left:-100%;
+		width:200px;
+		height:100%;
+		background: $mainColor;
+		z-index: 150;
+		gap:10px;
+		transition: left 0.8s ease 0s;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		border-bottom-right-radius: 10px;
+		border-top-right-radius: 10px;
 	}
 }
+// .menu.active{
+// 	transition: left 0.6s ease 0s;
+// 		left: 0%;
+// 	}
+
+
+%listMenuBurger { //------------------------ul
+	@extend %displayComplect;
+	@media (max-width:768px){
+		flex-direction: column;
+		align-items:flex-start;
+		gap: 20px;
+		color: white;
+		font-size: 25px;
+	}
+}
+
+%burgerBtn { //-----------------------btnBurger
+	width: fit-content;
+	display: none;
+	@media (max-width:768px){
+		display: block;
+		margin-left: 12px;
+	}
+}
+
+%linkMenuBurgerItem {
+	@extend %link;
+	@media (max-width:768px){
+		font-size: 20px;
+	}
+	}
 //-------------------------------------------------------BURGER-MENU-CONSTRUCTION
 
-//-------------------------------------------------------HEADER
 
 
 
@@ -260,16 +302,16 @@ $cartTextColor:#686868;
   grid-template-columns: repeat(4, minmax(280px, 1fr));
   grid-template-rows: repeat(4, auto);
 
-  @media (max-width:1315.98px) {
+  @media (max-width:1315px) {
     grid-template-columns: repeat(3, minmax(280px, 1fr));
     grid-template-rows: repeat(8, auto);
   }
-  @media (max-width:925.98px) {
+  @media (max-width:925px) {
     grid-template-columns: repeat(2, minmax(280px, 1fr));
     grid-template-rows: repeat(12, auto);
   }
-  @media (max-width:610.98px) {
-   justify-items: center;
+  @media (max-width:610px) {
+    justify-items: center;
     grid-template-columns: repeat(1, minmax(280px, 1fr));
     grid-template-rows: repeat(16, minmax(280px, 1fr));
 
@@ -280,19 +322,19 @@ $cartTextColor:#686868;
   grid-template-columns: repeat(5, auto);
   grid-template-rows: repeat(1, auto);
 
-  @media (max-width:1024.98px) {
+  @media (max-width:1024px) {
     align-items:center;
     justify-items: center;
     grid-template-columns: repeat(4, auto);
     grid-template-rows: repeat(2, auto);
   }
-  @media (max-width:768.98px) {
+  @media (max-width:768px) {
     justify-items: normal;
     grid-template-columns: repeat(3, auto);
     grid-template-rows: 1fr;
   }
 
-  @media (max-width:425.98px) {
+  @media (max-width:425px) {
     grid-template-columns: repeat(2,auto);
     grid-template-rows: repeat(5, auto);
   }
@@ -302,7 +344,7 @@ $cartTextColor:#686868;
   display: grid;
   grid-template-columns: repeat(2, minmax(280px, 1fr));
 
-  @media (max-width:768.98px) {
+  @media (max-width:768px) {
     grid-template-columns: repeat(1, minmax(280px, 1fr));
     grid-template-rows: repeat(10, auto);
   }

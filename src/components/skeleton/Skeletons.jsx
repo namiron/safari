@@ -1,5 +1,5 @@
 import React from 'react';
-import { fotFunction } from '../../common/variables';
+import { skeletonComponents } from '../../common/variables';
 import skeleton from '../../modules/skeleton.module.scss'
 
 export const SkeletonItem = () => {
@@ -21,7 +21,7 @@ export const SkeletonItem = () => {
 
 export const Skeleton = (props) => {
 	const skeletonListQuantity = 16
-	const skeletonArray = []
+
 
 	return (
 		<section className={skeleton.skeletonHome}>
@@ -32,7 +32,7 @@ export const Skeleton = (props) => {
 				</div>
 				<div className={skeleton.skeletonList}>
 					{
-						fotFunction(skeletonListQuantity, skeletonArray, <SkeletonItem />)
+						skeletonComponents(skeletonListQuantity, <SkeletonItem />)
 					}
 				</div>
 			</div>
