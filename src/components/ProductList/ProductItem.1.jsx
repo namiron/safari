@@ -1,16 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import Image from '../../construction/Image';
 import { AddToCart, FavoriteBtn } from './../../common/Buttons';
 import global from '../../modules/global.module.scss';
-import product from '../../modules/products.module.scss'
+import product from '../../modules/products.module.scss';
 
-const ProductItem = ({ image, title, price }) => {
+export const ProductItem = ({ image, title, price }) => {
 
 	return (
 		<div className={product.itemBody}>
 			<div className={product.boxImage}>
-				<Link to='/item_details' >
+				<Link to='/item_details'>
 					<div className={product.curtain}>
 						<div className={product.box}>
 							<FavoriteBtn />
@@ -25,6 +25,5 @@ const ProductItem = ({ image, title, price }) => {
 				<h3 className={global.text}>{`${price === undefined ? '10.000' : price}$`}</h3>
 			</div>
 		</div>
-	)
-}
-export default ProductItem;
+	);
+};

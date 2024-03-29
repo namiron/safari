@@ -27,3 +27,25 @@ export const ACCESSORIES = 'Accessories'
 
 //-----------------------------------------------header
 
+
+//---------------------------------------pagination
+
+export const itemsPerPage = 16;
+
+//---------------------------------------pagination
+
+
+
+//----------------------------------home
+
+export const TITLE = 'Welcome to our online store!';
+
+export const SUB_TITLE = ` Here, every shopper will find the product of their dreams. Our store offers a wide range of products for all ages, preferences, and budgets. 
+Join our family of shoppers and bring your dreams to life with our online store!`
+
+
+
+//----------------------------------home
+
+
+
