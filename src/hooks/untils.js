@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux'
 import { getProducts } from '../redux/reducers/productsSlice';
 import { useSelector } from 'react-redux'
@@ -30,9 +30,6 @@ export const useClickOutSide = (ref, callback) => {
 		};
 	}, [ref]);
 };
-
-export const BASE_URL = 'https://65a10699600f49256fb0bd21.mockapi.io/healthier/v1/safari'
-
 
 export const useExportAllProducts = () => {
 	const dispatch = useDispatch();

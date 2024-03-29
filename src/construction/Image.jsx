@@ -5,7 +5,7 @@ import img from '../modules/images.module.scss'
 
 const Image = ({ image, classNameBox }) => {
 	return (
-		<Link to='/safari'  >
+		<Link to='/'  >
 			<div className={`${img[classNameBox]}`}>
 				<img src={!image || image === '' ? dress : image}
 					alt="itemContent" />

@@ -1,6 +1,8 @@
 import React, { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom'
 import { ROUTES } from './route';
+import { Skeleton } from '../skeleton/Skeletons';
+import { SkeletonCart } from './../skeleton/Skeletons';
 //----------------------------------------------------------
 const HomePage = lazy(() => import('./../pages/Home'))
 const LayoutPage = lazy(() => import('../Layout/Layout'))
@@ -16,6 +18,7 @@ const AboutUsPage = lazy(() => import('./../pages/informations/AboutUs'))
 const ContactPage = lazy(() => import('./../pages/informations/Contact'))
 const TermsPage = lazy(() => import('./../pages/informations/Terms'))
 
+
 //----------------------------------------------------------
 
 
@@ -23,22 +26,21 @@ const Ways = () => {
 
 	return (
 		<Routes>
-			<Route path={ROUTES.layout} element={<Suspense fallback={<p>Loading...</p>}><LayoutPage />
+			<Route path={ROUTES.layout} element={<Suspense fallback={<Skeleton />}><LayoutPage />
 			</Suspense>} >
-				<Route index element={<Suspense fallback={<p>Loading...</p>}><HomePage />
+				<Route index element={<Suspense fallback={<Skeleton />}> <HomePage />
 				</Suspense>} />
 				<Route path={ROUTES.log_in} element={<Suspense fallback={<p>Loading...</p>}><SignInPage />
 				</Suspense>} />
-				<Route path={ROUTES.clothes} element={<Suspense fallback={<p>Loading...</p>}><ClothesPage />
+				<Route path={ROUTES.clothes} element={<Suspense fallback={<Skeleton />}><ClothesPage />
 				</Suspense>} />
-				<Route path={ROUTES.shoes} element={<Suspense fallback={<p>Loading...</p>}><ShoesPage />
+				<Route path={ROUTES.shoes} element={<Suspense fallback={<Skeleton />}><ShoesPage />
 				</Suspense>} />
-				<Route path={ROUTES.accessories} element={<Suspense fallback={<p>Loading...</p>}><AccessoriesPage /></Suspense>} />
-				<Route index element={<Suspense fallback={<p>Loading...</p>}><HomePage />
+				<Route path={ROUTES.accessories} element={<Suspense fallback={<Skeleton />}><AccessoriesPage /></Suspense>} />
+
+				<Route path={ROUTES.cart} element={<Suspense fallback={<SkeletonCart />}><CartPage />
 				</Suspense>} />
-				<Route path={ROUTES.cart} element={<Suspense fallback={<p>Loading...</p>}><CartPage />
-				</Suspense>} />
-				<Route path={ROUTES.favorite} element={<Suspense fallback={<p>Loading...</p>}><FavoritePage />
+				<Route path={ROUTES.favorite} element={<Suspense fallback={<SkeletonCart />}><FavoritePage />
 				</Suspense>} />
 				<Route path={ROUTES.about_us} element={<Suspense fallback={<p>Loading...</p>}><AboutUsPage />
 				</Suspense>} />

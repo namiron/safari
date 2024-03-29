@@ -8,10 +8,11 @@ $colorBtn:#ED165F;
 	width: fit-content;
 	gap: 10px;
 	background:$colorBtn;
-	padding: 10px 15px;
+	padding: 8px 15px;
 	border-radius: 5px;
 	color:#fff;
 	transition: all 0.3s ease 0s;
+	font-size: 16px;
 	@media (any-hover: hover){
 		&:hover{
 	transition: all 0.3s ease 0s;
@@ -151,4 +152,9 @@ $colorBtn:#ED165F;
 	width: fit-content;
 	text-transform: uppercase;
 	color:$colorBtn;
+}
+.btnNavigations{
+	@extend %displayComplect;
+	@include adaptive-value('gap',10,5,1440);
+	max-width: 80px;
 }

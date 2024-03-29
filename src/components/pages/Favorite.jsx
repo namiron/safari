@@ -1,8 +1,13 @@
 import React from 'react';
+import { Nav } from './../../common/Buttons';
 
 const Favorite = (props) => {
 	return (
-		<p>Favorite</p>
+		<section>
+			<p>Favorite</p>
+			<Nav />
+		</section>
+
 	)
 }
 export default Favorite;

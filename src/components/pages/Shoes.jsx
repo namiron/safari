@@ -1,9 +1,12 @@
 import React from 'react';
-import '../../wrapper.scss'
+import { Nav } from './../../common/Buttons';
+
 
 const Shoes = (props) => {
 	return (
-		<section className='main'>Shoes</section>
+		<section className='shoes'>
+			<Nav />
+			Shoes</section>
 	)
 }
 export default Shoes;

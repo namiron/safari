@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './../header/Header';
 import Footer from './../footer/Footer';
 import { Outlet } from 'react-router-dom'
+import './../../wrapper.scss'
 
 const Layout = (props) => {
 	return (
@@ -9,7 +10,9 @@ const Layout = (props) => {
 			<header className='header'>
 				<Header />
 			</header>
-			<Outlet />
+			<main className='main'>
+				<Outlet />
+			</main>
 			<footer className='footer'>
 				<Footer />
 			</footer>

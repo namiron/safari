@@ -1,5 +1,6 @@
 import React from 'react';
-import '../../wrapper.scss'
+
+
 import { useCustomProductList } from '../../hooks/untils';
 
 
@@ -10,10 +11,10 @@ const Home = (props) => {
 
   return (
     <>
-      <main className='main'>
+      <section className='home'>
         Home
 
-      </main>
+      </section>
     </>
   )
 
