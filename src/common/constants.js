@@ -30,7 +30,7 @@ export const ACCESSORIES = 'Accessories'
 
 //---------------------------------------pagination
 
-export const itemsPerPage = 16;
+export const ITEMS_PER_PAGE = 16;
 
 //---------------------------------------pagination
 

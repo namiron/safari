@@ -3,15 +3,11 @@
 
 
 //-----------------------------global
-.home {
-}
+
 .container {
 	@extend %container ;
 }
 //-----------------------------global
-
-
-.slider{}
 
 .homeBody{
 	@extend %gridColumn;
