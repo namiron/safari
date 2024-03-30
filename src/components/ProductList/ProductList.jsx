@@ -1,17 +1,14 @@
 import React, { useState } from 'react';
-import { useCustomProductList, useExportAllProducts } from './../../hooks/untils';
 import { ITEMS_PER_PAGE } from '../../common/constants';
 import product_list from '../../modules/productList.module.scss'
 import ProductItem from './ProductItem';
 
 
-const ProductList = (props) => {
+const ProductList = ({ array }) => {
 	const FIRST_PAGE = 1
-	useExportAllProducts()
-	const [isLoading, productList, error] = useCustomProductList()
 
 	//----------------------------------------------------------const
-	const totalItems = productList.length
+	const totalItems = array.length
 	const [currentPage, setCurrentPage] = useState(FIRST_PAGE)
 	const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE)
 	//----------------------------------------------------------const
@@ -20,7 +17,7 @@ const ProductList = (props) => {
 	const displayItemsOnPage = () => {
 		const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
 		const endIndex = startIndex + ITEMS_PER_PAGE;
-		const itemsToShow = productList.slice(startIndex, endIndex)
+		const itemsToShow = array.slice(startIndex, endIndex)
 		return (
 			<>
 				{

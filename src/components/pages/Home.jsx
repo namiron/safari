@@ -4,9 +4,14 @@ import ProductList from './../ProductList/ProductList';
 import Slider from '../../construction/Slider/Slider';
 import { TITLE } from '../../common/constants';
 import { SUB_TITLE } from './../../common/constants';
+import { useCustomProductList, useExportAllProducts } from './../../hooks/untils';
 
 
 const Home = (props) => {
+  //----------------------------------
+  useExportAllProducts()
+  const productList = useCustomProductList()
+  //----------------------------------
 
   return (
     <>
@@ -21,7 +26,7 @@ const Home = (props) => {
               {SUB_TITLE}
             </h3>
           </div>
-          <ProductList />
+          <ProductList array={productList} />
         </div>
       </section>
     </>

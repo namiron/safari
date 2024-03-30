@@ -41,7 +41,7 @@ export const useExportAllProducts = () => {
 
 export const useCustomProductList = () => {
 	const { isLoading, productList, error } = useSelector((state) => state.products);
-	return [isLoading, productList, error];
+	return productList;
 }
 
 

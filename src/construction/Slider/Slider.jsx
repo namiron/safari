@@ -10,12 +10,12 @@ import flickity from '../../modules/flickity.module.scss'
 
 const Slider = () => {
 	const flickityOptions = {
-		initialIndex: 2,
+		initialIndex: 0,
 	};
 
 	const girls = {
 		id: [1, 2, 3],
-		image: [girlOne, girlsTwo, girlsThree]
+		image: [girlOne, girlsThree, girlsTwo]
 	}
 	return (
 		<div className={flickity.sliderBody}>
