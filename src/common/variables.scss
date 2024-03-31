@@ -22,14 +22,14 @@ $cartTextColor:#686868;
 
 //--------------------------------------------TEXTS
 %title {
-  font-size: calc(30px + (5 + 5 * 0.8) * ((100vw - 320px)/ 1440));
+  font-size: calc(25px + (5 + 5 * 0.8) * ((100vw - 320px)/ 1440));
   font-weight: 800;
   line-height: 1.5;
 }
 %text {
   line-height: 1.5;
   font-weight: 600;
-  font-size: calc(17px + (1 + 1 * 0.8) * ((100vw - 320px)/ 1440));
+  font-size: calc(16px + (1 + 1 * 0.8) * ((100vw - 320px)/ 1440));
 }
 
 %categoryLink{
@@ -160,6 +160,7 @@ $cartTextColor:#686868;
 %menuBurger{ //------------------------nav
 	@media (max-width:768px){
 		position: fixed;
+    padding-top: 50px;
 		top:0%;
 		left:-100%;
 		width:200px;
@@ -229,6 +230,7 @@ $cartTextColor:#686868;
 %wrapper {
   @extend %displayFlexDirection;
   height: 100vh;
+  overflow-x: hidden;
 }
 
 %main {
@@ -237,9 +239,9 @@ $cartTextColor:#686868;
 
 %images {
   img {
-    object-fit: cover;
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
   }
 }
 %lock{

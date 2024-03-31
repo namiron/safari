@@ -1,0 +1,55 @@
+@import '../common/variables.scss';
+@import '../null.scss';
+
+
+//-----------------------------global
+
+.container {
+	@extend %container ;
+}
+//-----------------------------global
+
+.homeBody{
+	@extend %gridColumn;
+}
+.heading{
+	@include adaptive-value('padding-top',60,20,1440);
+	@include adaptive-value('padding-bottom',60,20,1440);
+}
+.title{
+	position: relative; 
+	z-index: 3;
+	text-align: center;
+	@extend %title;
+	&::before{
+		content:"";
+		position: absolute;
+		top:50%;
+		left:78%;
+		width:40%;
+		height:1px;
+		background: #000;
+		z-index: 1;
+		@media (max-width:768px){
+			width:0%;
+
+		}
+	}
+	&::after{
+		content:"";
+		position: absolute;
+		top:50%;
+		right:78%;
+		width:40%;
+		height:1px;
+		background: #000;
+		z-index: 1;
+		@media (max-width:768px){
+			width:0%;
+		}
+	}
+}
+.subTitle{
+	text-align: center;
+	@extend %text;
+}

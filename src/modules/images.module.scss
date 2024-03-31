@@ -2,8 +2,7 @@
 @import '../null.scss';
 
 .imageBox{
-max-width: 410px;
-height: auto;
+	height: 100%;
 @extend %images ;
 }
 

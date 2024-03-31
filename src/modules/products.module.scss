@@ -11,8 +11,10 @@
 
 .itemBody {
 	max-width: 296px;
+
 }
 .boxImage{
+	@include adaptive-value('height',420,280,1440);
 	position: relative;
 }
 .curtain {
