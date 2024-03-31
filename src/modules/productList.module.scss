@@ -1,0 +1,35 @@
+@import '../common/variables.scss';
+@import '../null.scss';
+
+
+//------------------------------global
+.productListBody {
+	@extend %displayFlexDirection;
+	align-items: center;
+}
+.productListHolder {
+	@extend %gridColumn;
+	@include adaptive-value('margin-bottom',50,25,1440);
+}
+//------------------------------global
+
+
+//---------------------------------pagination
+.paginationArrowPrevios {
+	font-size: 16px;
+}
+.paginationRow {
+	width: fit-content;
+	@extend %displayComplect;
+	@include adaptive-value('gap',35,20,1440);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.311);
+	@include adaptive-value('margin-bottom',50,25,1440);
+}
+.paginationNumber {
+	@extend %link;
+}
+.paginationArrowNext {
+	font-size: 16px;
+}
+
+//---------------------------------pagination

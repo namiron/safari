@@ -19,7 +19,6 @@ $mainColor:#ED165F;
 //----------------------------------------------
 
 .menu{ 
-	@include adaptive-value('padding-top',50,30,768);
 	@extend %menuBurger;
 	//------------------------nav
 	// @media (max-width:768.98px){

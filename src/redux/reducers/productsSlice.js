@@ -11,7 +11,6 @@ export const getProducts = createAsyncThunk(
 				throw Error('Server error')
 			}
 			const data = response.data
-			console.log(data);
 			return data
 		} catch (error) {
 			return rejectWithValue(error.message)
