@@ -15,7 +15,7 @@ const Slider = () => {
 
 	const girls = {
 		id: [1, 2, 3],
-		image: [girlOne, girlsThree, girlsTwo]
+		image: [girlOne, girlsTwo, girlsThree]
 	}
 	return (
 		<div className={flickity.sliderBody}>

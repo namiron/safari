@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useDispatch } from 'react-redux'
 import { getProducts } from '../redux/reducers/productsSlice';
 import { useSelector } from 'react-redux'
@@ -28,7 +28,7 @@ export const useClickOutSide = (ref, callback) => {
 		return () => {
 			document.removeEventListener('mousedown', handleDocumentClick);
 		};
-	}, [ref]);
+	}, [ref, handleClick]);
 };
 
 export const useExportAllProducts = () => {
@@ -43,5 +43,9 @@ export const useCustomProductList = () => {
 	const { isLoading, productList, error } = useSelector((state) => state.products);
 	return productList;
 }
+
+
+
+
 
 

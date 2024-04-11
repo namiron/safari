@@ -1,17 +1,18 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { IoSearchSharp } from "react-icons/io5";
-import search from '../../modules/search.module.scss'
+import searchStyle from '../../modules/search.module.scss'
 import '../../wrapper.scss'
 
+const Search = ({ productList }) => {
 
-const Search = () => {
+
+
 	return (
-		<div className={search.search}>
-			<input type="text" name="search" className={search.searchInput} placeholder='Search...' />
-			<button className={search.searchIcon}><IoSearchSharp className='iconSearch' /></button>
+		<div className={searchStyle.search}>
+			<input type="text" name="search" className={searchStyle.searchInput} placeholder='Search...' />
+			<button className={searchStyle.searchIcon}><IoSearchSharp className='iconSearch' /></button>
 		</div>
-
-
-	)
+	);
 }
+
 export default Search;

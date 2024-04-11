@@ -8,9 +8,6 @@ import './wrapper.scss';
 
 
 const App = () => {
-
-
-
   return (
     <div className="wrapper">
       <Ways />

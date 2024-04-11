@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import btn from '../modules/buttons.module.scss'
 import { ImArrowLeft2 } from "react-icons/im";
 import { CiLogin } from "react-icons/ci";
@@ -12,6 +12,45 @@ import { BACK, CONTINUE_SHOPPING, HOME, SIG_IN, CREATE_ACCOUNT, MOVE_TO_FAVORITE
 //---------------------------------------
 
 //---------------------------------------
+
+export const Up = () => {
+	const [isVisible, setIsVisible] = useState(false);
+
+
+	useEffect(() => {
+		const toggleVisibility = () => {
+			if (window.scrollY > 300) {
+				setIsVisible(true);
+			} else {
+				setIsVisible(false);
+			}
+		};
+
+		window.addEventListener('scroll', toggleVisibility);
+
+		return () => {
+			window.removeEventListener('scroll', toggleVisibility);
+		};
+	}, []);
+
+
+	const scrollToTop = () => {
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth'
+		});
+	};
+
+	return (
+		<div className={btn.up}>
+			{isVisible && (
+				<button onClick={scrollToTop} className={btn.up} >
+					Up
+				</button >
+			)}
+		</div>
+	);
+};
 
 export const GoBack = () => {
 	const navigate = useNavigate()

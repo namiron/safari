@@ -9,15 +9,15 @@ import '../../wrapper.scss'
 import { useClickOutSide } from '../../hooks/untils';
 import { ACCESSORIES, CLOSES, HOME_HEADER, SHOES } from './../../common/constants';
 
-const Header = () => {
+const Header = ({ productList }) => {
 
 	const [isOpen, setOpen] = React.useState(false);
 	const mouseRef = React.useRef(null);
 
 	useClickOutSide(mouseRef, () => {
 		if (isOpen) setTimeout(() => { setOpen(false) }, 50)
-
 	});
+
 
 	return (
 		<header className={header.header}>
@@ -32,7 +32,7 @@ const Header = () => {
 				</nav>
 				<Logo />
 				<nav className={header.navigation}>
-					<Search />
+					<Search productList={productList} />
 					<UserIcon />
 					<CartIcon />
 					<FavoriteIcon />
