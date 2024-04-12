@@ -47,9 +47,10 @@ const Ways = () => {
 				</Suspense>} />
 				<Route path={ROUTES.shoes} element={<Suspense fallback={<Skeleton />}><ShoesPage productList={productList} />
 				</Suspense>} />
-				<Route path={ROUTES.accessories} element={<Suspense fallback={<Skeleton />}><AccessoriesPage /></Suspense>} />
-
-				<Route path={ROUTES.accessories} element={<Suspense fallback={<Skeleton />}><AccessoriesPage productList={productList} /></Suspense>} />
+				<Route path={ROUTES.accessories} element={<Suspense fallback={<Skeleton />}><AccessoriesPage />
+				</Suspense>} />
+				<Route path={ROUTES.accessories} element={<Suspense fallback={<Skeleton />}><AccessoriesPage productList={productList} />
+				</Suspense>} />
 				<Route path={ROUTES.cart} element={<Suspense fallback={<SkeletonCart />}><CartPage />
 				</Suspense>} />
 				<Route path={ROUTES.favorite} element={<Suspense fallback={<SkeletonCart />}><FavoritePage />
