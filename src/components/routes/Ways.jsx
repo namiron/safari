@@ -47,15 +47,9 @@ const Ways = () => {
 				</Suspense>} />
 				<Route path={ROUTES.shoes} element={<Suspense fallback={<Skeleton />}><ShoesPage productList={productList} />
 				</Suspense>} />
-<<<<<<< Updated upstream
 				<Route path={ROUTES.accessories} element={<Suspense fallback={<Skeleton />}><AccessoriesPage /></Suspense>} />
-<<<<<<< HEAD
 
-=======
 				<Route path={ROUTES.accessories} element={<Suspense fallback={<Skeleton />}><AccessoriesPage productList={productList} /></Suspense>} />
->>>>>>> Stashed changes
-=======
->>>>>>> clothes
 				<Route path={ROUTES.cart} element={<Suspense fallback={<SkeletonCart />}><CartPage />
 				</Suspense>} />
 				<Route path={ROUTES.favorite} element={<Suspense fallback={<SkeletonCart />}><FavoritePage />
