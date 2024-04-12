@@ -16,7 +16,6 @@ const Clothes = ({ productList }) => {
 
 	return (
 		<section className={clothes.clothes}>
-			<Nav />
 			<div className={clothes.container}>
 				<Nav />
 				<Up />
