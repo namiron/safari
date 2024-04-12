@@ -1,0 +1,11 @@
+@import '../../common/variables.scss';
+
+
+*{
+	background: #fff;
+	font-size: calc(14px + (2 + 2 * 0.8) * ((100vw - 320px)/ 1440));
+	color:#000;
+	padding: 10px;
+	border: 1px solid #000;
+	
+}

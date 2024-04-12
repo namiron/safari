@@ -1,0 +1,148 @@
+@import '../../common/variables.scss';
+
+//---------------------------vars
+$bgBox:white;
+//---------------------------vars
+
+//-----------------------------categoryBox/category-element
+.categoryBox {
+	text-align: left;
+	background: $bgBox;
+	.category{
+		@extend %linkFilters;
+		@extend %text;
+	}
+}
+//-----------------------------categoryBox/category-element
+
+
+
+//-----------------------------sizeBox/size-element
+.sizeBox {
+	padding-top: 10px;
+	text-align: left;
+	background: $bgBox;
+	display: grid;
+	gap:10px;
+	grid-template-columns: repeat(4, minmax(50px, 55px));
+	grid-template-rows: repeat(5, auto);
+	.size{
+		color: #161515;
+		@extend %text;
+		cursor:pointer;
+		border:1px solid #000;
+		width: 50px;
+		text-align: center;
+		transition: all 0.3s ease 0s;
+		@media (any-hover: hover){
+			&:hover{
+				transition: all 0.3s ease 0s;
+				background: $mainColor;
+				color:#fff;
+			}
+			&:focus{
+				background: $bgBox;
+			}
+		}
+	}
+}
+//-----------------------------sizeBox/size-element
+
+
+
+//-----------------------------colorBox/color-element
+.colorBox {
+	text-align: left;
+	background: $bgBox;
+	width: 85%;
+	display: grid;
+	gap:15px;
+	grid-template-columns: repeat(3, minmax(50px, 1fr));
+	grid-template-rows: repeat(6, auto);
+	@media (any-hover: hover){
+		&:hover{
+			&:focus{
+				background: $bgBox;
+			}
+		}
+	}
+	.color{
+		color: #161515;
+		@extend %text;
+	}
+}
+//-----------------------------colorBox/color-element
+
+
+
+//-----------------------------priceBox/price-element
+.priceBox {
+	text-align: left;
+	background: $bgBox;
+	.price{
+		color: #161515;
+		@extend %text;
+		cursor: pointer;
+	}
+}
+//-----------------------------priceBox/price-element
+
+
+.accordionList {
+	list-style-type: none;
+	background: #ffffff;
+	border-radius: 27px;
+	}
+	.accordionItem {
+		margin-bottom: 16px;
+		background: #fff;
+		border-radius:7px;
+	}
+	.button {
+		position: relative;
+		border-bottom: 1px solid #00000066;
+		@extend %titleCategory;
+		width: 100%;
+		background: #fff;
+		text-align: left;
+		cursor: pointer;
+	}
+	.accordionCollapse{
+		height: 0px;
+		overflow: hidden;
+		transition: height 0.3s;
+	}
+	.accordionCollapse.open{
+		height:auto;
+		padding-bottom: 10px;
+	}
+	.accordionLink:focus{
+		color: $mainColor;
+	}
+	.boxColor{
+		width: 15px;
+		height: 15px;
+		border: 1px solid #000;
+	}
+.inner{
+	@extend %displayComplect;
+	width: fit-content;
+	gap: 3px;
+	margin: 10px 10px 10px 3px;
+	transition: all 0.3s ease 0s;
+	cursor: pointer;
+	@media (any-hover: hover){
+		&:hover{
+			transition: all 0.3s ease 0s;
+			color:#fff;
+			&:focus{
+				background: $bgBox;
+			}
+		}
+	}
+}
+.boxInput{
+	padding: 2px;
+	margin: 10px 10px 10px 3px;
+	
+}

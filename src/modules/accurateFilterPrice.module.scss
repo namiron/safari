@@ -1,0 +1,35 @@
+@import '../common/variables.scss';
+@import '../null.scss';
+
+//--------------------------------------------vars
+$colorBtn:#f80c5b;
+$colorBtnHover:#ED165F;
+
+//--------------------------------------------vars
+
+
+.accurateFilterPrice {
+	max-width: 220px;
+	@extend %displayComplect;
+}
+.inputBox {
+	max-width: 60px;
+	border: 1px solid #0000007e;
+}
+.to {
+	color: #0000007e;
+}
+
+.apply{
+	padding: 6px 5px;
+	background: $colorBtn;
+	max-width: 60px;
+	color: #fff;
+	transition: all 0.3s ease 0s;
+	@media (any-hover: hover){
+		&:hover{
+	transition: all 0.3s ease 0s;
+			background: $colorBtnHover;
+		}
+	}
+}

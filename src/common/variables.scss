@@ -5,9 +5,76 @@ $maxWidth: 1440px;
 $containerWidth:1140px;
 $mainColor:#ED165F;
 $cartTextColor:#686868;
+$containerHome:1300px;
+$ContainerNavigation:1600px;
 
 
 //=====================================variables
+
+//=======================================================================global
+
+
+%wrapper {
+  @extend %displayFlexDirection;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+%main {
+  flex: 1 1 auto;
+}
+
+%images {
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+%lock{
+  display: none;
+}
+%onLock{
+  display: block;
+}
+
+
+%container {
+  max-width:$containerWidth;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @media (max-width:768px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+%containerHome {
+  max-width:$containerHome;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @media (max-width:768px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+%containerPages {
+  max-width:$ContainerNavigation;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @media (max-width:768px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+//=======================================================================global
+
 //======================================================window
 .laptop{
 
@@ -55,7 +122,7 @@ $cartTextColor:#686868;
 %titlePage{
   line-height: 1.5;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 800;
   font-size: calc(20px + (5 + 5 * 0.8) * ((100vw - 320px)/ 1440));
 }
 //-------------------------------------------------CART-TEXTS
@@ -149,9 +216,54 @@ $cartTextColor:#686868;
 			}
 		}
   }
-  
 }
+%linkFilters {
+	text-transform: capitalize;
+	padding-bottom: 10px;
+	border-radius:10px;
+	position: relative;
+	width: fit-content;
+	cursor: pointer;
+	font-weight: 600;
+	font-size: 16px;
+	transition: width 0.3s ease 0s, color 0.6s ease 0s;
+	padding: 10px 10px 10px 0px;
+  &::before {
+		transition: width 0.3s ease 0s;
+		content: '';
+		position: absolute;
+		bottom: 0%;
+		left: 50%; 
+		transform: translateX(-50%); /* Центрирование относительно родительского элемента */
+		width: 0%; 
+		height: 3px;
+		background: $mainColor;
+	}
 
+	@media (any-hover: hover) {
+		&:hover {
+			transition: width 0.3s ease 0s, color 0.6s ease 0s;
+			color: $mainColor;
+			&::before {
+					content: '';
+					width: 100%; 
+			}
+		}
+	}
+  @media (max-width:768px){
+    &::before {
+      transition: width 0.3s ease 0s;
+      content: '';
+      position: absolute;
+      bottom: 0%;
+      left: 50%; 
+      transform: translateX(-50%); /* Центрирование относительно родительского элемента */
+      width: 0%; 
+      height: 3px;
+      background: white;
+    }
+  }
+}
 //-------------------------------------------------------------------------------------------------animation
 
 
@@ -224,47 +336,6 @@ $cartTextColor:#686868;
 
 
 //--------------------------------------------TEXTS
-//=======================================================================global
-
-
-%wrapper {
-  @extend %displayFlexDirection;
-  height: 100vh;
-  overflow-x: hidden;
-}
-
-%main {
-  flex: 1 1 auto;
-}
-
-%images {
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
-%lock{
-  display: none;
-}
-%onLock{
-  display: block;
-}
-
-
-%container {
-  max-width:$containerWidth;
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-
-  @media (max-width:768.98px) {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-}
-
-//=======================================================================global
 
 //=============================================display
 %displayFlexDirection {
@@ -295,8 +366,12 @@ $cartTextColor:#686868;
 
 %gridComplect {
   display: grid;
-  grid-template: 1fr / minmax(150px, 250px) 1fr;
+  grid-template: 1fr / minmax(120px, 300px) 1fr;
   height: 100%;
+  @media (max-width:768px) {
+    grid-template-columns: repeat(1,1fr);
+    grid-template-rows: repeat(2,auto);
+  }
 }
 %gridColumn {
   display: grid;
@@ -318,6 +393,13 @@ $cartTextColor:#686868;
     grid-template-rows: repeat(16, minmax(280px, 1fr));
 
   }
+  %gridFilterPrice {
+    width: 100%;
+    display: grid;
+    gap:15px;
+    grid-template-columns: repeat(4, minmax(50px, 55px));
+    grid-template-rows: repeat(5, auto);
+    }
 }
 %gridFooter {
   display: grid;

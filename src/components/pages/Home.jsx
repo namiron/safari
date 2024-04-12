@@ -4,14 +4,10 @@ import ProductList from './../ProductList/ProductList';
 import Slider from '../../construction/Slider/Slider';
 import { TITLE } from '../../common/constants';
 import { SUB_TITLE } from './../../common/constants';
-import { useCustomProductList, useExportAllProducts } from './../../hooks/untils';
 
 
-const Home = (props) => {
-  //----------------------------------
-  useExportAllProducts()
-  const productList = useCustomProductList()
-  //----------------------------------
+const Home = ({ productList }) => {
+
 
   return (
     <>
