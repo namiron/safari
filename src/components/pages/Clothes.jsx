@@ -1,7 +1,5 @@
 import React from 'react';
 import '../../wrapper.scss'
-import { Nav } from './../../common/Buttons';
-import clothes from '../../modules/clothes.module.scss'
 import { Nav, Up } from './../../common/Buttons';
 import clothes from '../../modules/clothes.module.scss'
 import { CLOTHES } from '../../common/constants';
