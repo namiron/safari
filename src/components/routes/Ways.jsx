@@ -34,10 +34,14 @@ const Ways = () => {
 				</Suspense>} />
 				<Route path={ROUTES.clothes} element={<Suspense fallback={<Skeleton />}><ClothesPage />
 				</Suspense>} />
-				<Route path={ROUTES.shoes} element={<Suspense fallback={<Skeleton />}><ShoesPage />
+				<Route path={ROUTES.shoes} element={<Suspense fallback={<Skeleton />}><ShoesPage productList={productList} />
 				</Suspense>} />
+<<<<<<< Updated upstream
 				<Route path={ROUTES.accessories} element={<Suspense fallback={<Skeleton />}><AccessoriesPage /></Suspense>} />
 
+=======
+				<Route path={ROUTES.accessories} element={<Suspense fallback={<Skeleton />}><AccessoriesPage productList={productList} /></Suspense>} />
+>>>>>>> Stashed changes
 				<Route path={ROUTES.cart} element={<Suspense fallback={<SkeletonCart />}><CartPage />
 				</Suspense>} />
 				<Route path={ROUTES.favorite} element={<Suspense fallback={<SkeletonCart />}><FavoritePage />
