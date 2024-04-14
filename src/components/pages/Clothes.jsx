@@ -6,7 +6,7 @@ import { CLOTHES } from '../../common/constants';
 import Filters from '../../construction/Filters/Filters';
 
 
-const Clothes = ({ productList }) => {
+const Clothes = ({ productList, searchList }) => {
 	//-----------------------------------------
 	const clothesList = productList.filter(el => el.group === CLOTHES)
 	console.log('clothesList:');
@@ -20,7 +20,7 @@ const Clothes = ({ productList }) => {
 				<div className={clothes.heading}>
 					<h1 className={clothes.title}>{CLOTHES}</h1>
 				</div>
-				<Filters productList={productList} clothesList={clothesList} />
+				<Filters productList={productList} clothesList={searchList.length > 0 ? searchList : clothesList} />
 			</div>
 		</section>
 	)

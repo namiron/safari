@@ -1,0 +1,47 @@
+@import '../common/variables.scss';
+@import '../null.scss';
+
+
+//------------------------------vars
+
+//------------------------------vars
+
+
+//-------------------------------------global
+
+.itemBody {
+    max-width: 413px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #E1E1E1;
+}
+
+.boxImage {
+    max-width: 100%;
+    @extend %images;
+    transition: all 0.2s ease 0s;
+    position: relative;
+
+    img:hover {
+        transition: all 0.2s ease 0s;
+
+        transform: scale(1.1);
+    }
+}
+
+//-------------------------------------global
+
+
+.contentBox {
+    position: absolute;
+    bottom: 5%;
+    left: 2%;
+    width: 100px;
+    height: 30px;
+    background: #fff;
+    width: fit-content;
+    padding: 7px;
+    border-radius: 20px;
+}
+
+.text {}

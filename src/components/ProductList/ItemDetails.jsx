@@ -73,6 +73,7 @@ const ItemDetails = () => {
 									<span className={details.price}>{price}$</span>
 								</div>
 								<div className={details.btnBox}>
+
 									<FavoriteBtn />
 									<AddToCart />
 								</div>
