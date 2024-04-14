@@ -31,7 +31,7 @@ $mainColor:#ED165F;
 	}
 }
 .facebook {
-	font-weight: 600;
+	font-weight: 500;
 	@extend %display;
 	gap: 15px;
 	transition: all 0.3s ease 0s;
@@ -43,7 +43,7 @@ $mainColor:#ED165F;
 	}
 }
 .twitter {
-	font-weight: 600;
+	font-weight: 500;
 	@extend %display;
 	gap: 10px;
 	transition: all 0.3s ease 0s;
@@ -65,7 +65,7 @@ $mainColor:#ED165F;
 	}
 }
 .instagram {
-	font-weight: 600;
+	font-weight: 500;
 	@extend %display;
 	gap: 10px;
 	transition: all 0.3s ease 0s;

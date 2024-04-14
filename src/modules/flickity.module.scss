@@ -43,7 +43,7 @@ img{
 }
 }
 .exploreBlock{
-	@include adaptive-value('padding-top',60,25,1440);
+	@include adaptive-value('padding-top', 60, 25, 1440);
 	gap: 10px;
 	@extend %displayFlexDirection;
 	align-items: center;
