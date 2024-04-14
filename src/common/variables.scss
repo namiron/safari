@@ -6,7 +6,7 @@ $containerWidth:1140px;
 $mainColor:#ED165F;
 $cartTextColor:#686868;
 $containerHome:1300px;
-$ContainerNavigation:1600px;
+$ContainerNavigation: 1440px;
 
 
 //=====================================variables
@@ -90,12 +90,12 @@ $ContainerNavigation:1600px;
 //--------------------------------------------TEXTS
 %title {
   font-size: calc(25px + (5 + 5 * 0.8) * ((100vw - 320px)/ 1440));
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.5;
 }
 %text {
   line-height: 1.5;
-  font-weight: 600;
+  font-weight: 500;
   font-size: calc(16px + (1 + 1 * 0.8) * ((100vw - 320px)/ 1440));
 }
 
@@ -116,13 +116,13 @@ $ContainerNavigation:1600px;
 %titleCategory {
   line-height: 1.5;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 500;
   font-size: calc(18px + (2 + 2 * 0.8) * ((100vw - 320px)/ 1440));
 }
 %titlePage{
   line-height: 1.5;
   text-transform: uppercase;
-  font-weight: 800;
+  font-weight: 500;
   font-size: calc(20px + (5 + 5 * 0.8) * ((100vw - 320px)/ 1440));
 }
 //-------------------------------------------------CART-TEXTS
@@ -169,7 +169,7 @@ $ContainerNavigation:1600px;
 	position: relative;
 	width: fit-content;
 	cursor: pointer;
-	font-weight: 600;
+  font-weight: 500;
 	font-size: 16px;
 	transition: width 0.3s ease 0s, color 0.6s ease 0s;
 	padding: 10px;
@@ -224,7 +224,7 @@ $ContainerNavigation:1600px;
 	position: relative;
 	width: fit-content;
 	cursor: pointer;
-	font-weight: 600;
+  font-weight: 400;
 	font-size: 16px;
 	transition: width 0.3s ease 0s, color 0.6s ease 0s;
 	padding: 10px 10px 10px 0px;
@@ -366,7 +366,7 @@ $ContainerNavigation:1600px;
 
 %gridComplect {
   display: grid;
-  grid-template: 1fr / minmax(120px, 300px) 1fr;
+  grid-template: 1fr / minmax(180px, 250px) 1fr;
   height: 100%;
   @media (max-width:768px) {
     grid-template-columns: repeat(1,1fr);
@@ -375,21 +375,24 @@ $ContainerNavigation:1600px;
 }
 %gridColumn {
   display: grid;
-  gap:20px;
+  gap: 50px;
   grid-template-columns: repeat(4, minmax(280px, 1fr));
   grid-template-rows: repeat(4, auto);
 
-  @media (max-width:1315px) {
+  @media (max-width:1440px) {
+      column-gap: 20px;
+      row-gap: 0px;
     grid-template-columns: repeat(3, minmax(280px, 1fr));
     grid-template-rows: repeat(8, auto);
   }
-  @media (max-width:925px) {
+@media (max-width:1024px) {
+  column-gap: 20px;
+  row-gap: 0px;
     grid-template-columns: repeat(2, minmax(280px, 1fr));
     grid-template-rows: repeat(12, auto);
   }
-  @media (max-width:610px) {
-    justify-items: center;
-    grid-template-columns: repeat(1, minmax(280px, 1fr));
+@media (max-width:425px) {
+  grid-template-columns: repeat(1, minmax(230px, 1fr));
     grid-template-rows: repeat(16, minmax(280px, 1fr));
 
   }

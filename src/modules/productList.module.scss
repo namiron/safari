@@ -9,7 +9,8 @@
 }
 .productListHolder {
 	@extend %gridColumn;
-	@include adaptive-value('margin-bottom',50,25,1440);
+		@include adaptive-value('margin-bottom', 60, 30, 1440);
+			@include adaptive-value('margin-top', 60, 30, 1440);
 }
 //------------------------------global
 
