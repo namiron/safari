@@ -41,16 +41,21 @@ const Ways = () => {
 			</Suspense>} >
 				<Route index element={<Suspense fallback={<Skeleton />}> <HomePage productList={productList} />
 				</Suspense>} />
-				<Route path={ROUTES.log_in} element={<Suspense fallback={<p>Loading...</p>}><SignInPage />
-				</Suspense>} />
 				<Route path={ROUTES.clothes} element={<Suspense fallback={<Skeleton />}><ClothesPage productList={productList} />
 				</Suspense>} />
 				<Route path={ROUTES.shoes} element={<Suspense fallback={<Skeleton />}><ShoesPage productList={productList} />
 				</Suspense>} />
+<<<<<<< HEAD
 
 				<Route path={ROUTES.accessories} element={<Suspense fallback={<Skeleton />}><AccessoriesPage /></Suspense>} />
 
 				<Route path={ROUTES.accessories} element={<Suspense fallback={<Skeleton />}><AccessoriesPage productList={productList} /></Suspense>} />
+=======
+				<Route path={ROUTES.accessories} element={<Suspense fallback={<Skeleton />}><AccessoriesPage productList={productList} />
+				</Suspense>} />
+				<Route path={ROUTES.log_in} element={<Suspense fallback={<p>Loading...</p>}><SignInPage />
+				</Suspense>} />
+>>>>>>> master
 				<Route path={ROUTES.cart} element={<Suspense fallback={<SkeletonCart />}><CartPage />
 				</Suspense>} />
 				<Route path={ROUTES.favorite} element={<Suspense fallback={<SkeletonCart />}><FavoritePage />

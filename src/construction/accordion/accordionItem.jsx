@@ -1,20 +1,28 @@
 import React, { useState } from 'react';
 import accordion from './accordion.module.scss';
 
-
-const AccordionItem = ({ faqItem, id, handleFilterChange, productList }) => {
-	//---------------------------------------------
-
+const AccordionItem = ({ faqItem, id, handleFilterChange, productList, productListWrapperRef }) => {
 	const [openId, setOpenId] = useState(null);
+
 	const clickAccordion = (id) => {
 		setOpenId(openId === id ? null : id);
 	};
 
 	const handleFilterCategory = (category) => {
-		const filterProduct = productList.filter(el => el.category === category)
-		handleFilterChange(filterProduct)
+		const filterProduct = productList.filter(el => el.category === category);
+		handleFilterChange(filterProduct);
+
+		if (window.innerWidth < 425) {
+			setOpenId(null);
+			if (productListWrapperRef.current) {
+				const productListOffset = productListWrapperRef.current.offsetTop + productListWrapperRef.current.offsetHeight;
+				window.scrollTo({ top: productListOffset, behavior: 'smooth' });
+
+				console.log('productListOffset:', productListOffset);
+			}
+
+		}
 	}
-	//---------------------------------------------
 
 	return (
 		<li className={accordion.accordionItem}>
@@ -29,6 +37,5 @@ const AccordionItem = ({ faqItem, id, handleFilterChange, productList }) => {
 		</li>
 	);
 };
-
 
 export default AccordionItem;

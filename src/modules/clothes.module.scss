@@ -3,75 +3,30 @@
 
 
 //-----------------------------global
-.clothes{}
-<<<<<<< HEAD
-//-----------------------------global
-=======
+.clothes {}
 
-.container{
-	@include adaptive-value('padding-top',30,15,1440);
+
+.container {
+	@include adaptive-value('padding-top', 30, 15, 1440);
 	@extend %containerPages;
 }
+
 //-----------------------------/global
 
 //--------------------------------------titles
 .heading {
-	@include adaptive-value('padding-top',20,10,1440);
-	@include adaptive-value('padding-bottom',60,30,1440);
+	@include adaptive-value('padding-top', 20, 10, 1440);
+		@include adaptive-value('padding-bottom', 60, 30, 1440);
 }
+
 .title {
 	@extend %titlePage;
 }
-.subTitle{
+.subTitle {
 	@extend %titleCategory;
 }
-.titleCategory{
+.titleCategory {
 	@extend %titleCategory;
 }
+
 //--------------------------------------titles
-
-//------------------------------------------------body
-
-.clothesBody {
-	@extend %gridComplect;
-	@include adaptive-value('gap',20,10,1440);
-
-}
-.clothesFilters {
-
-@include adaptive-value('padding-bottom',65,20,1440);
-}
-
-//--------------------------------------------------------------clothesList
-.clothesList { 
-	@extend %displayFlexDirection;
-	@include adaptive-value('margin-top',-22,-24,1440);
-
-
-}
-.clothesListSelectBody{
-	padding-bottom: 15px;
-	align-self: flex-end;
-	@media (max-width:768px) {
-	align-self: flex-start;
-	}
-}
-
-.listBodyWrapper{
-	border-top: 1px solid #00000066;
-}
-.clothesFiltersBody{
-
-	border-top: 1px solid #00000066;
-}
-.clothesFiltersItemBody{
-
-}
-
-
-
-//--------------------------------------------------------------/clothesList
-
-//------------------------------------------------/body
-
->>>>>>> clothes

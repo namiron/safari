@@ -28,6 +28,14 @@ export const ACCESSORIES = 'Accessories'
 
 //-----------------------------------------------header
 
+//-------------------------------------------------footer
+export const FACEBOOK = 'Facebook'
+
+export const TWITTER = 'Twitter'
+
+export const INSTAGRAM = 'Instagram'
+//-------------------------------------------------footer
+
 
 //---------------------------------------pagination
 

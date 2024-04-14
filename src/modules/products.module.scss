@@ -10,12 +10,14 @@
 //====================================PRODUCTITEM
 
 .itemBody {
-	max-width: 296px;
-
+	@include adaptive-value('width', 280, 230, 1440);
 }
 .boxImage{
-	@include adaptive-value('height',420,280,1440);
-	position: relative;
+	@include adaptive-value('height', 350, 280, 1440);
+		border-radius: 20px;
+		border: 1px solid var(--grey-200, #E1E1E1);
+		position: relative;
+		overflow: hidden;
 }
 .curtain {
 	background: #00000044;

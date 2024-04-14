@@ -12,13 +12,18 @@
  .flickity-viewport {
 	overflow: hidden;
 	position: relative;
-	height: auto;
+	height: 500px;
  }
  
  .flickity-slider {
 	position: absolute;
 	width: 100%;
 	height: 100%;
+ }
+ 
+
+ .slide{
+	max-width: 500px;
  }
  
  /* draggable */
@@ -85,8 +90,12 @@
 	transform: translateY(-50%);
  }
  
- .flickity-prev-next-button.previous { display: none; }
- .flickity-prev-next-button.next {display: none; }
+ .flickity-prev-next-button.previous {
+	left: 0%;
+   }
+ .flickity-prev-next-button.next {
+	right: 0%;
+ }
  /* right to left */
  .flickity-rtl .flickity-prev-next-button.previous {
 	left: auto;
@@ -110,6 +119,7 @@
  .flickity-page-dots {
 	position: absolute;
 	width: 100%;
+	bottom: -7%;
 	padding: 0;
 	margin: 0;
 	list-style: none;
@@ -124,7 +134,7 @@
 	width: 10px;
 	height: 10px;
 	margin: 0 12px;
-	outline: 2px solid white;
+	outline: 2px solid #000;
 	border-radius: 50%;
 	opacity: 0.25;
 	cursor: pointer;
@@ -133,3 +143,4 @@
  .flickity-page-dots .dot.is-selected {
 	opacity: 1;
  }
+

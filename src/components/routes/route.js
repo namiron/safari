@@ -9,7 +9,7 @@ export const ROUTES = {
 	cart: '/cart',
 	favorite: '/favorite',
 	accessories: '/accessories',
-	item_details: '/item_details',
+	item_details: '/item_details/:id',
 	not_found: '*'
 }
 

@@ -18,10 +18,8 @@ export const SkeletonItem = () => {
 
 
 
-
 export const Skeleton = (props) => {
-	const skeletonListQuantity = 16
-
+	const skeletonListQuantity = 16;
 
 	return (
 		<section className={skeleton.skeletonHome}>
@@ -31,14 +29,13 @@ export const Skeleton = (props) => {
 					<h3 className={`${skeleton.subTitle} ${skeleton.skeletonLoader}`}></h3>
 				</div>
 				<div className={skeleton.skeletonList}>
-					{
-						skeletonComponents(skeletonListQuantity, <SkeletonItem />)
-					}
+					{Array.from({ length: skeletonListQuantity }, (_, index) => <SkeletonItem key={index} />)}
 				</div>
 			</div>
 		</section>
-	)
-}
+	);
+};
+
 
 
 export const SkeletonCart = () => {

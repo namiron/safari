@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import clothes from '../../modules/clothes.module.scss'
+import React, { useState, useRef } from 'react';
+import filterStyles from '../../modules/filterStyles.module.scss';
 import ProductList from '../../components/ProductList/ProductList';
 import Accordion from './../accordion/accordion';
 import { faqCategory, faqColor, faqPrice, faqSize } from './../accordion/accordionData';
@@ -10,25 +10,21 @@ import AccordionItemWidthSize from '../accordion/accordionItemWidthSize';
 import { CustomSelect } from './../select/Select';
 import { options } from '../../common/constants';
 
-
-
-
-
 const Filters = ({ productList, clothesList }) => {
-	//--------------------------
-	const [filterProductList, setFilterProductList] = useState([])
-	console.log(filterProductList);
+	const [filterProductList, setFilterProductList] = useState([]);
+	const productListWrapperRef = useRef(null);
+	console.log('productListWrapperRef:', productListWrapperRef);
+
 	const handleFilterChange = (filterArray) => {
-		setFilterProductList(filterArray)
+		setFilterProductList(filterArray);
 	}
-	//--------------------------
 
 	return (
-		<div className={clothes.clothesBody}>
-			<div className={clothes.clothesFilters}>
-				<div className={clothes.clothesFiltersItemBody}>
+		<div className={filterStyles.clothesBody}>
+			<div className={filterStyles.clothesFilters}>
+				<div className={filterStyles.clothesFiltersItemBody}>
 					<Accordion faqList={faqCategory} handleFilterChange={handleFilterChange} productList={productList}>
-						<AccordionItem />
+						<AccordionItem productListWrapperRef={productListWrapperRef} />
 					</Accordion>
 					<Accordion faqList={faqSize} handleFilterChange={handleFilterChange} productList={productList}>
 						<AccordionItemWidthSize />
@@ -41,15 +37,16 @@ const Filters = ({ productList, clothesList }) => {
 					</Accordion>
 				</div>
 			</div>
-			<div className={clothes.clothesList}>
-				<div className={clothes.clothesListSelectBody}>
+			<div className={filterStyles.clothesList}>
+				<div className={filterStyles.clothesListSelectBody}>
 					<CustomSelect options={options} placeholder='Sort by:' isClearable isSearchable={false} />
 				</div>
-				<div className={clothes.listBodyWrapper}>
+				<div className={filterStyles.listBodyWrapper} ref={productListWrapperRef}>
 					<ProductList array={filterProductList.length ? filterProductList : clothesList} />
 				</div>
 			</div>
 		</div>
 	)
 }
+
 export default Filters;
