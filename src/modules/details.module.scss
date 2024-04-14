@@ -1,0 +1,148 @@
+@import '../common/variables.scss';
+@import '../null.scss';
+
+//----------------------------------------vars
+$mainColor:#ED165F;
+$headerBg:#F5F5F5;
+//----------------------------------------vars
+
+
+//--------------------------------global
+.detailsItem {
+
+
+}
+.detailsContainer {
+	@include adaptive-value('padding-top',40,15,1440);
+	@extend %container;
+	@include adaptive-value('gap',30,15,1440);
+}
+.heading {
+	@include adaptive-value('padding-bottom',40,15,1440);
+}
+.detailsWrapper{
+	@extend %display;
+	@media (max-width:768px) {
+		flex-direction: column;
+		align-items:center;
+		height: 100%;
+	}
+}
+//--------------------------------global
+.title {
+	text-transform: uppercase;
+	font-size: calc(25px + (5 + 5 * 0.8) * ((100vw - 320px)/ 1440));
+	font-weight: 600;
+	line-height: 1.5;
+}
+.detailsSlider {
+	@include adaptive-value('width',500,280,1440);
+
+}
+.detailsInfo {
+	background: $headerBg;
+	flex: 1 1 auto;
+	border-right: 10px;
+	overflow: hidden;
+	height: 100%;
+}
+.infoContainer{
+	@include adaptive-value('padding-top',20,10,1440);
+	@include adaptive-value('padding-bottom',20,10,1440);
+	@include adaptive-value('padding-left',10,5,1440);
+	@include adaptive-value('padding-right',10,5,1440);
+}
+//----------------------------------------------------------Color
+.colorBox {
+	background: #fff;
+	margin: 5px;
+	padding-bottom: 10px;
+}
+
+.colorRow {
+	width: fit-content;
+	cursor: pointer;
+	@extend %display;
+	gap: 10px;
+	padding: 0px 5px;
+	margin-right: 10px;
+	border-right: 1px solid #000;
+
+}
+
+.colorsHeading {
+	padding: 0px 5px 5px;
+}
+.titleColors {
+	@extend %text;
+	text-transform: uppercase;
+}
+
+.box{
+	width: 10px;
+	height: 20px;
+	padding-right: 20px;
+	margin-right: 5px;
+	
+}
+.colorElement {
+	padding: 5px;
+}
+
+//----------------------------------------------------------Color
+
+
+//----------------------------------------------------------size
+
+.sizeBox {
+	background: #fff;
+	margin: 5px;
+	padding-bottom: 10px;
+}
+.sizeRow {
+	width: fit-content;
+	cursor: pointer;
+	@extend %display;
+	gap: 10px;
+	padding: 0px 5px;
+	margin-right: 10px;
+
+}
+.sizeElement {
+	padding: 5px;
+}
+.sizeHeading{
+	@extend %display;
+	padding: 0px 5px 5px;
+}
+.titleSize{
+	@extend %text;
+	text-transform: uppercase;
+}
+//----------------------------------------------------------size
+
+.priceBox {
+	text-transform: uppercase;
+}
+.priceHeading{
+	@extend %display;
+	gap: 10px;
+	padding: 0px 5px 5px;
+}
+.titlePrice{
+	 line-height: 1.5;
+	font-weight: 600;
+	font-size: calc(20px + (5 + 5 * 0.8) * ((100vw - 320px)/ 1440));
+	text-transform: uppercase;
+}
+.price{
+	line-height: 1.5;
+	font-weight: 600;
+	font-size: calc(20px + (5 + 5 * 0.8) * ((100vw - 320px)/ 1440));
+	text-transform: uppercase;
+}
+.btnBox {
+	@extend %display;
+	@include adaptive-value('gap',20,10,1440);
+	
+}

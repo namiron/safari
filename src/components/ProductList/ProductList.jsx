@@ -5,8 +5,8 @@ import ProductItem from './ProductItem';
 
 
 const ProductList = ({ array }) => {
-	const FIRST_PAGE = 1
 
+	const FIRST_PAGE = 1
 	//----------------------------------------------------------const
 	const totalItems = array.length
 	const [currentPage, setCurrentPage] = useState(FIRST_PAGE)
@@ -22,7 +22,7 @@ const ProductList = ({ array }) => {
 			<>
 				{
 					itemsToShow.map(({ image, title, price, id }) => {
-						return <ProductItem image={image} title={title} price={price} key={id} />
+						return <ProductItem image={image} title={title} price={price} id={id} key={id} />
 					})
 				}
 			</>

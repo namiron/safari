@@ -1,0 +1,54 @@
+@import '../common/variables.scss';
+@import '../null.scss';
+
+
+//----------------------------------------vars
+$SliderBG:#ED165F;
+//----------------------------------------vars
+
+
+//------------------------------global
+.sliderBody {
+	@include adaptive-value('padding-top',35,20,1440);
+	@include adaptive-value('padding-bottom',40,20,1440);
+}
+
+.container{
+	position: relative;
+	@extend %container;
+}
+
+//------------------------------global
+
+.SliderTextBg{
+	position: absolute;
+	top:0%;
+	left:7%;
+	margin: 0 auto;
+	max-width: 1000px;
+	@extend %images;
+	@include adaptive-value('padding-left',10,5,1440);
+	@include adaptive-value('padding-right',10,5,1440);
+
+}
+.slide{
+	display: flex;
+	justify-content: center;
+width: 100%;
+img{
+	width: 45%;
+	object-fit: cover;
+	
+}
+}
+.exploreBlock{
+	@include adaptive-value('padding-top',60,25,1440);
+	gap: 10px;
+	@extend %displayFlexDirection;
+	align-items: center;
+}
+.explore{
+	text-align: center;
+	color:white;
+	@extend %text;
+}
