@@ -53,3 +53,12 @@
 	text-align: center;
 	@extend %text;
 }
+
+.exploreCategory {
+	@include adaptive-value('margin-top', 100, 50, 1440);
+	@extend %gridItemCategory;
+	@include adaptive-value('gap', 20, 10, 1440);
+	@include adaptive-value('margin-bottom', 100, 50, 1440);
+}
+
+.advertisingSlider {}

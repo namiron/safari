@@ -1,16 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, } from 'react';
 import { IoSearchSharp } from "react-icons/io5";
 import searchStyle from '../../modules/search.module.scss'
 import '../../wrapper.scss'
 
-const Search = ({ productList }) => {
+const Search = ({ productList, handleSearchList }) => {
 
+	const [search, setSearch] = useState('')
 
-
+	const handleSearchForTitles = (e) => {
+		setSearch(e.target.value)
+	}
+	const filterProductList = (array = []) => {
+		const newProductList = array.filter(el => el.title.includes(search))
+		handleSearchList(newProductList)
+		setSearch('')
+		console.log('newProductList:', newProductList);
+	}
+	console.log('search:', search);
 	return (
 		<div className={searchStyle.search}>
-			<input type="text" name="search" className={searchStyle.searchInput} placeholder='Search...' />
-			<button className={searchStyle.searchIcon}><IoSearchSharp className='iconSearch' /></button>
+			<input type="text" name="search" value={search} onChange={handleSearchForTitles} className={searchStyle.searchInput} placeholder='Search...' />
+			<button onClick={() => filterProductList(productList)} className={searchStyle.searchIcon}><IoSearchSharp className='iconSearch' /></button>
 		</div>
 	);
 }

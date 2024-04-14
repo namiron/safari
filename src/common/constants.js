@@ -1,3 +1,7 @@
+import accessories from '../image/Accessories.png'
+import shoes from '../image/shoes.png'
+import clothes from '../image/clothes.png'
+
 export const BASE_URL = 'https://65a10699600f49256fb0bd21.mockapi.io/healthier/v1/safari'
 
 //--------------------------------btn
@@ -53,6 +57,25 @@ export const SUB_TITLE = ` Here, every shopper will find the product of their dr
 Join our family of shoppers and bring your dreams to life with our online store!`
 
 
+export const EXPLORE_MORE_ARRAY = [
+	{
+		id: 1,
+		image: accessories,
+		name: 'accessories'
+	},
+	{
+		id: 2,
+		image: clothes,
+		name: 'clothes'
+	},
+	{
+		id: 2,
+		image: shoes,
+		name: 'shoes'
+	},
+
+
+]
 
 //----------------------------------home
 

@@ -9,7 +9,7 @@ import '../../wrapper.scss'
 import { useClickOutSide } from '../../hooks/untils';
 import { ACCESSORIES, CLOSES, HOME_HEADER, SHOES } from './../../common/constants';
 
-const Header = ({ productList }) => {
+const Header = ({ productList, handleSearchList }) => {
 
 	const [isOpen, setOpen] = React.useState(false);
 	const mouseRef = React.useRef(null);
@@ -32,7 +32,7 @@ const Header = ({ productList }) => {
 				</nav>
 				<Logo />
 				<nav className={header.navigation}>
-					<Search productList={productList} />
+					<Search productList={productList} handleSearchList={handleSearchList} />
 					<UserIcon />
 					<CartIcon />
 					<FavoriteIcon />

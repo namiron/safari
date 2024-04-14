@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense, useState } from 'react';
 import { Routes, Route } from 'react-router-dom'
 import { ROUTES } from './route';
 import { Skeleton } from '../skeleton/Skeletons';
@@ -24,28 +24,30 @@ const TermsPage = lazy(() => import('./../pages/informations/Terms'))
 //----------------------------------------------------------
 
 
-
-
-
 const Ways = () => {
 	//---------------------------------------------------
 	useExportAllProducts()
 	const productList = useCustomProductList()
+	const [searchList, setSearchList] = useState([])
 
+	const handleSearchList = (searchFilterArray) => {
+		setSearchList(searchFilterArray)
+	}
+	console.log('searchList:', searchList);
 	//---------------------------------------------------
 
 
 	return (
 		<Routes>
-			<Route path={ROUTES.layout} element={<Suspense fallback={<Skeleton />}><LayoutPage productList={productList} />
+			<Route path={ROUTES.layout} element={<Suspense fallback={<Skeleton />}><LayoutPage productList={productList} handleSearchList={handleSearchList} />
 			</Suspense>} >
-				<Route index element={<Suspense fallback={<Skeleton />}> <HomePage productList={productList} />
+				<Route index element={<Suspense fallback={<Skeleton />}> <HomePage productList={productList} searchList={searchList} />
 				</Suspense>} />
-				<Route path={ROUTES.clothes} element={<Suspense fallback={<Skeleton />}><ClothesPage productList={productList} />
+				<Route path={ROUTES.clothes} element={<Suspense fallback={<Skeleton />}><ClothesPage productList={productList} searchList={searchList} />
 				</Suspense>} />
-				<Route path={ROUTES.shoes} element={<Suspense fallback={<Skeleton />}><ShoesPage productList={productList} />
+				<Route path={ROUTES.shoes} element={<Suspense fallback={<Skeleton />}><ShoesPage productList={productList} searchList={searchList} />
 				</Suspense>} />
-				<Route path={ROUTES.accessories} element={<Suspense fallback={<Skeleton />}><AccessoriesPage productList={productList} />
+				<Route path={ROUTES.accessories} element={<Suspense fallback={<Skeleton />}><AccessoriesPage productList={productList} searchList={searchList} />
 				</Suspense>} />
 				<Route path={ROUTES.log_in} element={<Suspense fallback={<p>Loading...</p>}><SignInPage />
 				</Suspense>} />
