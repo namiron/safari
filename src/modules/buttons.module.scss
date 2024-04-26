@@ -113,6 +113,9 @@ $colorBtn:#ED165F;
 }
 
 .addToCart{
+	@extend %display;
+		gap: 5px;
+		justify-content: center;
 	background: white;
 	padding: 8px 15px;
 	text-transform: uppercase;
@@ -123,24 +126,72 @@ $colorBtn:#ED165F;
 	@media (any-hover: hover){
 		&:hover{
 	transition: all 0.3s ease 0s;
-			color:$colorBtn;
-			
+color: $colorBtn;
 		}
 	}
 }
-.favorite{
+.favorite {
 	background: white;
 	width: fit-content;
 	font-size: 20px;
 	padding: 5px 8px;
 	transition: all 0.3s ease 0s;
-	@media (any-hover: hover){
-		&:hover{
-	transition: all 0.3s ease 0s;
+@media (any-hover: hover) {
+		&:hover {
+			transition: all 0.3s ease 0s;
 			background: $colorBtn;
 		}
 	}
 }
+
+//-----------------------------------------tabs
+.ToFavorite {
+	@extend %display;
+	gap: 5px;
+	justify-content: center;
+	background: $colorBtn;
+	color: #fff;
+	font-weight: 600;
+	padding: 8px 15px;
+	border-radius: 3px;
+	width: fit-content;
+	@include adaptive-font(16, 14, 1440);
+	transition: all 0.3s ease 0s;
+
+	@media (any-hover: hover) {
+		&:hover {
+			transition: all 0.3s ease 0s;
+			background: #fff;
+				color: $colorBtn;
+				outline: 2px solid $colorBtn;
+			}
+			}
+			}
+			
+			.buy {
+				@extend %display;
+				gap: 5px;
+				justify-content: center;
+	background: $colorBtn;
+	@include adaptive-font(16, 14, 1440);
+		padding: 8px 15px;
+		text-transform: uppercase;
+		width: fit-content;
+		border-radius: 3px;
+		font-weight: 600;
+		color: #fff;
+		transition: all 0.3s ease 0s;
+	
+		@media (any-hover: hover) {
+			&:hover {
+				transition: all 0.3s ease 0s;
+				background: #fff;
+				color: $colorBtn;
+				outline: 2px solid $colorBtn;
+		}
+	}
+}
+//-----------------------------------------tabs
 .heart{
 	color:$colorBtn;
 	transition: all 0.3s ease 0s;

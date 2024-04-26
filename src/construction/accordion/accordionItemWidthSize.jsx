@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import accordion from './accordion.module.scss';
 
-const AccordionItemWidthSize = ({ faqItem, id, productList, handleFilterChange }) => {
+const AccordionItemWidthSize = ({ faqItem, id, productList, handleFilterChange, productListWrapperRef }) => {
 	//------------------------------------------------
 	const [openId, setOpenId] = useState(null);
 
@@ -12,6 +12,22 @@ const AccordionItemWidthSize = ({ faqItem, id, productList, handleFilterChange }
 	const clickAccordion = (id) => {
 		setOpenId(openId === id ? null : id);
 	};
+
+	const handleFilterCategory = (category) => {
+		const filterProduct = productList.filter(el => el.category === category);
+		handleFilterChange(filterProduct);
+
+		if (window.innerWidth < 425) {
+			setOpenId(null);
+			if (productListWrapperRef.current) {
+				const productListOffset = productListWrapperRef.current.offsetTop + productListWrapperRef.current.offsetHeight;
+				window.scrollTo({ top: productListOffset, behavior: 'smooth' });
+
+				console.log('productListOffset:', productListOffset);
+			}
+
+		}
+	}
 	//------------------------------------------------
 
 	return (
@@ -23,7 +39,7 @@ const AccordionItemWidthSize = ({ faqItem, id, productList, handleFilterChange }
 				<div className={`${accordion[faqItem.className]}`}>
 					{Array.isArray(faqItem.answer) && faqItem.answer.map((el, index) => (
 						<div onClick={() => filterForSize(el)} className={accordion.inner} key={index}>
-							<p className={`${accordion[faqItem.question.toLowerCase()]}`}>{el}</p>
+							<p onClick={() => handleFilterCategory(el)} className={`${accordion[faqItem.question.toLowerCase()]}`}>{el}</p>
 						</div>
 					))}
 				</div>

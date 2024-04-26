@@ -1,0 +1,24 @@
+@import '../common/variables.scss';
+@import '../null.scss';
+
+
+//----------------------------------------vars
+$SliderBG: #ED165F;
+//----------------------------------------vars
+
+
+//------------------------------global
+
+.imageBox {
+	max-width: 400px;
+	@include adaptive-value('padding-bottom', 50, 30, 1440);
+	@extend %images;
+}
+
+.boxNavigationSlide {
+	max-width: 200px;
+	border-radius: 10px;
+	@extend %images;
+}
+
+//------------------------------global

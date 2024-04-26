@@ -1,0 +1,129 @@
+//-------------------------------var
+$colorBtn: #ED165F;
+//-------------------------------var
+
+
+
+//---------------------global
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+    margin: 50px auto;
+
+}
+
+//---------------------global
+
+//---------------------------------------CommentsList
+.heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 30px auto;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.subTitle {
+    color: #0000006d;
+}
+
+.reviewList {
+    padding: 10px 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reviewItem {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px;
+    gap: 10px;
+    width: 100%;
+    border-bottom: 1px solid #2929295a;
+
+}
+
+.time {
+    color: #0000006d;
+    font-size: 14px;
+}
+
+.reviewName {
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+}
+
+//---------------------------------------/CommentsList
+
+
+//--------------------------------------CreateComments
+.formBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+
+
+.starsRating {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #2929295a;
+}
+
+.OverallRating {}
+
+
+
+.box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 10px;
+}
+
+.text {}
+
+.textReview {}
+
+.publish {
+    background: $colorBtn;
+    color: #fff;
+    width: 100%;
+    max-width: 200px;
+    padding: 10px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid $colorBtn ;
+}
+
+.blockInput {
+    border: 2px solid #2929295a;
+    border-radius: 5px;
+
+}
+
+.blockTextarea {
+    border: 2px solid #2929295e;
+    border-radius: 5px;
+}
+
+//--------------------------------------/CreateComments

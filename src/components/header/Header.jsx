@@ -10,24 +10,35 @@ import { useClickOutSide } from '../../hooks/untils';
 import { ACCESSORIES, CLOSES, HOME_HEADER, SHOES } from './../../common/constants';
 
 const Header = ({ productList, handleSearchList }) => {
-
+	//---------------------------------------------
 	const [isOpen, setOpen] = React.useState(false);
 	const mouseRef = React.useRef(null);
 
-	useClickOutSide(mouseRef, () => {
-		if (isOpen) setTimeout(() => { setOpen(false) }, 50)
-	});
+	const closeMenu = () => {
+		if (isOpen) setOpen(false);
+	};
 
+
+	const handleMenuClick = () => {
+		if (window.innerWidth <= 968) {
+			closeMenu();
+		}
+	};
+
+	useClickOutSide(mouseRef, () => {
+		if (isOpen) setTimeout(() => setOpen(false), 50);
+	});
+	//---------------------------------------------
 
 	return (
 		<header className={header.header}>
 			<div className={header.container}>
 				<nav className={`${header.menu} ${isOpen ? header.active : ''}`} ref={mouseRef}>
 					<ul className={header.list}>
-						<li className={header.item}><Link to='/' className={header.link}>{HOME_HEADER}</Link></li>
-						<li className={header.item}><Link to='/clothes' className={header.link}>{CLOSES}</Link></li>
-						<li className={header.item}><Link to='/shoes' className={header.link}>{SHOES}</Link></li>
-						<li className={header.item}><Link to='/accessories' className={header.link}>{ACCESSORIES}</Link></li>
+						<li className={header.item}><Link to='/' className={header.link} onClick={handleMenuClick}>{HOME_HEADER}</Link></li>
+						<li className={header.item}><Link to='/clothes' className={header.link} onClick={handleMenuClick}>{CLOSES}</Link></li>
+						<li className={header.item}><Link to='/shoes' className={header.link} onClick={handleMenuClick}>{SHOES}</Link></li>
+						<li className={header.item}><Link to='/accessories' className={header.link} onClick={handleMenuClick}>{ACCESSORIES}</Link></li>
 					</ul>
 				</nav>
 				<Logo />
@@ -43,4 +54,4 @@ const Header = ({ productList, handleSearchList }) => {
 	);
 };
 
-export default Header
+export default Header;

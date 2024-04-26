@@ -33,7 +33,6 @@ const Ways = () => {
 	const handleSearchList = (searchFilterArray) => {
 		setSearchList(searchFilterArray)
 	}
-	console.log('searchList:', searchList);
 	//---------------------------------------------------
 
 

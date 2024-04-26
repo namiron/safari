@@ -1,0 +1,31 @@
+@import '../common/variables.scss';
+@import '../null.scss';
+
+//--------------------------var
+$colorBg: #F79E1B;
+//--------------------------var
+
+
+
+.contentBox {}
+
+.contentInner {
+
+    display: flex;
+    width: fit-content;
+    @include adaptive-value('gap', 5, 3, 1440);
+    align-items: center;
+}
+
+.iconElement {}
+
+.iconStar {
+    @include adaptive-font(18, 14, 1440);
+}
+
+.quantityRating {
+    color: $colorBg;
+    @include adaptive-font(18, 14, 1440);
+
+
+}

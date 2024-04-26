@@ -105,11 +105,18 @@ export const Close = () => {
 export const AddToCart = () => {
 	return (
 		<Link to='/cart' className={btn.addToCart}>
-			add to cart <FaCartPlus style={{ color: '#ED165F' }} />
+			Add to cart <FaCartPlus style={{ color: '#ED165F' }} />
 		</Link>
 	);
 };
 
+export const Buy = () => {
+	return (
+		<Link to='/cart' className={btn.buy}>
+			Add to cart <FaCartPlus className={btn.buyIcons} />
+		</Link>
+	);
+};
 
 export const FavoriteBtn = () => {
 	return (
@@ -125,6 +132,12 @@ export const GoToFavorite = () => {
 		}} /> {MOVE_TO_FAVORITES} </Link>
 	)
 }
+export const ToFavorite = () => {
+	return (
+		<Link to='/favorite' className={btn.ToFavorite}><MdFavoriteBorder className={btn.favoriteIcon} /> {MOVE_TO_FAVORITES} </Link>
+	)
+}
+
 
 export const Remove = () => {
 	return (

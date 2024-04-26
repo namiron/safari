@@ -1,0 +1,499 @@
+@import '../common/variables.scss';
+@import '../null.scss';
+
+
+//----------------------------------------vars
+$colorPrice: #F79E1B;
+$colorOldPrice: #787A80;
+$colorActive: #ED165F;
+$border: #9A9CA5;
+$border: #9A9CA5;
+$borderActive: #ED165F;
+
+%titlesStyle {
+    color: #000;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+//----------------------------------------vars
+
+//-----------------------------------tabsWrapper
+.tabsContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.tabButtons {
+    display: flex;
+    gap: 12px;
+    @include adaptive-value('padding-bottom', 20, 10, 1440);
+    @include adaptive-value('padding-top', 20, 10, 1440);
+    border-bottom: 1px solid #9A9CA5;
+    @include adaptive-value('margin-bottom', 30, 15, 1440);
+
+}
+
+.tabContent {}
+
+.tabBtn {
+    background: transparent;
+    max-width: 124px;
+    border: 1px solid $border;
+    @include adaptive-value('padding-left', 10, 5, 1440);
+    @include adaptive-value('padding-right', 10, 5, 1440);
+    @include adaptive-value('padding-bottom', 10, 5, 1440);
+    @include adaptive-value('padding-top', 10, 5, 1440);
+    border-radius: 4px;
+    color: #9A9CA5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tabBtn.active {
+    color: #9A9CA5;
+    border: 1px solid $borderActive;
+}
+
+//-----------------------------------tabsWrapper
+
+
+//------------------------------global
+.wrapper {
+    @extend %display;
+    @include adaptive-value('gap', 100, 50, 1440);
+    @include adaptive-value('padding-bottom', 100, 50, 1440);
+
+    @media (max-width:1024px) {
+        flex-direction: column;
+    }
+}
+
+.swiper {
+    max-width: 500px;
+}
+
+.description {
+    align-self: stretch;
+}
+
+.holder {}
+
+
+//------------------------------global
+.priceRatingBox {
+    @extend %displayComplect;
+    @include adaptive-value('padding-top', 25, 15, 1440);
+    @include adaptive-value('padding-bottom', 25, 15, 1440);
+}
+
+.priceDiscontBox {
+    @extend %displayComplect;
+    width: fit-content;
+    @include adaptive-value('gap', 10, 5, 1440);
+}
+
+.newPrice {
+    @include adaptive-font(24, 18, 1440);
+    color: $colorPrice;
+}
+
+.oldPrice {
+    @include adaptive-font(18, 14, 1440);
+    color: $colorOldPrice;
+    font-weight: 400;
+    line-height: 150%;
+    text-decoration: line-through;
+}
+
+.discont {
+    padding: 2px 8px;
+    background: $colorPrice;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.ratingBox {}
+
+
+//---------------------------------color
+
+.colorBox {}
+
+.headingColor {}
+
+.titleColorBlock {
+    border-top: 1px solid $border;
+    padding-top: 10px;
+    @extend %titlesStyle;
+}
+
+.colorRow {
+    @extend %display;
+    gap: 10px;
+    padding: 12px 0px;
+}
+
+.colorElement {
+    @extend %display;
+    gap: 10px;
+    cursor: pointer;
+    padding: 3px;
+
+    &:active {
+        outline: 2px solid $colorActive;
+        border-radius: 4px;
+    }
+}
+
+.colorBlock {}
+
+.colorName {}
+
+//---------------------------------/color
+
+
+//---------------------------------size
+
+.sizeBox {}
+
+.headingSize {}
+
+.titleSize {
+    border-top: 1px solid $border;
+    padding-top: 10px;
+    @extend %titlesStyle;
+}
+
+.sizeRow {
+    @extend %display;
+    gap: 10px;
+    padding: 12px 0px;
+}
+
+.sizeElement {
+    @extend %display;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+
+    &:active {
+        outline: 2px solid $colorActive;
+        border-radius: 4px;
+    }
+}
+
+.sizeIcon {
+    @extend %display;
+    gap: 10px;
+    @include adaptive-value('margin-left', 240, 15, 1440);
+    padding: 12px 0px;
+}
+
+.sizeText {}
+
+//---------------------------------/size
+
+
+//---------------------------------count
+
+
+.countContainer {
+    border-top: 1px solid $border;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.countInner {
+    @extend %displayComplect;
+
+    @media (max-width:768px) {
+        align-items: flex-start;
+        gap: 10px;
+        flex-direction: column;
+    }
+
+}
+
+.countBlock {
+    @extend %display;
+    gap: 10px;
+    padding: 5px 10px;
+    border: 1px solid $border;
+    border-radius: 5px;
+}
+
+.arrowBlock {}
+
+.arrowPlus {}
+
+//---------------------------------/count
+
+//----------------------------------delivery
+
+
+.delivery {
+    border-top: 1px solid $border;
+    padding-top: 10px;
+
+}
+
+.headingDelivery {}
+
+.title {
+    @extend %titlesStyle;
+}
+
+.deliveryInner {}
+
+.deliveryText {
+    @include adaptive-value('padding-top', 20, 10, 1440);
+    @include adaptive-value('padding-bottom', 20, 10, 1440);
+}
+
+.deliveryContainer {}
+
+.typesList {
+    @extend %gridItems;
+    border-bottom: 1px solid $border;
+}
+
+.typeItem {
+    @include adaptive-value('padding-top', 12, 6, 1440);
+    @include adaptive-value('padding-bottom', 12, 6, 1440);
+    @include adaptive-font(16, 14, 1440);
+    font-weight: 700;
+    word-wrap: break-word;
+    color: $colorOldPrice;
+}
+
+.deliveryListRow {
+    @extend %gridItems;
+    border-bottom: 1px solid $border;
+
+}
+
+.deliveryItem {
+    word-wrap: break-word;
+    @include adaptive-value('padding-top', 12, 6, 1440);
+    @include adaptive-value('padding-bottom', 12, 6, 1440);
+
+}
+
+//----------------------------------/delivery
+
+//-------------------------------------return
+
+.return {}
+
+//-------------------
+.headingReturn {
+    @include adaptive-value('padding-top', 12, 6, 1440);
+    @include adaptive-value('padding-bottom', 12, 6, 1440);
+}
+
+.returnTitle {
+    @extend %titlesStyle;
+}
+
+.returnInner {}
+
+.returnText {
+    @include adaptive-value('padding-top', 20, 10, 1440);
+    @include adaptive-value('padding-bottom', 20, 10, 1440);
+}
+
+.returnList {}
+
+.returnItem {
+    padding-bottom: 5px;
+}
+
+//-------------------------------------return
+
+//-------------------------------------share
+
+.share {
+    @extend %displayComplect;
+    width: fit-content;
+    @include adaptive-value('padding-bottom', 30, 15, 1440);
+}
+
+.shareText {
+    @include adaptive-value('padding-top', 20, 10, 1440);
+    @include adaptive-value('padding-bottom', 20, 10, 1440);
+    @extend %titlesStyle;
+
+}
+
+.pays {
+    @extend %display;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+//-------------------------------------share
+
+
+
+//-----------------------------------------------------------------TabsThree
+.wrapper {}
+
+.container {
+    @extend %container;
+}
+
+.heading {
+    @include adaptive-value('padding-top', 10, 5, 1440);
+    @include adaptive-value('padding-bottom', 10, 5, 1440);
+    border-bottom: 1px solid $colorOldPrice;
+}
+
+.title {
+    @extend %textFlickity;
+
+}
+
+.inner {
+    @include adaptive-value('padding-top', 20, 10, 1440);
+    @include adaptive-value('padding-bottom', 20, 10, 1440);
+}
+
+//-------------------------------------description
+.descriptionBox {
+    @extend %displayFlexDirection;
+    @include adaptive-value('gap', 10, 5, 1440);
+}
+
+.description {
+    @extend %textFlickity;
+    font-weight: 600;
+}
+
+.descriptionText {
+    line-height: 1.2;
+}
+
+.store {
+    color: $colorActive;
+    @extend %text;
+    text-transform: uppercase;
+
+}
+
+//-------------------------------------/description
+
+//-------------------------------------specifications
+
+
+.specificationsBox {}
+
+.specifications {
+    @extend %textFlickity;
+    font-weight: 600;
+}
+
+.specificationsList {
+    @include adaptive-value('padding-top', 20, 10, 1440);
+    @include adaptive-value('padding-bottom', 20, 10, 1440);
+}
+
+.specificationsItem {
+    @extend %displayFlexDirection;
+    @include adaptive-value('padding-top', 10, 5, 1440);
+    @include adaptive-value('padding-bottom', 10, 5, 1440);
+    @include adaptive-value('gap', 10, 5, 1440);
+}
+
+.specificationsSubTitle {
+    @extend %textFlickity;
+    font-weight: 600;
+}
+
+//-------------------------------------/specifications
+
+//-------------------------------------purchase
+
+.purchaseBox {
+    @include adaptive-value('padding-top', 20, 10, 1440);
+    @include adaptive-value('padding-bottom', 20, 10, 1440);
+}
+
+.purchase {
+    @extend %textFlickity;
+    font-weight: 600;
+}
+
+.purchaseList {}
+
+.purchaseItem {
+    @extend %displayFlexDirection;
+    @include adaptive-value('padding-top', 10, 5, 1440);
+    @include adaptive-value('padding-bottom', 10, 5, 1440);
+    @include adaptive-value('gap', 10, 5, 1440);
+}
+
+.purchaseSubTitle {
+    @extend %textFlickity;
+    font-weight: 600;
+}
+
+.packageContentsBox {}
+
+//-------------------------------------/purchase
+
+//-------------------------------------contentsList
+
+.contentsList {}
+
+.contentsItem {
+    @extend %textFlickity;
+    font-weight: 600;
+    @extend %displayFlexDirection;
+    @include adaptive-value('padding-top', 10, 5, 1440);
+    @include adaptive-value('padding-bottom', 10, 5, 1440);
+    @include adaptive-value('gap', 10, 5, 1440);
+}
+
+//-------------------------------------/contentsList
+
+//-------------------------------------.instruction
+
+
+.instructionBox {
+    @extend %displayFlexDirection;
+    @include adaptive-value('padding-top', 10, 5, 1440);
+    @include adaptive-value('padding-bottom', 10, 5, 1440);
+    @include adaptive-value('gap', 10, 5, 1440);
+}
+
+.instructionTitle {
+    @extend %textFlickity;
+    font-weight: 600;
+}
+
+.inctuctionText {
+    line-height: 1.2;
+}
+
+//-------------------------------------.instruction
+
+
+//-------------------------------------/warranty
+
+.warrantyBox {}
+
+.warrantyTitle {
+    @extend %textFlickity;
+    font-weight: 600;
+}
+
+.warrantyText {
+    line-height: 1.2;
+}
+
+//-------------------------------------/warranty
+
+
+//--------------------------------------------------------------------/TabsThree

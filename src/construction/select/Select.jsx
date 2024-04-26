@@ -1,7 +1,6 @@
 import Select from 'react-select'
 import styled from 'styled-components'
 
-const bg = '#ED165F'
 
 export const CustomSelect = styled(Select).attrs({
 	styles: {
@@ -16,11 +15,20 @@ export const CustomSelect = styled(Select).attrs({
 		option: (provided, state) => ({
 			...provided,
 			cursor: 'pointer',
-			background: '#fff',
-			'&:hover': {
-				background: '#ED165F',
-				color: '#fff'
-			},
+		  background: state.isSelected ? '#ED165F' : '#fff', // Изменение цвета для активной категории
+		  color: state.isSelected ? '#fff' : '#000',          // Изменение цвета текста для активной категории
+		  '&:hover': {
+			  background: '#ED165F',
+			  color: '#fff'
+		  },
+		  '&:focus': {
+			  background: '#ED165F',
+			  color: '#fff'
+		  }
 		}),
-	},
+		singleValue: (provided, state) => ({
+			...provided,
+			color: state.isFocused ? '#ED165F' : '#000'
+		})
+	}
 })``;
