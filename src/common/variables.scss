@@ -5,7 +5,7 @@ $maxWidth: 1440px;
 $containerWidth:1140px;
 $mainColor:#ED165F;
 $cartTextColor:#686868;
-$containerHome:1300px;
+$containerHome: 1440px;
 $ContainerNavigation: 1440px;
 
 
@@ -99,6 +99,11 @@ $ContainerNavigation: 1440px;
   line-height: 1.5;
   font-weight: 500;
   font-size: calc(16px + (1 + 1 * 0.8) * ((100vw - 320px)/ 1440));
+}
+%textFlickity {
+  line-height: 1.5;
+  font-weight: 500;
+  font-size: calc(13px + (1 + 1 * 0.8) * ((100vw - 320px)/ 1440));
 }
 
 %categoryLink{
@@ -377,20 +382,32 @@ $ContainerNavigation: 1440px;
     }
     
     %gridItemCategory {
+      justify-content: center;
       display: grid;
+      gap: 10%;
       grid-template-columns: repeat(3, minmax(280px, 300px));
       grid-template-rows: repeat(1, auto);
+      @media (max-width:1024px) {
+          grid-template-columns: repeat(2, minmax(280px, 300px));
+          grid-template-rows: repeat(2, auto);
+        }
     
       @media (max-width:768px) {
         grid-template-columns: repeat(2, minmax(280px, 300px));
         grid-template-rows: repeat(2, auto);
       }
     
-      @media (max-width:425px) {
+@media (max-width:569px) {
         justify-content: center;
         grid-template-columns: repeat(1, minmax(280px, 300px));
         grid-template-rows: repeat(3, auto);
       }
+}
+%gridItems {
+  display: grid;
+  gap: 6%;
+  grid-template-columns: repeat(3, minmax(25px, 1fr));
+  grid-template-rows: repeat(1, auto);
 }
 %gridColumn {
   display: grid;
@@ -412,7 +429,7 @@ $ContainerNavigation: 1440px;
   }
 @media (max-width:425px) {
   grid-template-columns: repeat(1, minmax(230px, 1fr));
-    grid-template-rows: repeat(16, minmax(280px, 1fr));
+
   }
   
   %gridFilterPrice {
@@ -425,19 +442,19 @@ $ContainerNavigation: 1440px;
 }
 %gridFooter {
   display: grid;
-  grid-template-columns: repeat(5, auto);
+  grid-template-columns: repeat(4, auto);
   grid-template-rows: repeat(1, auto);
 
   @media (max-width:1024px) {
     align-items:center;
     justify-items: center;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(3, auto);
     grid-template-rows: repeat(2, auto);
   }
   @media (max-width:768px) {
     justify-items: normal;
-    grid-template-columns: repeat(3, auto);
-    grid-template-rows: 1fr;
+    grid-template-columns: repeat(2, auto);
+      grid-template-rows: repeat(4, auto);
   }
 
   @media (max-width:425px) {

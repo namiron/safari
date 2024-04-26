@@ -47,9 +47,12 @@ img{
 	gap: 10px;
 	@extend %displayFlexDirection;
 	align-items: center;
+	img {
+			width: 15px;
+		}
 }
 .explore{
 	text-align: center;
 	color:white;
-	@extend %text;
+	@extend %textFlickity;
 }

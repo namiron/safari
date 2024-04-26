@@ -7,6 +7,7 @@ import Contact from './../pages/informations/Contact';
 import { Link } from 'react-router-dom'
 import Terms from '../pages/informations/Terms';
 import { Email } from '../../construction/forms/Email';
+import { FACEBOOK, INSTAGRAM, TWITTER } from '../../common/constants';
 
 
 const Footer = (props) => {
@@ -14,24 +15,24 @@ const Footer = (props) => {
 		<section className={footer.footer} >
 			<div className={footer.container}>
 				<Logo />
-				<div className={footer.informations}>
+				{/* <div className={footer.informations}>
 					<Link to='/about_us'><AboutUs /></Link>
 					<Link to='/contact'><Contact /></Link>
 					<Link to='/terms'><Terms /></Link>
-				</div>
+				</div> */}
 				<div className={footer.social}>
-					<Facebook />
-					<Twitter />
-					<Instagram />
+					<Facebook text={FACEBOOK} />
+					<Twitter text={TWITTER} />
+					<Instagram text={INSTAGRAM} />
 				</div>
 				<Email />
-				<p className={footer.thank}>
+				<div className={footer.thank}>
 					thank you for visiting my site!
 					<a href="mailto:samsonov.oleksandr95@gmail.com">
 						<br />
 						samsonov.oleksandr95@gmail.com
 					</a>
-				</p>
+				</div>
 
 			</div>
 		</section >

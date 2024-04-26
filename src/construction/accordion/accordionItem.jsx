@@ -16,13 +16,16 @@ const AccordionItem = ({ faqItem, id, handleFilterChange, productList, productLi
 			setOpenId(null);
 			if (productListWrapperRef.current) {
 				const productListOffset = productListWrapperRef.current.offsetTop + productListWrapperRef.current.offsetHeight;
-				window.scrollTo({ top: productListOffset, behavior: 'smooth' });
+				const headerHeight = document.querySelector('header').offsetHeight; // Получаем высоту шапки
+				const scrollToOffset = productListOffset - headerHeight; // Вычисляем конечное значение для прокрутки
+				window.scrollTo({ top: scrollToOffset, behavior: 'smooth' });
 
 				console.log('productListOffset:', productListOffset);
+				console.log('scrollToOffset:', scrollToOffset);
 			}
-
 		}
 	}
+
 
 	return (
 		<li className={accordion.accordionItem}>

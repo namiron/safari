@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import accordion from './accordion.module.scss';
 import AccurateFilterPrice from './../../common/AccurateFilterPrice';
 
-const AccordionItemWidthInput = ({ faqItem, id, handleFilterChange, productList }) => {
+const AccordionItemWidthInput = ({ faqItem, id, handleFilterChange, productList, }) => {
 	//----------------------------------------------------
 	const [openId, setOpenId] = useState(null);
 

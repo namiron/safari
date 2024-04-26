@@ -14,9 +14,7 @@ const Search = ({ productList, handleSearchList }) => {
 		const newProductList = array.filter(el => el.title.includes(search))
 		handleSearchList(newProductList)
 		setSearch('')
-		console.log('newProductList:', newProductList);
 	}
-	console.log('search:', search);
 	return (
 		<div className={searchStyle.search}>
 			<input type="text" name="search" value={search} onChange={handleSearchForTitles} className={searchStyle.searchInput} placeholder='Search...' />

@@ -9,7 +9,6 @@ import Filters from '../../construction/Filters/Filters';
 const Clothes = ({ productList, searchList }) => {
 	//-----------------------------------------
 	const clothesList = productList.filter(el => el.group === CLOTHES)
-	console.log('clothesList:');
 	//-----------------------------------------
 
 	return (
