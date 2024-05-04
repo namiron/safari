@@ -6,8 +6,9 @@ import ProductItem from './ProductItem';
 
 const ProductList = ({ array }) => {
 
-	const FIRST_PAGE = 1
+
 	//----------------------------------------------------------const
+	const FIRST_PAGE = 1
 	const totalItems = array.length
 	const [currentPage, setCurrentPage] = useState(FIRST_PAGE)
 	const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE)

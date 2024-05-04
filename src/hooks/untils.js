@@ -44,8 +44,21 @@ export const useCustomProductList = () => {
 	return productList;
 }
 
+export const useCustomUsers = () => {
+	const users = useSelector((state) => state.users.users)
+
+	return users
+}
+
+export const useCustomCurrentUser = () => {
+	const currentUser = useSelector((state) => state.users.currentUser)
+	return currentUser
+}
 
 
+export const useCustomTriggerModalWindow = () => {
+	const [isModalWindow, setModalWindow] = useState(false);
 
+	return { isModalWindow, setModalWindow }
 
-
+}

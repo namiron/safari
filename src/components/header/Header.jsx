@@ -1,23 +1,64 @@
-import React from 'react';
-import { Link } from 'react-router-dom'
+import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import Logo from './../../construction/Logo';
+import { useDispatch } from 'react-redux';
 import { CartIcon, FavoriteIcon, UserIcon } from '../../construction/Links';
 import { GiHamburgerMenu } from "react-icons/gi";
-import header from '../../modules/header.module.scss'
+import header from '../../modules/header.module.scss';
 import Search from '../../construction/forms/Search';
-import '../../wrapper.scss'
-import { useClickOutSide } from '../../hooks/untils';
+import '../../wrapper.scss';
+import { useClickOutSide, useCustomTriggerModalWindow, useCustomUsers } from '../../hooks/untils';
 import { ACCESSORIES, CLOSES, HOME_HEADER, SHOES } from './../../common/constants';
+import { getUsers, createUsersOnServer, comparisonsData } from '../../redux/reducers/userSlice';
+import CustomModalUser from '../../construction/CustomModal/CustomModalUser';
 
 const Header = ({ productList, handleSearchList }) => {
-	//---------------------------------------------
-	const [isOpen, setOpen] = React.useState(false);
-	const mouseRef = React.useRef(null);
+
+	//----------------------------------
+	const mouseRef = useRef(null);
+	const [isOpen, setOpen] = useState(false);
+
+	const [userData, setUserData] = useState({});
+	const dispatch = useDispatch();
+
+	const { isModalWindow, setModalWindow } = useCustomTriggerModalWindow()
+
+	const users = useCustomUsers()
+
+	useEffect(() => {
+		if (Object.keys(userData).length > 0) {
+			dispatch(createUsersOnServer(userData));
+		}
+		dispatch(getUsers());
+	}, [userData, dispatch]);
+
+	const handleCloseWindow = () => {
+		setModalWindow(!isModalWindow);
+	};
+
+	const handleSetUser = (data) => {
+		setUserData({
+			name: data.firstName,
+			surname: data.lastName,
+			email: data.email,
+			password: data.password,
+			signUp: data.signUp,
+			privacy: data.privacy,
+			cart: [],
+			favorite: []
+		});
+	};
+
+	const handleLogInUser = (data) => {
+		dispatch(comparisonsData({
+			email: data.email,
+			password: data.password
+		}));
+	};
 
 	const closeMenu = () => {
 		if (isOpen) setOpen(false);
 	};
-
 
 	const handleMenuClick = () => {
 		if (window.innerWidth <= 968) {
@@ -28,7 +69,9 @@ const Header = ({ productList, handleSearchList }) => {
 	useClickOutSide(mouseRef, () => {
 		if (isOpen) setTimeout(() => setOpen(false), 50);
 	});
-	//---------------------------------------------
+
+	//----------------------------------
+
 
 	return (
 		<header className={header.header}>
@@ -44,9 +87,10 @@ const Header = ({ productList, handleSearchList }) => {
 				<Logo />
 				<nav className={header.navigation}>
 					<Search productList={productList} handleSearchList={handleSearchList} />
-					<UserIcon />
+					<UserIcon handleCloseWindow={handleCloseWindow} users={users} />
 					<CartIcon />
 					<FavoriteIcon />
+					<CustomModalUser isModalWindow={isModalWindow} handleCloseWindow={handleCloseWindow} handleLogInUser={handleLogInUser} handleSetUser={handleSetUser} />
 				</nav>
 				<button type="burgerBtn" onClick={() => setOpen(!isOpen)} className={header.burgerBtn}><GiHamburgerMenu className='burgerIcon' /></button>
 			</div>

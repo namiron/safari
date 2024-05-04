@@ -20,24 +20,7 @@ $mainColor:#ED165F;
 
 .menu{ 
 	@extend %menuBurger;
-	//------------------------nav
-	// @media (max-width:768.98px){
-	// 	position: fixed;
-	// 	top:0%;
-	// 	left:-100%;
-	// 	width:200px;
-	// 	height:100%;
-	// 	background: $mainColor;
-	// 	z-index: 150;
-	// 	gap:10px;
-	// 	transition: left 0.8s ease 0s;
-	// 	@include adaptive-value('padding-top',50,30,768);
-	// 	display: flex;
-	// 	flex-direction: column;
-	// 	align-items: center;
-	// 	border-bottom-right-radius: 10px;
-	// 	border-top-right-radius: 10px;
-	// }
+
 }
 .menu.active{
 	transition: left 0.6s ease 0s;
@@ -46,23 +29,13 @@ $mainColor:#ED165F;
 .list { //------------------------ul
 
 	@extend %listMenuBurger;
-	// @extend %displayComplect;
-	// @media (max-width:768.98px){
-	// 	flex-direction: column;
-	// 	align-items:flex-start;
-	// 	gap: 20px;
-	// 	color: white;
-	// 	font-size: 25px;
-	// }
+
 }
 .item {
 }
 .link {
 	@extend %linkMenuBurgerItem;
-	// @extend %link;
-	// @media (max-width:768.98px){
-	// 	font-size: 20px;
-	// }
+
 	}
 //----------------------------------------------
 
@@ -72,13 +45,163 @@ $mainColor:#ED165F;
 }
 .burgerBtn {
 	@extend %burgerBtn;
-	// width: fit-content;
-	// display: none;
-	// @media (max-width:768.98px){
-	// 	display: block;
-	// 	margin-left: 12px;
-	// }
+}
+
+//-----------------------------------
+
+.userIcon {
+
+	transition: all 0.3s ease 0s;
+	height: 15px;
+
+	@media (any-hover: hover) {
+		&:hover {
+			color: $mainColor ;
+		}
+	}
 }
 
 
+.userComponent {
+	position: relative;
+}
 
+
+.userDataBox {
+	position: absolute;
+	margin-top: 5px;
+	top: 100%;
+	@include adaptive-value('padding-top', 25, 10, 1440);
+	@include adaptive-value('padding-bottom', 25, 10, 1440);
+	@include adaptive-value('padding-left', 25, 10, 1440);
+	@include adaptive-value('padding-right', 25, 10, 1440);
+	background: #fff;
+	border: 1px solid $mainColor;
+	border-radius: 7px;
+	z-index: 100;
+	opacity: 0;
+	transform: translateY(-10px);
+	visibility: hidden;
+	transition: 0.3s;
+}
+
+.active {
+	transform: translateY(0);
+	opacity: 1;
+	visibility: visible;
+	transition: 0.3s;
+}
+
+.userDataList {}
+
+.userDataImage {
+	@extend %displayCenter;
+	background: transparent;
+	border: 1px solid #000;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	@extend %images;
+}
+
+.userDataItem {
+	@extend %display;
+	word-wrap: wrap;
+	gap: 5px;
+	@include adaptive-font(18, 12, 1440);
+	@include adaptive-value('padding-top', 5, 2, 1440);
+	@include adaptive-value('padding-bottom', 5, 2, 1440);
+}
+
+.userDataName {
+	@extend %display;
+	word-wrap: wrap;
+	gap: 5px;
+	@include adaptive-font(18, 12, 1440);
+	@include adaptive-value('padding-top', 5, 2, 1440);
+	@include adaptive-value('padding-bottom', 5, 2, 1440);
+	border-bottom: 1px solid #dad9d9;
+
+}
+
+.userDataEmail {
+	@extend %display;
+	word-wrap: wrap;
+	gap: 5px;
+	@include adaptive-font(18, 12, 1440);
+	@include adaptive-value('padding-top', 5, 2, 1440);
+	@include adaptive-value('padding-bottom', 5, 2, 1440);
+	border-bottom: 1px solid #dad9d9;
+}
+
+.buttonsBox {
+	@extend %displayFlexDirection;
+	@include adaptive-value('gap', 10, 5, 1440);
+
+}
+
+.login {
+	padding: 2px;
+	@extend %display;
+	@include adaptive-font(18, 12, 1440);
+	gap: 10px;
+	text-align: left;
+	color: $mainColor;
+	@extend %linkUserButtons;
+	@include adaptive-value('width', 100, 50, 1440);
+
+}
+
+.exit {
+	padding: 2px;
+	@extend %display;
+	gap: 10px;
+	text-align: left;
+	color: $mainColor;
+	@extend %linkUserButtons;
+	@include adaptive-value('width', 100, 50, 1440);
+	@include adaptive-font(18, 12, 1440);
+}
+
+
+.iconLogIn {
+	min-width: 15px;
+	min-height: 10px;
+}
+
+.iconExit {
+	min-width: 15px;
+	min-height: 10px;
+}
+
+.cartIcon {
+	transition: all 0.3s ease 0s;
+
+	@media (any-hover: hover) {
+		&:hover {
+			color: $mainColor ;
+		}
+	}
+}
+
+.favoriteIcon {
+
+	transition: all 0.3s ease 0s;
+
+	@media (any-hover: hover) {
+		&:hover {
+			color: $mainColor ;
+		}
+	}
+}
+
+
+.CartBox {
+	@extend %display;
+	gap: 10px;
+}
+
+.FavoriteBox {
+	@extend %display;
+	gap: 10px;
+}

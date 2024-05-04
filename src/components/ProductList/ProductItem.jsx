@@ -5,7 +5,10 @@ import { AddToCart, FavoriteBtn } from './../../common/Buttons';
 import global from '../../modules/global.module.scss';
 import product from '../../modules/products.module.scss';
 
+
+
 const ProductItem = ({ image, title, price, id }) => {
+
 	return (
 		<div className={product.itemBody}>
 			<div className={product.boxImage}>
@@ -13,7 +16,7 @@ const ProductItem = ({ image, title, price, id }) => {
 					<div className={product.curtain}>
 						<div className={product.box}>
 							<FavoriteBtn />
-							<AddToCart />
+							<AddToCart /> 
 						</div>
 					</div>
 					<Image classNameBox='imageBox' image={image[0]} />
@@ -28,3 +31,4 @@ const ProductItem = ({ image, title, price, id }) => {
 };
 
 export default ProductItem;
+

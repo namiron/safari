@@ -25,12 +25,11 @@ const Home = ({ productList, searchList }) => {
           </div>
           <ProductList array={searchList.length > 0 ? searchList : productList} />
           <div className={home.exploreCategory}>
-            {
-              EXPLORE_MORE_ARRAY.map((el,) => {
-                return <ItemCategory key={el.id} image={el.image} text={el.name} name={el.name} />
-              })
-            }
+            {EXPLORE_MORE_ARRAY.map((el, index) => (
+              <ItemCategory key={index} image={el.image} text={el.name} name={el.name} />
+            ))}
           </div>
+
           <div className={home.advertisingSlider}></div>
         </div>
       </section>
