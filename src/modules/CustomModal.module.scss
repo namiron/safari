@@ -1,9 +1,14 @@
-//-------------------------------var
-$colorBtn: #ED165F;
-//-------------------------------var
+@import '../common/variables.scss';
+@import '../null.scss';
 
 
 
+//-------------------vars
+
+$closeColor: #6868689b;
+$mainColor: #ED165F;
+$closeHover: #686868ef;
+//-------------------vars
 .modal {
 	position: fixed;
 	top: 0%;
@@ -33,11 +38,12 @@ $colorBtn: #ED165F;
 .modalContent {
 	position: relative;
 	margin: 20px;
+
 	width: 100%;
 	max-width: 600px;
 	border-radius: 20px;
 	background-color: #fff;
-	padding: 40px 20px 40px 20px;
+	padding-bottom: 40px;
 	transform: translateY(-50px);
 	transition: opacity 0.3s transform 0.3s;
 }
@@ -46,31 +52,62 @@ $colorBtn: #ED165F;
 	position: absolute;
 	top: 16px;
 	right: 16px;
-	width: 60px;
-	height: 30px;
-	border-radius: 5px;
-	background: #ED165F;
+	@include adaptive-value('width', 60, 35, 1440);
+		@include adaptive-value('height', 40, 25, 1440);
+		background: $closeColor;
 	color: #fff;
 	padding: 10px;
+	border-radius: 10px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	border: 1px solid #ED165F;
+	transition: background 0.6s ease 0s;
+	
+		@media (any-hover: hover) {
+			&:hover {
+				transition: background 0.6s ease 0s;
+				background: $closeHover;
+			}
+		}
 }
 
 .modalText {}
 
 
 .buttonOpen {
-	background: $colorBtn;
+	background: $mainColor;
 	color: #fff;
 	width: 100%;
 	max-width: 200px;
-	padding: 10px;
+	padding: 20px;
 	border-radius: 20px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	cursor: pointer;
-	border: 1px solid $colorBtn ;
+}
+
+.modalImage {
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	overflow-x: hidden;
+	width: 100%;
+	@extend %images;
+}
+
+.modalFormCreateAccountWrapper {}
+
+.close {
+	color: #fff;
+	@include adaptive-font(18, 10, 1440);
+}
+
+
+.EntranceBox {
+	@extend %displayFlexDirection;
+	gap: 10px;
+}
+
+.response {
+	@extend %title;
 }

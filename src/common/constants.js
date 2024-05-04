@@ -4,6 +4,7 @@ import clothes from '../image/clothes.png'
 
 export const BASE_URL = 'https://65a10699600f49256fb0bd21.mockapi.io/healthier/v1/safari'
 
+export const BASE_URL_USERS = 'https://65a10699600f49256fb0bd21.mockapi.io/healthier/v1/users'
 //--------------------------------btn
 export const BACK = 'Back';
 
@@ -33,6 +34,11 @@ export const SHOES = 'Shoes'
 
 export const ACCESSORIES = 'Accessories'
 
+export const ICONS_LOG_IN = 'Login'
+
+export const ICONS_EXIT = ' Exit'
+
+export const LOG = 'Loading...'
 //-----------------------------------------------header
 
 //-------------------------------------------------footer
@@ -76,24 +82,8 @@ export const EXPLORE_MORE_ARRAY = [
 		image: shoes,
 		name: 'shoes'
 	},
-
-
 ]
 
-// const i = [
-// 	создай 10 обьектов   {
-// 		id: '0'
-// 		"title": "имя известного бренда ",
-// 		"image": [],
-// 		"size": [несколько произвольных размеров товара],
-// 		"color": [несколько цветов товара],
-// 		"price": цена,
-// 		"category": с одной из категорий Watches, Backpacks, Dresses, Booties, Bags, Sneakers, Sunglasses, Tops, Jeans, Boots
-// 		"group": "ACCESSORIES",
-// 		"rating": "1"
-// 		"comments": [напиши несколько комментариев по поводу этого товара или один или не пиши совсем]
-// 	},
-// ]
 
 //----------------------------------home
 
@@ -215,6 +205,12 @@ export const GENERAL_INFO = 'General info'
 export const REVIEWS = 'Reviews'
 
 export const PRODUCT_DETAILS = 'Product details'
+
+export const LOG_IN_CONSTANTA = 'Login'
+
+export const ENTRANCE = 'entrance'
+
+
 
 
 
@@ -364,3 +360,25 @@ export const PUBLISH_CONSTANT = 'publish'
 
 
 //---------------------------------/CreateComments
+
+
+//---------------------------------------Entrance>CreateAccount
+
+export const ERROR_TEXT = 'field must be filled in'
+
+export const CREATE_ACCOUNT_BTN = 'Create account'
+
+export const PASSWORD_REQUIREMENTS = 'Password requirements:'
+
+export const MINIMUM = 'Minimum 8 characters'
+
+export const CAPITAL_LETTER = 'At least one capital letter'
+
+export const ONE_NUMBER = 'At least one number'
+
+export const SYMBOLS = 'At least one special character (! @ # $ % &)'
+
+export const FOR_EMAIL = 'Sign up for email to hear about product launches, exclusive offers and athlete news'
+
+export const PRIVACY = 'By checking the box, you are creating an account with New Balance and you agree to the Terms & Conditions and Privacy Policy.'
+//---------------------------------------/Entrance>CreateAccount

@@ -1,0 +1,257 @@
+@import '../common/variables.scss';
+@import '../null.scss';
+
+//-----------------------------var
+$colorBorders: #E1E1E1;
+$mainColorGlobal: #ED165F;
+$mainColorHover: #bd184f;
+
+//-----------------------------/var
+
+//--------------------------------------global
+
+//-----------------CreateAccount
+.createAccountWrapper {
+    @extend %displayCenter;
+    @include adaptive-value('padding-left', 15, 10, 1440);
+    @include adaptive-value('padding-right', 15, 10, 1440);
+}
+
+.formAccount {
+    max-width: 500px;
+}
+
+//-----------------/CreateAccount
+
+
+//--------------------------------------/global
+
+
+
+//-----------------------------------------CreateAccount
+
+.userDataCollection {
+    margin-top: 20px;
+    @extend %displayFlexDirection;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.firstName {
+    @include adaptive-value('padding-top', 10, 5, 1440);
+    @include adaptive-value('padding-bottom', 10, 5, 1440);
+    @include adaptive-value('padding-left', 10, 5, 1440);
+    @include adaptive-value('padding-right', 10, 5, 1440);
+    border: 1px solid $colorBorders;
+    border-radius: 10px;
+
+    input {
+        @include adaptive-font(16, 14, 1440);
+    }
+}
+
+.error {}
+
+.errorText {
+    @extend %display;
+    gap: 5px;
+    color: red;
+    @include adaptive-font(16, 12, 1440);
+}
+
+.LastName {
+    @include adaptive-value('padding-top', 10, 5, 1440);
+    @include adaptive-value('padding-bottom', 10, 5, 1440);
+    @include adaptive-value('padding-left', 10, 5, 1440);
+    @include adaptive-value('padding-right', 10, 5, 1440);
+    border: 1px solid $colorBorders;
+    border-radius: 10px;
+
+    input {
+        @include adaptive-font(16, 14, 1440);
+    }
+}
+
+.email {
+    @include adaptive-value('padding-top', 10, 5, 1440);
+    @include adaptive-value('padding-bottom', 10, 5, 1440);
+    @include adaptive-value('padding-left', 10, 5, 1440);
+    @include adaptive-value('padding-right', 10, 5, 1440);
+    border: 1px solid $colorBorders;
+    border-radius: 10px;
+
+    input {
+        @include adaptive-font(16, 14, 1440);
+    }
+}
+
+.password {
+    @include adaptive-value('padding-top', 10, 5, 1440);
+    @include adaptive-value('padding-bottom', 10, 5, 1440);
+    @include adaptive-value('padding-left', 10, 5, 1440);
+    @include adaptive-value('padding-right', 10, 5, 1440);
+    border: 1px solid $colorBorders;
+    border-radius: 10px;
+
+    input {
+        @include adaptive-font(16, 14, 1440);
+    }
+}
+
+.requirements {
+    color: $cartTextColor;
+    text-align: left;
+    @extend %displayFlexDirection;
+    @include adaptive-value('gap', 15, 10, 1440);
+}
+
+.perquirementsTitle {
+    @include adaptive-font(20, 16, 1440);
+}
+
+.requirementsList {
+    @extend %displayFlexDirection;
+    @include adaptive-value('gap', 10, 5, 1440);
+}
+
+.requirementsItems {
+    @include adaptive-font(16, 10, 1440);
+}
+
+.permissions {
+    @include adaptive-value('padding-top', 20, 10, 1440);
+    @include adaptive-value('padding-bottom', 20, 10, 1440);
+    @extend %displayFlexDirection;
+    gap: 15px;
+}
+
+//---------------------------signUp
+.signUpBox {
+    @extend %display;
+    gap: 10px;
+
+    input {
+        width: fit-content;
+    }
+}
+
+.signUp {}
+
+.signUpText {
+    @include adaptive-font(16, 12, 1440);
+}
+
+//---------------------------signUp
+
+
+
+//---------------------------privacy
+.privacyBox {
+    @extend %display;
+    gap: 10px;
+
+    input {
+        width: fit-content;
+    }
+}
+
+.privacyPolicy {}
+
+.privacyPolicyText {
+    @include adaptive-font(16, 12, 1440);
+}
+
+//---------------------------/privacy
+
+
+.createAccountBtn {
+    background: $mainColorGlobal;
+    @include adaptive-value('margin-top', 15, 10, 1440);
+    max-width: 300px;
+    text-align: center;
+    @include adaptive-value('padding-top', 15, 10, 1440);
+    @include adaptive-value('padding-bottom', 15, 10, 1440);
+    color: #fff;
+    @include adaptive-font(16, 10, 1440);
+    border-radius: 10px;
+    transition: background 0.3s ease 0s;
+
+    @media (any-hover: hover) {
+        &:hover {
+            transition: background 0.3s ease 0s;
+            background: $mainColorHover;
+        }
+    }
+}
+
+//-----------------------------------------/CreateAccount
+p {
+    text-align: left;
+}
+
+
+//----------------------------CreateLogIn
+
+.logInWrapper {
+
+    @include adaptive-value('padding-left', 15, 10, 1440);
+    @include adaptive-value('padding-right', 15, 10, 1440);
+}
+
+.logIn {
+    margin: 0 auto;
+    max-width: 500px;
+    @include adaptive-value('padding-top', 40, 20, 1440);
+    gap: 10px;
+    @extend %displayFlexDirection;
+
+}
+
+.email {}
+
+.emailInput {}
+
+.error {}
+
+.errorText {}
+
+
+
+.createAccountBtn {}
+
+.passwordOpenClose {
+    @extend %displayComplect;
+}
+
+.eyeBtn {
+    width: fit-content;
+}
+
+.eye {
+    font-size: 18px;
+    width: fit-content;
+}
+
+.standardList {
+    @include adaptive-value('padding-top', 40, 20, 1440);
+    @include adaptive-value('padding-bottom', 15, 10, 1440);
+    @extend %displayFlexDirection;
+    justify-content: start;
+    gap: 15px;
+}
+
+.standardTitle {
+    color: #959595;
+    text-align: left;
+    @include adaptive-font(20, 16, 1440);
+}
+
+.standardItems {
+    color: #959595;
+    text-align: left;
+
+    @include adaptive-font(16, 14, 1440);
+}
+
+
+//----------------------------CreateLogIn

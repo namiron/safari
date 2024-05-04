@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { FaFacebookF } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa6";
@@ -7,7 +7,12 @@ import { FaUser } from "react-icons/fa6";
 import { MdFavorite } from "react-icons/md";
 import { Link } from 'react-router-dom'
 import footer from '../modules/footer.module.scss'
+import header from '../modules/header.module.scss'
 import '../wrapper.scss'
+import { useCustomCurrentUser } from "../hooks/untils";
+import Client from "../components/client/Client";
+import ClientLog from "../components/client/ClientLog";
+
 
 export const Facebook = ({ text = '' }) => {
 	return (
@@ -27,21 +32,33 @@ export const Instagram = ({ text = '' }) => {
 	)
 }
 
-export const CartIcon = () => {
+export const CartIcon = ({ text = '' }) => {
 	return (
-		<Link to='/cart'> <FaShoppingCart className="cartIcon" /></Link>
+		<Link to='/cart' className={header.CartBox}> <FaShoppingCart className={header.cartIcon} />{text}</Link>
 	)
 }
 
-export const FavoriteIcon = () => {
+export const FavoriteIcon = ({ text = '' }) => {
 	return (
-		<Link to='/favorite'> <MdFavorite className="favoriteIcon" /></Link>
+		<Link to='/favorite' className={header.FavoriteBox}>  <MdFavorite className={header.favoriteIcon} />{text}</Link>
 	)
 }
 
-export const UserIcon = () => {
+export const UserIcon = ({ handleCloseWindow }) => {
+	//---------------------------
+	const [isOpen, setOpen] = useState(false)
+
+	const currentUser = useCustomCurrentUser()
+
+	//---------------------------
+
 	return (
-		<Link to='/favorite'> <FaUser className="userIcon" /></Link>
+		<div className={header.userComponent}>
+			<button> <FaUser className={`${header.userIcon}`} onClick={() => setOpen(!isOpen)} /></button>
+			<div className={`${header.userDataBox} ${isOpen ? header.active : ''}`}>
+				{currentUser ? <Client /> : <ClientLog handleCloseWindow={handleCloseWindow} />}
+			</div>
+		</div>
 	)
 }
 

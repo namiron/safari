@@ -8,7 +8,7 @@ import { FaCartPlus } from "react-icons/fa";
 import { MdFavoriteBorder } from "react-icons/md";
 import { IoIosRemoveCircle } from "react-icons/io";
 import { BACK, CONTINUE_SHOPPING, HOME, SIG_IN, CREATE_ACCOUNT, MOVE_TO_FAVORITES, REMOVE } from './constants';
-
+import { useCustomTriggerModalWindow } from '../hooks/untils'
 //---------------------------------------
 
 //---------------------------------------
@@ -107,8 +107,18 @@ export const AddToCart = () => {
 		<Link to='/cart' className={btn.addToCart}>
 			Add to cart <FaCartPlus style={{ color: '#ED165F' }} />
 		</Link>
+
+
 	);
 };
+
+
+export const FavoriteBtn = () => {
+	return (
+		<Link to='/favorite' className={btn.favorite}><MdFavoriteBorder className={btn.heart} /> </Link>
+	)
+}
+
 
 export const Buy = () => {
 	return (
@@ -118,11 +128,6 @@ export const Buy = () => {
 	);
 };
 
-export const FavoriteBtn = () => {
-	return (
-		<Link to='/favorite' className={btn.favorite}><MdFavoriteBorder className={btn.heart} /> </Link>
-	)
-}
 
 
 export const GoToFavorite = () => {

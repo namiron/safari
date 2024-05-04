@@ -4,6 +4,7 @@ import { ROUTES } from './route';
 import { Skeleton } from '../skeleton/Skeletons';
 import { SkeletonCart } from './../skeleton/Skeletons';
 import { useCustomProductList, useExportAllProducts } from './../../hooks/untils';
+import { LOG } from '../../common/constants';
 
 
 //----------------------------------------------------------
@@ -29,7 +30,6 @@ const Ways = () => {
 	useExportAllProducts()
 	const productList = useCustomProductList()
 	const [searchList, setSearchList] = useState([])
-
 	const handleSearchList = (searchFilterArray) => {
 		setSearchList(searchFilterArray)
 	}
@@ -48,21 +48,21 @@ const Ways = () => {
 				</Suspense>} />
 				<Route path={ROUTES.accessories} element={<Suspense fallback={<Skeleton />}><AccessoriesPage productList={productList} searchList={searchList} />
 				</Suspense>} />
-				<Route path={ROUTES.log_in} element={<Suspense fallback={<p>Loading...</p>}><SignInPage />
+				<Route path={ROUTES.log_in} element={<Suspense fallback={<p>{LOG}</p>}><SignInPage />
 				</Suspense>} />
 				<Route path={ROUTES.cart} element={<Suspense fallback={<SkeletonCart />}><CartPage />
 				</Suspense>} />
 				<Route path={ROUTES.favorite} element={<Suspense fallback={<SkeletonCart />}><FavoritePage />
 				</Suspense>} />
-				<Route path={ROUTES.about_us} element={<Suspense fallback={<p>Loading...</p>}><AboutUsPage />
+				<Route path={ROUTES.about_us} element={<Suspense fallback={<p>{LOG}</p>}><AboutUsPage />
 				</Suspense>} />
-				<Route path={ROUTES.contact} element={<Suspense fallback={<p>Loading...</p>}><ContactPage />
+				<Route path={ROUTES.contact} element={<Suspense fallback={<p>{LOG}</p>}><ContactPage />
 				</Suspense>} />
-				<Route path={ROUTES.terms} element={<Suspense fallback={<p>Loading...</p>}><TermsPage />
+				<Route path={ROUTES.terms} element={<Suspense fallback={<p>{LOG}</p>}><TermsPage />
 				</Suspense>} />
-				<Route path={ROUTES.item_details} element={<Suspense fallback={<p>Loading...</p>}><ItemDetailsPage
+				<Route path={ROUTES.item_details} element={<Suspense fallback={<p>{LOG}</p>}><ItemDetailsPage
 				/></Suspense>} />
-				<Route path={ROUTES.not_found} element={<Suspense fallback={<p>Loading...</p>}><NotFoundPage />
+				<Route path={ROUTES.not_found} element={<Suspense fallback={<p>{LOG}</p>}><NotFoundPage />
 				</Suspense>} />
 			</Route>
 		</Routes>

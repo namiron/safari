@@ -1,0 +1,39 @@
+@import '../common/variables.scss';
+@import '../null.scss';
+
+
+//------------------------var
+$closeColor: #6868689b;
+$mainColor: #ED165F;
+//------------------------var
+
+
+.tabsContainer {
+	display: flex;
+	flex-direction: column;
+}
+
+.tabButtons {
+	@extend %display;
+	justify-content: center;
+	@include adaptive-value('padding-top', 20, 10, 1440);
+	@include adaptive-value('gap', 20, 10, 1440);
+}
+
+.tabContent {}
+
+.tabBtn {
+	background: transparent;
+	padding: 10px;
+	@include adaptive-value('width', 250, 200, 1440);
+	color: $closeColor;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.tabBtn.active {
+	color: $mainColor;
+	border-bottom: 2px solid $mainColor;
+}

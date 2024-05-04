@@ -44,15 +44,6 @@ transition: all 0.3s ease 0s;
 	}
 }
 
-.userIcon{
-	transition: all 0.3s ease 0s;
-	height: 15px;
-	@media (any-hover: hover){
-		&:hover{
-			color:$mainColor ;
-		}
-	}
-}
 
 .burgerIcon{
 	font-size: 18px;
