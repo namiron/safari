@@ -1,45 +1,95 @@
-import React from 'react'
+import React, { useState } from 'react'
 import CarouselItem from '../Slider/Carousel'
 import tab from '../../modules/tabs.module.scss'
 import { TbHanger } from "react-icons/tb";
-import { MdArrowDropUp } from "react-icons/md";
-import { MdArrowDropDown } from "react-icons/md";
 import { Buy, ToFavorite } from '../../common/Buttons';
 import { Facebook, Instagram, Twitter } from '../Links';
 import visa from '../../image/visa-cart.png';
 import payPal from '../../image/pay-pal.png'
+import { useDispatch } from 'react-redux'
 import masterCart from '../../image/master-card.png';
-import { BUSINESS_DAYS, COLOR, DELIVERY, EXPRESS_DELIVERY, FREE_TEXT_DELIVERY, HOW_MUCH, LONG_CONST, PICK_DELIVERY, PRICE_ITEMS, RETURN_CONST, SHARE, SIZE_CHART, SIZE_CONST, STANDARD_DELIVERY, TYPE_CONST } from '../../common/constants';
+import {
+    BUSINESS_DAYS, COLOR, DELIVERY, EXPRESS_DELIVERY,
+    FREE_TEXT_DELIVERY, HOW_MUCH, LONG_CONST, PICK_DELIVERY, PRICE_ITEMS, RETURN_CONST, SHARE,
+    SIZE_CHART, SIZE_CONST, STANDARD_DELIVERY, TYPE_CONST
+} from '../../common/constants';
 import StarsRating from '../starsRating/StarsRating';
+import { addToCartForUserProduct } from '../../redux/reducers/userSlice';
+import { discount, useCustomCountHook, useCustomCurrentUser } from '../../hooks/untils';
+import CountComponent from '../count/CountComponent';
 
 
 
-const TabOne = ({ image = [], size = [], color = [], price, id, rating }) => {
+
+const TabOne = ({ image = [], size = [], color = [], price, id, rating, title }) => {
 
     //--------------------------------------
-    const discont = (price,) => {
-        let percent
-        if (price > 5000) {
-            percent = 50
-        } else if (price <= 5000) {
-            percent = 25
-        } else if (price <= 1000) {
-            percent = 15
+
+    const [sizeItem, setSizeItem] = useState(null)
+    const [colorItem, setColorItem] = useState(null)
+    const [item, setItem] = useState({})
+    const dispatch = useDispatch()
+    const currentUser = useCustomCurrentUser()
+
+    const { count, handleCountMinus, handleCountPlus } = useCustomCountHook()
+
+    //---------------------------
+    const createItem = () => {
+        const updatedItem = {
+            id: id,
+            size: sizeItem,
+            color: colorItem,
+            count: count,
+            image: image[0],
+            price: result,
+            title: title
+        };
+        setItem(prevItem => ({
+            ...prevItem,
+            [id]: updatedItem
+        }));
+
+        if (currentUser) {
+            dispatch(addToCartForUserProduct({ item: updatedItem, currentUser }));
         }
-        const result = (price / 100) * percent
-        return [result, percent]
-    }
-    const [result, percent] = discont(price)
+        setSizeItem(null)
+        setColorItem(null)
+    };
 
-    const [count, setCount] = React.useState(1)
+    const createFavoriteItem = () => {
+        const updatedItem = {
+            id: id,
+            size: sizeItem,
+            color: colorItem,
+            count: count,
+            image: image[0],
+            price: result,
+            title: title
+        };
+        setItem(prevItem => ({
+            ...prevItem,
+            [id]: updatedItem
+        }));
 
-    const handleCountMinus = () => {
-        setCount(count - 1)
-    }
-    const handleCountPluse = () => {
-        setCount(count + 1)
-    }
+        setSizeItem(null)
+        setColorItem(null)
+    };
+
+
+
+    const handleSizeItemClick = (selectedSize) => {
+        setSizeItem(selectedSize);
+    };
+
+    const handleSColorItemClick = (selectedSize) => {
+        setColorItem(selectedSize);
+    };
+    //---------------------------
+
+    const [result, percent] = discount(price)
+
     //--------------------------------------
+
 
     return (
         <div className={tab.wrapper}>
@@ -49,10 +99,10 @@ const TabOne = ({ image = [], size = [], color = [], price, id, rating }) => {
             <div className={tab.description}>
                 <div className={tab.holder}>
                     <div className={tab.priceRatingBox}>
-                        <div className={tab.priceDiscontBox}>
+                        <div className={tab.priceDiscountBox}>
                             <span className={tab.newPrice}>{result}$</span>
                             <span className={tab.oldPrice}>{price}$</span>
-                            <div className={tab.discont}>{percent}%</div>
+                            <div className={tab.discount}>{percent}%</div>
                         </div>
                         <div className={tab.ratingBox}>
                             <StarsRating count={5} id={id} rating={rating} />
@@ -67,7 +117,7 @@ const TabOne = ({ image = [], size = [], color = [], price, id, rating }) => {
                                 color.map((el, i) => {
                                     let colorName = el.toUpperCase();
                                     return (
-                                        <div key={i} className={tab.colorElement}>
+                                        <div key={i} onClick={() => handleSColorItemClick(el)} className={`${tab.colorElement} ${el === colorItem ? tab.activeColor : ''}`}>
                                             <span style={{
                                                 background: `${colorName}`,
                                                 width: '10px',
@@ -88,7 +138,7 @@ const TabOne = ({ image = [], size = [], color = [], price, id, rating }) => {
                         <div className={tab.sizeRow}>
                             {
                                 size.map((el, i) => {
-                                    return <span className={tab.sizeElement} key={i} >{el}</span>
+                                    return <span className={`${tab.sizeElement} ${el === sizeItem ? tab.activeSize : ''}`} onClick={() => handleSizeItemClick(el)} key={i} >{el}</span>
                                 })
                             }
                             <div className={tab.sizeIcon}><TbHanger /> <span className={tab.sizeText}>{SIZE_CHART}</span></div>
@@ -98,17 +148,10 @@ const TabOne = ({ image = [], size = [], color = [], price, id, rating }) => {
 
                     <div className={tab.countContainer}>
                         <div className={tab.countInner}>
-                            <div className={tab.countBlock}>
-                                <span>{count}</span>
-                                <div className={tab.arrowBlock}>
-                                    <button onClick={handleCountPluse} className={tab.arrowPlus}><MdArrowDropUp /></button>
-                                    <button onClick={handleCountMinus} className={tab.arrowPlus}><MdArrowDropDown /></button>
-                                </div>
-                            </div>
-                            <Buy />
-                            <ToFavorite />
+                            <CountComponent handleCountMinus={handleCountMinus} handleCountPlus={handleCountPlus} count={count} />
+                            <Buy callback={createItem} />
+                            <ToFavorite callback={createFavoriteItem} />
                         </div>
-
                     </div>
                     <div className={tab.delivery}>
                         <div className={tab.headingDelivery}>

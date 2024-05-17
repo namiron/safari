@@ -4,11 +4,11 @@ import Footer from './../footer/Footer';
 import { Outlet } from 'react-router-dom'
 import './../../wrapper.scss'
 
-const Layout = ({ productList, handleSearchList }) => {
+const Layout = ({ productList, handleSearchList, handleCloseWindow, isModalWindow }) => {
 	return (
 		<>
 			<header className='header'>
-				<Header productList={productList} handleSearchList={handleSearchList} />
+				<Header productList={productList} handleSearchList={handleSearchList} handleCloseWindow={handleCloseWindow} isModalWindow={isModalWindow} />
 			</header>
 			<main className='main'>
 				<Outlet />

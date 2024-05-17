@@ -7,7 +7,7 @@ import { SUB_TITLE } from './../../common/constants';
 import ItemCategory from '../ProductList/ItemCategory';
 
 
-const Home = ({ productList, searchList }) => {
+const Home = ({ productList, searchList, handleCloseWindow }) => {
 
 
   return (
@@ -23,7 +23,7 @@ const Home = ({ productList, searchList }) => {
               {SUB_TITLE}
             </h3>
           </div>
-          <ProductList array={searchList.length > 0 ? searchList : productList} />
+          <ProductList array={searchList.length > 0 ? searchList : productList} handleCloseWindow={handleCloseWindow} />
           <div className={home.exploreCategory}>
             {EXPLORE_MORE_ARRAY.map((el, index) => (
               <ItemCategory key={index} image={el.image} text={el.name} name={el.name} />

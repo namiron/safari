@@ -3,8 +3,6 @@
 
 
 //-----------------------------global
-.clothes{}
-
 .container{
 	@include adaptive-value('padding-top',30,15,1440);
 	@extend %containerPages;

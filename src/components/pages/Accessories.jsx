@@ -6,7 +6,7 @@ import Filters from '../../construction/Filters/Filters';
 import { ACCESSORIES_GROUP } from './../../common/constants';
 
 
-const Accessories = ({ productList, searchList }) => {
+const Accessories = ({ productList, searchList, handleCloseWindow }) => {
 	//-----------------------------------------
 	const AccessoriesList = productList.filter(el => el.group === ACCESSORIES_GROUP)
 	//-----------------------------------------
@@ -16,11 +16,10 @@ const Accessories = ({ productList, searchList }) => {
 		<section className={accessories.clothes}>
 			<div className={accessories.container}>
 				<Nav />
-				<Up />
 				<div className={accessories.heading}>
 					<h1 className={accessories.title}>{ACCESSORIES_GROUP}</h1>
 				</div>
-				<Filters productList={productList} clothesList={searchList.length > 0 ? searchList : AccessoriesList} />
+				<Filters productList={productList} clothesList={searchList.length > 0 ? searchList : AccessoriesList} handleCloseWindow={handleCloseWindow} />
 			</div>
 		</section>
 	)

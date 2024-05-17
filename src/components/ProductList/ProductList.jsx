@@ -4,7 +4,7 @@ import product_list from '../../modules/productList.module.scss'
 import ProductItem from './ProductItem';
 
 
-const ProductList = ({ array }) => {
+const ProductList = ({ array, handleCloseWindow }) => {
 
 
 	//----------------------------------------------------------const
@@ -23,7 +23,7 @@ const ProductList = ({ array }) => {
 			<>
 				{
 					itemsToShow.map(({ image, title, price, id }) => {
-						return <ProductItem image={image} title={title} price={price} id={id} key={id} />
+						return <ProductItem image={image} title={title} price={price} id={id} key={id} handleCloseWindow={handleCloseWindow} />
 					})
 				}
 			</>

@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useRef, useState } from "react"
 import { FaFacebookF } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa6";
@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom'
 import footer from '../modules/footer.module.scss'
 import header from '../modules/header.module.scss'
 import '../wrapper.scss'
-import { useCustomCurrentUser } from "../hooks/untils";
+import { useClickOutSide, useCustomCurrentUser } from "../hooks/untils";
 import Client from "../components/client/Client";
 import ClientLog from "../components/client/ClientLog";
 
@@ -45,20 +45,28 @@ export const FavoriteIcon = ({ text = '' }) => {
 }
 
 export const UserIcon = ({ handleCloseWindow }) => {
-	//---------------------------
-	const [isOpen, setOpen] = useState(false)
+	const mouseRef = useRef(null);
+	const [isOpen, setOpen] = useState(false);
 
-	const currentUser = useCustomCurrentUser()
+	const currentUser = useCustomCurrentUser();
 
-	//---------------------------
+
+	const handleIconClick = () => {
+		setOpen(!isOpen);
+	};
+
+	useClickOutSide(mouseRef, () => {
+		if (isOpen) setTimeout(() => setOpen(false), 50);
+	});
 
 	return (
-		<div className={header.userComponent}>
-			<button> <FaUser className={`${header.userIcon}`} onClick={() => setOpen(!isOpen)} /></button>
+		<div className={header.userComponent} ref={mouseRef}>
+			<button onClick={handleIconClick}>
+				<FaUser className={`${header.userIcon}`} />
+			</button>
 			<div className={`${header.userDataBox} ${isOpen ? header.active : ''}`}>
 				{currentUser ? <Client /> : <ClientLog handleCloseWindow={handleCloseWindow} />}
 			</div>
 		</div>
-	)
-}
-
+	);
+};

@@ -69,8 +69,9 @@ $mainColor:#ED165F;
 
 .userDataBox {
 	position: absolute;
-	margin-top: 5px;
+	@include adaptive-value('margin-top', 20, 10, 1440);
 	top: 100%;
+	@include adaptive-value('left', -100, -80, 1440);
 	@include adaptive-value('padding-top', 25, 10, 1440);
 	@include adaptive-value('padding-bottom', 25, 10, 1440);
 	@include adaptive-value('padding-left', 25, 10, 1440);
@@ -81,12 +82,14 @@ $mainColor:#ED165F;
 	z-index: 100;
 	opacity: 0;
 	transform: translateY(-10px);
+	
 	visibility: hidden;
 	transition: 0.3s;
 }
 
 .active {
 	transform: translateY(0);
+	@include adaptive-value('left', -100, -80, 1440);
 	opacity: 1;
 	visibility: visible;
 	transition: 0.3s;

@@ -16,7 +16,7 @@ const Client = () => {
     const users = useCustomUsers()
 
 
-    console.log('user:', users);
+
     //-------------------------------
 
     return (

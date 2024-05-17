@@ -18,38 +18,18 @@ $colorBtn:#ED165F;
 	@extend %display;
 	width: fit-content;
 	gap: 10px;
-	background:$colorBtn;
 	padding: 8px 15px;
-	border-radius: 5px;
-	color:#fff;
-	transition: all 0.3s ease 0s;
+	color: $colorBtn;
 	font-size: 16px;
-	@media (any-hover: hover){
-		&:hover{
-	transition: all 0.3s ease 0s;
-	color:$colorBtn;
-	background:#fff;
-	outline: 1px solid $colorBtn ;
-		}
-	}
+	@extend %linkUserButtons;
 }
 .goHome{
 	@extend %display;
 	width: fit-content;
 	gap: 10px;
-	background:$colorBtn;
 	padding: 10px 15px;
-	border-radius: 5px;
-	color:#fff;
-	transition: all 0.3s ease 0s;
-	@media (any-hover: hover){
-		&:hover{
-	transition: all 0.3s ease 0s;
-	color:$colorBtn;
-	background:#fff;
-	outline: 1px solid $colorBtn ;
-		}
-	}
+	color: $colorBtn;
+		@extend %linkUserButtons;
 }
 
 .SignIn{
@@ -114,6 +94,7 @@ $colorBtn:#ED165F;
 
 .addToCart{
 	@extend %display;
+	cursor: pointer;
 		gap: 5px;
 		justify-content: center;
 	background: white;
@@ -122,6 +103,7 @@ $colorBtn:#ED165F;
 	width: fit-content;
 	border-radius:3px;
 	font-weight: 600;
+	@include adaptive-font(16, 14, 1440);
 	transition: all 0.3s ease 0s;
 	@media (any-hover: hover){
 		&:hover{
@@ -130,18 +112,26 @@ color: $colorBtn;
 		}
 	}
 }
+.heart {
+	color: $colorBtn;
+}
 .favorite {
+	cursor: pointer;
 	background: white;
 	width: fit-content;
 	font-size: 20px;
 	padding: 5px 8px;
 	transition: all 0.3s ease 0s;
+
 @media (any-hover: hover) {
 		&:hover {
 			transition: all 0.3s ease 0s;
 			background: $colorBtn;
-		}
-	}
+			.heart {
+					color: #fff;
+				}
+}
+}
 }
 
 //-----------------------------------------tabs
@@ -192,16 +182,7 @@ color: $colorBtn;
 	}
 }
 //-----------------------------------------tabs
-.heart{
-	color:$colorBtn;
-	transition: all 0.3s ease 0s;
-	@media (any-hover: hover){
-		&:hover{
-	transition: all 0.3s ease 0s;
-			color:white;
-		}
-	}
-}
+
 
 .goToFavorite{
 	color:$colorBtn;
@@ -213,10 +194,35 @@ color: $colorBtn;
 .remove{
 	width: fit-content;
 	text-transform: uppercase;
+	@include adaptive-font(16, 14, 1440);
 	color:$colorBtn;
+&:focus {
+		transition: all 0.3s ease 0s;
+		color: black;
+	}
 }
 .btnNavigations{
 	@extend %displayComplect;
 	@include adaptive-value('gap',10,5,1440);
 	max-width: 80px;
+}
+.loginBtn {
+	color: $colorBtn;
+	cursor: pointer;
+	@extend %linkFilters;
+	@include adaptive-font(30, 15, 1440);
+
+}
+
+.active {
+	cursor: pointer;
+	width: fit-content;
+	font-size: 20px;
+	padding: 5px 8px;
+	background: $colorBtn;
+
+}
+
+.heartActive {
+	color: #fff;
 }
