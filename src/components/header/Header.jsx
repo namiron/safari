@@ -7,12 +7,12 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import header from '../../modules/header.module.scss';
 import Search from '../../construction/forms/Search';
 import '../../wrapper.scss';
-import { useClickOutSide, useCustomTriggerModalWindow, useCustomUsers } from '../../hooks/untils';
+import { useClickOutSide, useCustomUsers } from '../../hooks/untils';
 import { ACCESSORIES, CLOSES, HOME_HEADER, SHOES } from './../../common/constants';
 import { getUsers, createUsersOnServer, comparisonsData } from '../../redux/reducers/userSlice';
 import CustomModalUser from '../../construction/CustomModal/CustomModalUser';
 
-const Header = ({ productList, handleSearchList }) => {
+const Header = ({ productList, handleSearchList, handleCloseWindow, isModalWindow }) => {
 
 	//----------------------------------
 	const mouseRef = useRef(null);
@@ -21,7 +21,7 @@ const Header = ({ productList, handleSearchList }) => {
 	const [userData, setUserData] = useState({});
 	const dispatch = useDispatch();
 
-	const { isModalWindow, setModalWindow } = useCustomTriggerModalWindow()
+
 
 	const users = useCustomUsers()
 
@@ -32,9 +32,6 @@ const Header = ({ productList, handleSearchList }) => {
 		dispatch(getUsers());
 	}, [userData, dispatch]);
 
-	const handleCloseWindow = () => {
-		setModalWindow(!isModalWindow);
-	};
 
 	const handleSetUser = (data) => {
 		setUserData({

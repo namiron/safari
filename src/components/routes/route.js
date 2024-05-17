@@ -10,6 +10,7 @@ export const ROUTES = {
 	favorite: '/favorite',
 	accessories: '/accessories',
 	item_details: '/item_details/:id',
+	shopping_details: 'shopping_details',
 	not_found: '*'
 }
 

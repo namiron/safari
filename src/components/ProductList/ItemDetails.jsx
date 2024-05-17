@@ -4,6 +4,8 @@ import { Nav } from './../../common/Buttons';
 import { BASE_URL } from './../../common/constants';
 import details from '../../modules/details.module.scss'
 import Tabs from '../../construction/Tabs/Tabs';
+
+
 const ItemDetails = () => {
 	//------------------------------------------
 	const { id } = useParams();
@@ -26,6 +28,8 @@ const ItemDetails = () => {
 	}, [id]);
 
 	const { image = [], title, size = [], color = [], price = [], rating, comments } = item || {};
+
+
 	//------------------------------------------
 
 

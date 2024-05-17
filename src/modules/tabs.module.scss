@@ -88,7 +88,7 @@ $borderActive: #ED165F;
     @include adaptive-value('padding-bottom', 25, 15, 1440);
 }
 
-.priceDiscontBox {
+.priceDiscountBox {
     @extend %displayComplect;
     width: fit-content;
     @include adaptive-value('gap', 10, 5, 1440);
@@ -107,7 +107,7 @@ $borderActive: #ED165F;
     text-decoration: line-through;
 }
 
-.discont {
+.discount {
     padding: 2px 8px;
     background: $colorPrice;
     color: #fff;
@@ -140,11 +140,6 @@ $borderActive: #ED165F;
     gap: 10px;
     cursor: pointer;
     padding: 3px;
-
-    &:active {
-        outline: 2px solid $colorActive;
-        border-radius: 4px;
-    }
 }
 
 .colorBlock {}
@@ -497,3 +492,12 @@ $borderActive: #ED165F;
 
 
 //--------------------------------------------------------------------/TabsThree
+.activeSize {
+    outline: 2px solid $colorActive;
+    border-radius: 4px;
+}
+
+.activeColor {
+    outline: 2px solid $colorActive;
+    border-radius: 4px;
+}

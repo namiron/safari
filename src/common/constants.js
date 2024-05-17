@@ -382,3 +382,69 @@ export const FOR_EMAIL = 'Sign up for email to hear about product launches, excl
 
 export const PRIVACY = 'By checking the box, you are creating an account with New Balance and you agree to the Terms & Conditions and Privacy Policy.'
 //---------------------------------------/Entrance>CreateAccount
+
+
+//-----------------------------------------Cart/Favorite
+
+export const FAVORITE = "You don't have Favorite product.Please login to add the product in to favorite "
+
+export const CART = 'Please login to add the product in to cart '
+
+export const NO_CONTENT = 'No Content'
+//-----------------------------------------Cart/Favorite
+
+
+//---------------------------------------ShoppingDetails
+
+export const SHOPPING_ADDRESS = 'Shipping Address'
+
+export const DELIVERY_METHOD = 'Delivery method'
+
+export const DELIVERY_DOOR = 'Delivery door'
+
+export const PAYMENT_METHODS = ' Payment Methods'
+
+export const PAY_WITH_CART = 'Pay with card'
+
+export const GET_TO_OFF_TOTAL = 'Get 5% off total price and money back guarantee'
+
+export const YOU_WILL_BE_REDIRECTED = 'You will be redirected to Paystack payment gateway'
+
+export const PAY_ON_DELIVERY = 'Pay on delivery'
+
+export const KINDLY_NOTE_THAT = 'Kindly note that we will only accept POS payment option on delivery'
+
+export const YOU_HAVE_TO_MAKE = 'You have to make payment before opening package'
+
+export const ONCE_THE_SEAL_ID_BROKEN = 'Once the seal is broken, item can only be returned if damaged or defective'
+
+export const NO_CONTENT_CONSTANT = 'No Content'
+
+export const CART_SUB_TITLE = 'Cart sub-total'
+
+export const CART_DISCOUNT = 'Card discount'
+
+export const TOTAL = 'TOTAL'
+
+export const PLACE_ORDER = 'PLACE ORDER'
+
+export const ORDER_SUMMARY = 'ORDER SUMMARY'
+
+//-----------------------------------------------------------------/ShoppingDetails
+
+
+//-----------------------------------------AddressForm
+
+export const EMAIL_ADDRESS = 'Email'
+
+export const FULL_NAME = 'Full name'
+
+export const ADDRESS = 'Address'
+
+export const CITY_ADDRESS = 'City'
+
+export const PHONE_NUMBER = 'Phone number'
+
+
+
+//-----------------------------------------/AddressForm

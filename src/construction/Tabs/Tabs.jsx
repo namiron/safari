@@ -27,7 +27,7 @@ const Tabs = ({ image = [], size, color, price, id, rating, comments = [], title
 				</button>
 			</div>
 			<div className={tabs.tabContent}>
-				{activeTab === TABS_1 && <TabOne image={image} size={size} color={color} price={price} id={id} rating={rating} />}
+				{activeTab === TABS_1 && <TabOne image={image} size={size} color={color} price={price} id={id} rating={rating} title={title} />}
 				{activeTab === TABS_2 && <TabTwo image={image} rating={rating} comments={comments} id={id} />}
 				{activeTab === TABS_3 && <TabsThree title={title} />}
 			</div>

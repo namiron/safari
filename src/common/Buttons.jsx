@@ -8,7 +8,10 @@ import { FaCartPlus } from "react-icons/fa";
 import { MdFavoriteBorder } from "react-icons/md";
 import { IoIosRemoveCircle } from "react-icons/io";
 import { BACK, CONTINUE_SHOPPING, HOME, SIG_IN, CREATE_ACCOUNT, MOVE_TO_FAVORITES, REMOVE } from './constants';
-import { useCustomTriggerModalWindow } from '../hooks/untils'
+import { useDispatch } from 'react-redux';
+import { MdFavorite } from "react-icons/md";
+import { discount, useCustomCurrentUser } from '../hooks/untils';
+import { addToFavoriteForUser, removeFromFavoriteForUser } from '../redux/reducers/userSlice';
 //---------------------------------------
 
 //---------------------------------------
@@ -102,9 +105,9 @@ export const Close = () => {
 
 
 
-export const AddToCart = () => {
+export const AddToCart = ({ ways }) => {
 	return (
-		<Link to='/cart' className={btn.addToCart}>
+		<Link to={ways} className={btn.addToCart}>
 			Add to cart <FaCartPlus style={{ color: '#ED165F' }} />
 		</Link>
 
@@ -112,27 +115,93 @@ export const AddToCart = () => {
 	);
 };
 
-
-export const FavoriteBtn = () => {
+export const AddToCartWithoutUser = ({ handleCloseWindow }) => {
 	return (
-		<Link to='/favorite' className={btn.favorite}><MdFavoriteBorder className={btn.heart} /> </Link>
+		<div onClick={handleCloseWindow} className={btn.addToCart}>
+			Add to cart <FaCartPlus style={{ color: '#ED165F' }} />
+		</div>
+
+
+	);
+};
+
+export const LogButton = ({ handleCloseWindow }) => {
+	return (
+		<span onClick={handleCloseWindow} className={btn.loginBtn}>
+			Login
+		</span>
+
+
+	);
+};
+
+export const FavoriteBtnWithoutUser = ({ handleCloseWindow }) => {
+	return (
+		<div onClick={handleCloseWindow} className={btn.favorite}><MdFavorite className={btn.heart} /> </div>
 	)
 }
 
 
-export const Buy = () => {
+export const FavoriteBtn = ({ image, title, price, id }) => {
+	//------------------------------------------
+	const currentUser = useCustomCurrentUser();
+	const [item, setItem] = useState({});
+	const dispatch = useDispatch();
+
+	const [result] = discount(price)
+
+	const newFavoriteItem = () => {
+		const updatedItem = {
+			id: id,
+			image: image,
+			price: result,
+			title: title
+		};
+
+		setItem(prevItem => ({
+			...prevItem,
+			[id]: updatedItem
+		}));
+		console.log('newFavoriteItem:', updatedItem);
+		if (currentUser) {
+			dispatch(addToFavoriteForUser({ item: updatedItem, currentUser }));
+		}
+	};
+
+	const removeFavoriteItem = () => {
+		if (currentUser) {
+			dispatch(removeFromFavoriteForUser({ id, currentUser }));
+		}
+	};
+
+	const findItemForFavorite = (id, array) => {
+		const find = array.favorite.find(el => el.id === id);
+		return find;
+	};
+
+	const itemToFavoriteTrue = findItemForFavorite(id, currentUser);
+
 	return (
-		<Link to='/cart' className={btn.buy}>
+		<div onClick={itemToFavoriteTrue ? removeFavoriteItem : newFavoriteItem} className={`${itemToFavoriteTrue ? btn.active : btn.favorite}`} >
+			<MdFavorite className={`${itemToFavoriteTrue ? btn.heartActive : btn.heart}`} />
+		</div>
+	);
+};
+
+
+export const Buy = ({ callback }) => {
+	return (
+		<div className={btn.buy} onClick={callback}>
 			Add to cart <FaCartPlus className={btn.buyIcons} />
-		</Link>
+		</div>
 	);
 };
 
 
 
-export const GoToFavorite = () => {
+export const GoToFavorite = ({ callback }) => {
 	return (
-		<Link to='/favorite' className={btn.goToFavorite}><MdFavoriteBorder style={{
+		<Link to='/favorite' className={btn.goToFavorite} onClick={callback}><MdFavoriteBorder style={{
 			color: '#ED165F',
 		}} /> {MOVE_TO_FAVORITES} </Link>
 	)
@@ -143,12 +212,26 @@ export const ToFavorite = () => {
 	)
 }
 
-
-export const Remove = () => {
+export const ShoppingDetailsBtn = () => {
 	return (
-		<button className={btn.remove}><IoIosRemoveCircle style={{
+		<Link to='/shopping_details' className={btn.shoppingDetails}> CONTINUE SHOPPING </Link>
+	)
+}
+
+
+export const Remove = ({ callback, productId, userId }) => {
+	//------------------------------
+	const dispatch = useDispatch()
+	const handleClick = () => {
+		dispatch(callback({ productId, userId }));
+	};
+	//------------------------------
+
+	return (
+		<button onClick={handleClick} className={btn.remove}><IoIosRemoveCircle style={{
 			color: '#ED165F',
 		}} /> {REMOVE} </button>
 	)
 }
+
 

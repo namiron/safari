@@ -15,6 +15,9 @@
 .heading{
 	@include adaptive-value('padding-top',60,20,1440);
 	@include adaptive-value('padding-bottom',60,20,1440);
+	margin: 0 auto;
+		max-width: 1000px;
+		@extend %displayFlexDirection;
 }
 .title{
 	position: relative; 
@@ -25,8 +28,8 @@
 		content:"";
 		position: absolute;
 		top:50%;
-		left:78%;
-		width:40%;
+		left: 80%;
+			width: 25%;
 		height:1px;
 		background: #000;
 		z-index: 1;
@@ -39,8 +42,8 @@
 		content:"";
 		position: absolute;
 		top:50%;
-		right:78%;
-		width:40%;
+		right: 80%;
+			width: 25%;
 		height:1px;
 		background: #000;
 		z-index: 1;

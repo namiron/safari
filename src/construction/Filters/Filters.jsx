@@ -10,7 +10,7 @@ import AccordionItemWidthSize from '../accordion/accordionItemWidthSize';
 import { CustomSelect } from './../select/Select';
 import { PRICE_HIGHT_TO_LOW, PRICE_LOW_TO_HIGHT, options } from '../../common/constants';
 
-const Filters = ({ productList, clothesList }) => {
+const Filters = ({ productList, clothesList, handleCloseWindow }) => {
 	//--------------------------------------------------
 	const [filterProductList, setFilterProductList] = useState([]);
 	const productListWrapperRef = useRef(null);
@@ -61,7 +61,7 @@ const Filters = ({ productList, clothesList }) => {
 						onChange={setSelect} />
 				</div>
 				<div className={filterStyles.listBodyWrapper} ref={productListWrapperRef}>
-					<ProductList array={filterProductList.length ? filterProductList : resultOllFilters} />
+					<ProductList array={filterProductList.length ? filterProductList : resultOllFilters} handleCloseWindow={handleCloseWindow} />
 				</div>
 			</div>
 		</div>

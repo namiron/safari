@@ -39,7 +39,7 @@ const CreateAccount = ({ handleSetUser, onClose }) => {
                                 required: true,
                             })}
                         />
-                        <div className={forms.error}>{errors?.firstName && <span classamNe={forms.errorText}><MdError />{ERROR_TEXT}</span>}</div>
+                        <div className={forms.error}>{errors?.firstName && <span className={forms.errorText}><MdError />{ERROR_TEXT}</span>}</div>
                     </div>
                     <div className={forms.LastName}>
                         <input type="text" placeholder='Last name *'

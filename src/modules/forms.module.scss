@@ -255,3 +255,79 @@ p {
 
 
 //----------------------------CreateLogIn
+//---------------------------AddressForm
+
+.addressFormBlock {
+    @include adaptive-value('padding', 10, 5, 1440);
+    border: 1px solid $colorBorders;
+    max-width: 400px;
+}
+
+.emailBlock {
+    border: 1px solid #000;
+    border-radius: 5px;
+    @include adaptive-value('height', 40, 30, 1440);
+
+    input {
+        height: 100%;
+    }
+}
+
+.error {}
+
+.errorText {
+    @include adaptive-value('padding', 5, 2, 1440);
+}
+
+.nameBlock {
+    border: 1px solid #000;
+    border-radius: 5px;
+    @include adaptive-value('height', 40, 30, 1440);
+
+    input {
+        height: 100%;
+    }
+}
+
+.addressBlock {
+    border: 1px solid #000;
+    border-radius: 5px;
+    @include adaptive-value('height', 100, 60, 1440);
+
+    textarea {
+        height: 100%;
+    }
+
+}
+
+.cityBlock {
+    border: 1px solid #000;
+    border-radius: 5px;
+    @include adaptive-value('height', 40, 30, 1440);
+
+    input {
+        height: 100%;
+    }
+}
+
+.phoneNumberBlock {
+    border: 1px solid #000;
+    border-radius: 5px;
+    @include adaptive-value('height', 40, 30, 1440);
+
+    input {
+        height: 100%;
+    }
+}
+
+.inner {}
+
+.handing {}
+
+.titleInput {
+    @include adaptive-font(14, 10, 1440);
+    @include adaptive-value('padding', 10, 5, 1440);
+
+}
+
+//---------------------------/AddressForm

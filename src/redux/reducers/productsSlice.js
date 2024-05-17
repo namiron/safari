@@ -47,6 +47,7 @@ export const updateProduct = createAsyncThunk(
 export const addReview = createAsyncThunk(
 	'users/createNameUser',
 	async ({ id, newReviewData }, { rejectWithValue }) => {
+
 		try {
 			const response = await fetch(`https://65a10699600f49256fb0bd21.mockapi.io/healthier/v1/safari/${id}`);
 			if (!response.ok) {

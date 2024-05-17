@@ -1,0 +1,250 @@
+@import '../common/variables.scss';
+@import '../null.scss';
+
+//----------------------------vars
+$cartColor: #68686887;
+$mainColor: #ED165F;
+$colorPrice: #F79E1B;
+$colorBorders: #E1E1E1;
+//----------------------------vars
+
+
+
+//---------------------------------------------------ShoppingDetails
+
+//---------------------------------------global
+.shoppingDetails {}
+
+.container {
+    @extend %container;
+
+}
+
+.detailsWrapper {
+    @include adaptive-value('padding-top', 50, 25, 1440);
+    @include adaptive-value('padding-bottom', 50, 25, 1440);
+
+    @extend %gridShoppingDetails;
+}
+
+//--------------------------------------------------------------------------/global
+
+
+//---------------------------------------shoppingAddressBox
+
+.shoppingAddressBox {
+    border: 1px solid $colorBorders;
+}
+
+.heading {}
+
+.title {
+    @include adaptive-font(20, 16, 1440);
+    font-weight: 600
+}
+
+.shoppingForm {}
+
+//-----------------------------------------------------------------------/shoppingAddressBox
+
+//---------------------------------------payBox
+
+.payBox {
+    @extend %displayFlexDirection;
+    @include adaptive-value('gap', 30, 15, 1440);
+}
+
+.deliveryBlock {
+    @include adaptive-value('padding', 10, 5, 1440);
+    @extend %displayFlexDirection;
+    @include adaptive-value('gap', 10, 5, 1440);
+    border: 1px solid $colorBorders;
+}
+
+.titlePay {
+    @extend %titleCategory;
+}
+
+.check {}
+
+.deliveryData {
+
+    @extend %display;
+}
+
+.dataBox {}
+
+.price {}
+
+.doorDelivery {}
+
+.paymentBlock {
+    @include adaptive-value('padding', 10, 5, 1440);
+    @extend %displayFlexDirection;
+    @include adaptive-value('gap', 10, 5, 1440);
+    border: 1px solid $colorBorders;
+}
+
+.paymentCart {
+    @extend %displayFlexDirection;
+    @include adaptive-value('gap', 20, 10, 1440);
+
+    p {
+        @extend %textFlickity;
+        color: $cartColor;
+        padding-left: 20px;
+    }
+}
+
+.checkInput {
+    @extend %display;
+    gap: 10px;
+
+    input {
+        width: fit-content;
+    }
+}
+
+.payCart {}
+
+.cartText {}
+
+.paymentGateWayText {
+    @extend %textFlickity;
+}
+
+.paymentDelivery {
+    @extend %displayFlexDirection;
+    @include adaptive-value('gap', 20, 10, 1440);
+
+    p {
+        @extend %textFlickity;
+        color: $cartColor;
+        padding-left: 20px;
+    }
+}
+
+.deliveryText {}
+
+//------------------------------------------------------------------/payBox
+
+//---------------------------------------orderSummaryBox
+
+.orderSummaryBox {
+    @include adaptive-value('padding', 10, 5, 1440);
+
+}
+
+.orderSummaryList {}
+
+//------------------------------------itemBlock
+
+
+.itemBlock {
+    @include adaptive-value('padding', 10, 5, 1440);
+    border-bottom: 1px solid $colorBorders;
+
+}
+
+.itemWrapper {
+    @extend %display;
+    gap: 10px;
+}
+
+.imageBox {
+    max-width: 100px;
+    @extend %images;
+}
+
+.contentBlock {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.titleItem {
+    @extend %titleCategory;
+}
+
+.infoRow {}
+
+.color {}
+
+.size {}
+
+.priceBlock {}
+
+.price {}
+
+.countBlock {}
+
+.count {}
+
+.noContent {}
+
+
+//-----------------------------------------------------------------/itemBlock
+
+.noContent {}
+
+
+//--------------------------------------------------orderSummaryInfo
+
+.orderSummaryInfo {
+    @include adaptive-value('padding', 10, 5, 1440);
+    border-bottom: 1px solid $colorBorders;
+    @extend %displayFlexDirection;
+    @include adaptive-value('gap', 10, 5, 1440);
+}
+
+.totalPriceBlock {
+    @extend %display;
+    @include adaptive-value('gap', 10, 5, 1440);
+}
+
+.titlePrice {}
+
+.totalPriceData {}
+
+.CardDiscountBox {
+    @extend %display;
+    @include adaptive-value('gap', 10, 5, 1440);
+}
+
+.cardDiscount {}
+
+.cardDiscountData {}
+
+.orderSummaryTotalBox {
+    @include adaptive-value('padding', 10, 5, 1440);
+    @extend %display;
+    @include adaptive-value('gap', 10, 5, 1440);
+
+}
+
+.totalTitle {
+    color: $mainColor;
+}
+
+.submitCheck {
+    @include adaptive-value('margin-top', 20, 10, 1440);
+    @include adaptive-value('padding', 10, 5, 1440);
+    border-radius: 5px;
+
+    background: $mainColor;
+    color: #fff;
+}
+
+.placeOrder {}
+
+
+//--------------------------------------------------------------------/orderSummaryInfo
+
+
+//---------------------------------------------------------------------/orderSummaryBox
+
+.check {
+    color: $mainColor;
+}
+
+//------------------------------------------------------------------------------------/ShoppingDetails
