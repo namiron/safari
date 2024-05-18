@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../wrapper.scss'
 import clothes from '../../modules/clothes.module.scss'
-import { Nav, Up } from './../../common/Buttons';
+import { Nav } from './../../common/Buttons';
 import { CLOTHES } from '../../common/constants';
 import Filters from '../../construction/Filters/Filters';
 

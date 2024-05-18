@@ -214,7 +214,7 @@ export const ToFavorite = () => {
 
 export const ShoppingDetailsBtn = () => {
 	return (
-		<Link to='/shopping_details' className={btn.shoppingDetails}> CONTINUE SHOPPING </Link>
+		<Link to='/shopping_details' className={btn.shoppingDetails}> {CONTINUE_SHOPPING} </Link>
 	)
 }
 

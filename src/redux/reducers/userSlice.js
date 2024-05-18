@@ -22,7 +22,7 @@ export const getUsers = createAsyncThunk(
 
 export const createUsersOnServer = createAsyncThunk(
     'users/createUsersOnServer',
-    async (createUser, { rejectWithValue }) => {
+    async (createUser, { rejectWithValue, dispatch }) => {
         try {
             const response = await fetch(`${BASE_URL_USERS}`, {
                 method: 'POST',
@@ -31,9 +31,9 @@ export const createUsersOnServer = createAsyncThunk(
             })
             if (!response.ok) {
                 throw Error('Server error')
-
             }
             const data = await response.json()
+            dispatch(logInNewUser(data))
             return data
 
         } catch (error) {
@@ -238,6 +238,9 @@ const userSlice = createSlice({
         removeUser(state) {
             state.currentUser = null
         },
+        logInNewUser(state, { payload }) {
+            state.currentUser = payload
+        },
         removeProductFromUserCartAction(state, { payload }) {
             state.currentUser.cart = payload;
         },
@@ -269,6 +272,6 @@ const userSlice = createSlice({
     }
 })
 
-export const { comparisonsData, removeUser, removeProductFromUserCartAction, removeProductFromUFavoriteAction, createNewItemToUserCart, createNewItemToUserFavorite } = userSlice.actions;
+export const { comparisonsData, removeUser, logInNewUser, removeProductFromUserCartAction, removeProductFromUFavoriteAction, createNewItemToUserCart, createNewItemToUserFavorite } = userSlice.actions;
 
 export default userSlice.reducer

@@ -12,5 +12,3 @@ const Accordion = ({ faqList, children, handleFilterChange, productList }) => {
 };
 
 export default Accordion;
-
-

@@ -101,7 +101,6 @@ const ShoppingDetails = () => {
                                 <span className={shopDetails.totalTitle}>{total + 200} $</span>
                             </div>
                         </article>
-
                     </div>
                     <article className={shopDetails.payBox}>
                         <div className={shopDetails.deliveryBlock}>
