@@ -448,3 +448,32 @@ export const PHONE_NUMBER = 'Phone number'
 
 
 //-----------------------------------------/AddressForm
+
+
+//-----------------------------------------------CART
+
+export const SHOPPING_CART = 'Shopping Cart'
+
+export const NO_PRODUCT = 'no product'
+
+export const ITEM_DESCRIPTION = 'ITEM DESCRIPTION'
+
+export const COLOR_CONSTANTA = 'Color'
+
+export const SIZE_CONSTANTA = 'Size'
+
+export const QUANTITY = 'QUANTITY'
+
+export const UNIT_PRICE = 'UNIT PRICE'
+
+export const SUB_TOTAL = 'SUB TOTAL'
+
+export const TOTAL_CONST = 'TOTAL:'
+//-----------------------------------------------/CART
+
+
+//------------------------------------------BUTTONS
+
+export const EXPLORE_OUR_COLLECTION = 'Explore our collection'
+
+//------------------------------------------/BUTTONS

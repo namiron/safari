@@ -3,10 +3,11 @@ import Flickity from 'react-flickity-component';
 import logoSlider from '../../image/LogoSlider.png'
 import './slider.scss'
 import girlOne from '../../image/girls-1.jpg'
-import girlsTwo from '../../image/girls-2.png'
-import girlsThree from '../../image/girls-3.png'
+import girlsTwo from '../../image/image-girl-home-1.png'
+import girlsThree from '../../image/image-girl-home-2.png'
 import iconsArrow from '../../image/iconSlider.png'
 import flickity from '../../modules/flickity.module.scss'
+import { EXPLORE_OUR_COLLECTION } from './../../common/constants'
 
 const Slider = () => {
 	const flickityOptions = {
@@ -38,7 +39,7 @@ const Slider = () => {
 					})}
 				</Flickity >
 				<div className={flickity.exploreBlock}>
-					<p className={flickity.explore}>Explore our collection</p>
+					<p className={flickity.explore}>{EXPLORE_OUR_COLLECTION}</p>
 					<img src={iconsArrow} alt="" />
 				</div>
 

@@ -7,7 +7,6 @@ const AccordionItem = ({ faqItem, id, handleFilterChange, productList, productLi
 	const clickAccordion = (id) => {
 		setOpenId(openId === id ? null : id);
 	};
-
 	const handleFilterCategory = (category) => {
 		const filterProduct = productList.filter(el => el.category === category);
 		handleFilterChange(filterProduct);
@@ -16,8 +15,8 @@ const AccordionItem = ({ faqItem, id, handleFilterChange, productList, productLi
 			setOpenId(null);
 			if (productListWrapperRef.current) {
 				const productListOffset = productListWrapperRef.current.offsetTop + productListWrapperRef.current.offsetHeight;
-				const headerHeight = document.querySelector('header').offsetHeight; // Получаем высоту шапки
-				const scrollToOffset = productListOffset - headerHeight; // Вычисляем конечное значение для прокрутки
+				const headerHeight = document.querySelector('header').offsetHeight;
+				const scrollToOffset = productListOffset - headerHeight; 
 				window.scrollTo({ top: scrollToOffset, behavior: 'smooth' });
 
 				console.log('productListOffset:', productListOffset);
@@ -25,8 +24,6 @@ const AccordionItem = ({ faqItem, id, handleFilterChange, productList, productLi
 			}
 		}
 	}
-
-
 	return (
 		<li className={accordion.accordionItem}>
 			<button className={accordion.button} onClick={() => clickAccordion(id)}><span>{faqItem.question}</span></button>
@@ -40,5 +37,4 @@ const AccordionItem = ({ faqItem, id, handleFilterChange, productList, productLi
 		</li>
 	);
 };
-
 export default AccordionItem;

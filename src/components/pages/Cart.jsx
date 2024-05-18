@@ -2,7 +2,7 @@ import React from 'react';
 import { GoToFavorite, LogButton, Nav, Remove, ShoppingDetailsBtn } from './../../common/Buttons';
 import { TotalProductsPrice, useCustomCurrentUser } from '../../hooks/untils';
 import cart from '../../modules/cart.module.scss'
-import { NO_CONTENT } from '../../common/constants';
+import { COLOR_CONSTANTA, ITEM_DESCRIPTION, NO_CONTENT, NO_PRODUCT, QUANTITY, SHOPPING_CART, SIZE_CONSTANTA, SUB_TOTAL, TOTAL_CONST, UNIT_PRICE } from '../../common/constants';
 import { ImFilesEmpty } from "react-icons/im";
 import { removeProductFromUserCart } from '../../redux/reducers/userSlice'
 
@@ -62,13 +62,13 @@ export const CartWithUser = () => {
 						<Nav />
 					</div>
 					<div className={cart.heading}>
-						<h2 className={cart.title}>Shopping Cart <span>{currentUser.cart.length}</span></h2>
+						<h2 className={cart.title}>{SHOPPING_CART} <span>{currentUser.cart.length}</span></h2>
 					</div>
 					<div className={cart.content}>
 						<ul className={cart.cartList}>
 							{currentUser && currentUser.cart.length > 0 ? currentUser.cart.map(({ image, size, price, color, id, title, count }) => {
 								return <CartItem key={id} id={id} image={image} size={size} price={price} color={color} title={title} count={count} />
-							}) : <p className={cart.cartEmpty}> no product </p>}
+							}) : <p className={cart.cartEmpty}> {NO_PRODUCT} </p>}
 						</ul>
 
 					</div>
@@ -97,7 +97,7 @@ export const CartItem = ({ image, size, price, color, id, title, count }) => {
 			<div className={cart.itemWrapper}>
 				<div className={cart.firstColumn}>
 					<div className={cart.heading}>
-						<h2 className={cart.firstColumnTitle}>ITEM DESCRIPTION</h2>
+						<h2 className={cart.firstColumnTitle}>{ITEM_DESCRIPTION}</h2>
 					</div>
 					<div className={cart.firstColumnWrapper}>
 						<div className={cart.topRow}>
@@ -107,8 +107,8 @@ export const CartItem = ({ image, size, price, color, id, title, count }) => {
 							<div className={cart.titleProduct}>
 								<h3 className={cart.nameProduct}>{title}</h3>
 								<div className={cart.infoRow}>
-									<span className={cart.size}>Size-{size}</span>
-									<span className={cart.color}> Color-{color}</span>
+									<span className={cart.size}>{COLOR_CONSTANTA}-{size}</span>
+									<span className={cart.color}> {SIZE_CONSTANTA}-{color}</span>
 								</div>
 							</div>
 						</div>
@@ -121,20 +121,20 @@ export const CartItem = ({ image, size, price, color, id, title, count }) => {
 				</div>
 				<div className={cart.secondColumn}>
 					<div className={cart.quantity}>
-						<p className={cart.quantityTitle}>QUANTITY</p>
+						<p className={cart.quantityTitle}>{QUANTITY}</p>
 						<div className={cart.quantityBox}>
 							<span>{count}</span>
 						</div>
 
 					</div>
 					<div className={cart.price}>
-						<p className={cart.priceTitle}>UNIT PRICE</p>
+						<p className={cart.priceTitle}>{UNIT_PRICE}</p>
 						<div className={cart.priceBox}>
 							<span> {price} $ </span>
 						</div>
 					</div>
 					<div className={cart.totalPrice}>
-						<p className={cart.totalPriceTitle} >SUB TOTAL</p>
+						<p className={cart.totalPriceTitle} >{SUB_TOTAL}</p>
 						<div className={cart.totalPriceBox}>
 							<span>{count * price} $ </span>
 						</div>
@@ -154,7 +154,7 @@ export const TotalComponentPrice = ({ callback, array }) => {
 
 		<div className={cart.oll}>
 			<div className={cart.containerOll}>
-				<h2 className={cart.ollTitle}>TOTAL:</h2>
+				<h2 className={cart.ollTitle}>{TOTAL_CONST}</h2>
 				<span className={cart.ollPrices}>{total} $</span>
 			</div>
 		</div>
