@@ -7,6 +7,7 @@ export const BASE_URL =
 
 export const BASE_URL_USERS =
   "https://65a10699600f49256fb0bd21.mockapi.io/healthier/v1/users";
+
 //--------------------------------btn
 export const BACK = "Back";
 
