@@ -36,8 +36,8 @@ const Ways = () => {
 
 	//---------------------------------------------------
 
-
 	return (
+
 		<Routes>
 			<Route path={ROUTES.layout} element={<Suspense fallback={<Skeleton />}><LayoutPage productList={productList} handleSearchList={handleSearchList}
 				handleCloseWindow={handleCloseWindow} isModalWindow={isModalWindow}
