@@ -22,6 +22,8 @@ export const CREATE_ACCOUNT = "CREATE ACCOUNT";
 export const MOVE_TO_FAVORITES = "MOVE TO FAVORITES";
 
 export const REMOVE = "REMOVE";
+
+const Test = ''
 //--------------------------------btn
 
 export const STARS_CONSTANT = "Stars";
