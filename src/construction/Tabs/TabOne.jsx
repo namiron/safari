@@ -141,7 +141,7 @@ const TabOne = ({ image = [], size = [], color = [], price, id, rating, title })
                                     return <span className={`${tab.sizeElement} ${el === sizeItem ? tab.activeSize : ''}`} onClick={() => handleSizeItemClick(el)} key={i} >{el}</span>
                                 })
                             }
-                            <div className={tab.sizeIcon}><TbHanger /> <span className={tab.sizeText}>{SIZE_CHART}</span></div>
+                            {/* <div className={tab.sizeIcon}><TbHanger /> <span className={tab.sizeText}>{SIZE_CHART}</span></div> */}
                         </div>
 
                     </div>

@@ -15,8 +15,8 @@ export const CustomSelect = styled(Select).attrs({
 		option: (provided, state) => ({
 			...provided,
 			cursor: 'pointer',
-		  background: state.isSelected ? '#ED165F' : '#fff', // Изменение цвета для активной категории
-		  color: state.isSelected ? '#fff' : '#000',          // Изменение цвета текста для активной категории
+		  background: state.isSelected ? '#ED165F' : '#fff',  
+		  color: state.isSelected ? '#fff' : '#000',          
 		  '&:hover': {
 			  background: '#ED165F',
 			  color: '#fff'

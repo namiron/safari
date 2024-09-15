@@ -214,7 +214,7 @@ $borderActive: #ED165F;
 .countBlock {
     @extend %display;
     gap: 10px;
-    padding: 5px 10px;
+    padding: 0px 10px;
     border: 1px solid $border;
     border-radius: 5px;
 }
@@ -317,6 +317,7 @@ $borderActive: #ED165F;
 
 .shareText {
     @include adaptive-value('padding-top', 20, 10, 1440);
+    @include adaptive-value('padding-right', 10, 5, 1440);
     @include adaptive-value('padding-bottom', 20, 10, 1440);
     @extend %titlesStyle;
 
