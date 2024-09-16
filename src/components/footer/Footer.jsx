@@ -20,7 +20,7 @@ const Footer = () => {
           thank you for visiting my site!
           <a href="mailto:alexandersam.dev@gmail.com">
             <br />
-            <span className={footer.emailText}>alexandersam.dev@gmail.com</span> 
+            <span className={footer.emailText}>alexandersam.dev@gmail.com</span>
           </a>
         </div>
       </div>
