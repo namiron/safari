@@ -18,9 +18,6 @@ const AccordionItem = ({ faqItem, id, handleFilterChange, productList, productLi
 				const headerHeight = document.querySelector('header').offsetHeight;
 				const scrollToOffset = productListOffset - headerHeight; 
 				window.scrollTo({ top: scrollToOffset, behavior: 'smooth' });
-
-				console.log('productListOffset:', productListOffset);
-				console.log('scrollToOffset:', scrollToOffset);
 			}
 		}
 	}

@@ -10,9 +10,13 @@ const Search = ({ productList, handleSearchList }) => {
     setSearch(e.target.value);
   };
   const filterProductList = (array = []) => {
-    const newProductList = array.filter((el) => el.title.includes(search));
+
+
+    const newProductList = array.filter(
+      (el) => el.title.toLowerCase().includes(search.toLowerCase()) 
+    );
     handleSearchList(newProductList);
-    setSearch("");
+ 
   };
   return (
     <div className={searchStyle.search}>
@@ -28,7 +32,9 @@ const Search = ({ productList, handleSearchList }) => {
         onClick={() => filterProductList(productList)}
         className={searchStyle.searchIcon}
       >
-        <IoSearchSharp className="iconSearch" />
+        
+          <IoSearchSharp className="iconSearch" />
+     
       </button>
     </div>
   );

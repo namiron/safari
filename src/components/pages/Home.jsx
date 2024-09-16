@@ -5,6 +5,7 @@ import Slider from "../../construction/Slider/Slider";
 import { EXPLORE_MORE_ARRAY, TITLE } from "../../common/constants";
 import { SUB_TITLE } from "./../../common/constants";
 import ItemCategory from "../ProductList/ItemCategory";
+import { Link as ScrollLink } from "react-scroll";
 
 const Home = ({ productList, searchList, handleCloseWindow }) => {
   return (
