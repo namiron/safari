@@ -107,3 +107,41 @@ $closeHover: #686868ef;
 .response {
   @extend %title;
 }
+
+//---------------------------
+
+.modalEmail {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background: #00000093;
+  z-index: 100;
+  overflow: hidden;
+  overflow-y: auto;
+  transition: opacity 0.3s;
+}
+.modalWrapperEmail {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100%;
+  margin-top: 50px;
+}
+
+.modalContentEmail {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  padding: 25px;
+  border-radius: 20px;
+  background-color: #fff;
+  padding-bottom: 40px;
+  transform: translateY(-50px);
+  transition: opacity 0.3s transform 0.3s;
+}

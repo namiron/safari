@@ -1,0 +1,25 @@
+@import "../common/variables.scss";
+@import "../null.scss";
+
+
+.messageWrapper{
+   @extend %displayFlexDirection;
+   align-items: center;
+   @include adaptive-value('gap', 15, 10,1440);
+}
+
+.thankYouTitle{
+    font-size: 25px;
+}
+
+.thankYou {
+  font-size: 70px;
+  color: #ED165F;
+}
+.thankText {
+text-align: center;
+    max-width: 500px;
+    span{
+          color: #ED165F;
+    }
+}

@@ -502,3 +502,6 @@ export const TOTAL_CONST = "TOTAL:";
 export const EXPLORE_OUR_COLLECTION = "Explore our collection";
 
 //------------------------------------------/BUTTONS
+
+ export const THANK_YOU = `Thank You`;
+export const EMAIL_MESSAGE = `you are subscribed to safari site updates. Information about promotions will be sent to your email`;
